@@ -1,0 +1,9 @@
+# Arquivos com chaves de API — não subir para o GitHub
+scripts/GeradorPost.bat
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db

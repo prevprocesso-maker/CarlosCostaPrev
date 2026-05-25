@@ -1,0 +1,44 @@
+═══════════════════════════════════════════
+  CarlosCostaPrev — Log de Publicações Blog
+  Iniciado em 24/05/2026
+═══════════════════════════════════════════
+
+[24/05/2026, 00:00:00] Post manual: BPC/LOAS: Como Requerer e Quem Tem Direito
+[24/05/2026, 00:00:00] Post manual: Aposentadoria por Invalidez: Requisitos e Diferenças para o Auxílio-Doença
+
+[24/05/2026, 18:54:41] === Iniciando gerador de post ===
+[24/05/2026, 18:54:41] Tema: BPC/LOAS: Como Requerer e Quem Tem Direito
+[24/05/2026, 18:54:42] Foto baixada: C:\Users\NIKE\carloscostaprev-site\assets\images\blog\bpc-loas-como-requerer.jpg
+[24/05/2026, 18:54:42] Gerando conteúdo com IA...
+[24/05/2026, 18:54:42] AVISO: ANTHROPIC_API_KEY não configurada — usando conteúdo de exemplo.
+[24/05/2026, 18:54:42] Artigo criado: C:\Users\NIKE\carloscostaprev-site\blog\bpc-loas-como-requerer.html
+[24/05/2026, 18:54:42] index.html atualizado com novo card.
+[24/05/2026, 18:54:42] Iniciando deploy no Cloudflare Pages...
+[24/05/2026, 18:55:03] Deploy concluído com sucesso!
+
+═══════════════════════════════════════════
+  POST PUBLICADO — 24/05/2026, 18:55:03
+  Título : BPC/LOAS: Como Requerer e Quem Tem Direito
+  Tag    : BPC/LOAS
+  URL    : https://carloscostaprev.pages.dev/blog/bpc-loas-como-requerer.html
+═══════════════════════════════════════════
+[24/05/2026, 18:55:05] WhatsApp: backend retornou 401 (backend pode estar offline)
+[24/05/2026, 18:55:05] === Post #4 publicado: BPC/LOAS: Como Requerer e Quem Tem Direito ===
+[24/05/2026, 19:00:53] === Iniciando gerador de post ===
+[24/05/2026, 19:00:53] Tema: Aposentadoria por Invalidez: Requisitos e Diferenças para Auxílio-Doença
+[24/05/2026, 19:00:54] Foto baixada: C:\Users\NIKE\carloscostaprev-site\assets\images\blog\aposentadoria-por-invalidez.jpg
+[24/05/2026, 19:00:54] Gerando conteúdo com IA...
+[24/05/2026, 19:00:54] AVISO: ANTHROPIC_API_KEY não configurada — usando conteúdo de exemplo.
+[24/05/2026, 19:00:54] Artigo criado: C:\Users\NIKE\carloscostaprev-site\blog\aposentadoria-por-invalidez.html
+[24/05/2026, 19:00:54] index.html: card já existe, pulando inserção.
+[24/05/2026, 19:00:54] Iniciando deploy no Cloudflare Pages...
+[24/05/2026, 19:01:10] Deploy concluído com sucesso!
+
+═══════════════════════════════════════════
+  POST PUBLICADO — 24/05/2026, 19:01:10
+  Título : Aposentadoria por Invalidez: Requisitos e Diferenças para Auxílio-Doença
+  Tag    : Aposentadoria
+  URL    : https://carloscostaprev.pages.dev/blog/aposentadoria-por-invalidez.html
+═══════════════════════════════════════════
+[24/05/2026, 19:01:21] WhatsApp: backend retornou 401 (backend pode estar offline)
+[24/05/2026, 19:01:21] === Post #5 publicado: Aposentadoria por Invalidez: Requisitos e Diferenças para Auxílio-Doença ===

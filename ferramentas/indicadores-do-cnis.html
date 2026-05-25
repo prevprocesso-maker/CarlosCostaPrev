@@ -1,0 +1,677 @@
+﻿<!-- v=20260524 -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indicadores do CNIS | CarlosCostaPrev</title>
+  <meta name="description" content="Banco de dados completo dos indicadores e pendências do CNIS. Entenda o que cada código significa e como agir para regularizar seu extrato previdenciário.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/sections.css">
+  <style>
+    /* ── Navbar inline (mesma do blog) ── */
+    .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 14px 0; background: rgba(14,8,6,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--glass-border); }
+    .site-nav__inner { display: flex; align-items: center; gap: var(--gap-xl); }
+    .site-nav__logo { font-size: var(--text-lg); font-weight: 900; text-decoration: none; color: var(--text-primary); }
+    .site-nav__logo span { color: var(--accent); }
+    .site-nav__links { display: flex; align-items: center; gap: var(--gap-lg); margin-left: auto; }
+    .site-nav__links > a { font-size: var(--text-sm); color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .site-nav__links > a:hover { color: var(--accent); }
+    .nav-ferramentas { position: relative; }
+    .nav-ferramentas__btn { display: flex; align-items: center; gap: 5px; background: none; border: none; font-family: inherit; font-size: var(--text-sm); font-weight: 500; color: var(--text-muted); cursor: pointer; padding: 0; transition: color 0.2s; }
+    .nav-ferramentas__btn:hover { color: var(--text-primary); }
+    .nav-ferramentas__btn svg { transition: transform 0.25s ease; }
+    .nav-ferramentas__btn[aria-expanded="true"] svg { transform: rotate(180deg); }
+    .nav-ferramentas__dropdown { position: absolute; top: calc(100% + 14px); left: 50%; transform: translateX(-50%); min-width: 230px; background: rgba(20,10,6,0.97); border: 1px solid var(--glass-border); border-radius: var(--radius-md); backdrop-filter: blur(16px); box-shadow: 0 16px 40px rgba(0,0,0,0.5); overflow: hidden; animation: dropdownIn 0.2s ease; z-index: 200; }
+    @keyframes dropdownIn { from { opacity: 0; transform: translateX(-50%) translateY(-6px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
+    .nav-ferramentas__dropdown a { display: flex; align-items: center; gap: 10px; padding: 13px 18px; font-size: var(--text-sm); color: var(--text-muted); text-decoration: none; transition: background 0.15s, color 0.15s; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .nav-ferramentas__dropdown a:last-child { border-bottom: none; }
+    .nav-ferramentas__dropdown a:hover { background: rgba(196,103,58,0.1); color: var(--text-primary); }
+    .nav-ferramentas__dropdown a svg { color: var(--accent); flex-shrink: 0; }
+    .navbar__cta { margin-left: var(--gap-md); }
+
+    /* ── Hero ── */
+    .tool-hero { padding: 110px 0 60px; background: linear-gradient(160deg, var(--bg-deep) 0%, var(--bg-mid) 100%); border-bottom: 1px solid var(--glass-border); }
+    .tool-hero h1 { font-size: var(--text-h2); margin-bottom: 0.75rem; }
+    .tool-hero p { color: var(--text-muted); max-width: 560px; font-size: var(--text-base); }
+
+    /* ── Legenda cards ── */
+    .legend-section { padding: 48px 0 0; background: var(--bg-deep); }
+
+    /* Bloco intro hierarquia */
+    .hierarquia-intro { background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); padding: 28px 32px; margin-bottom: 28px; display: flex; gap: 20px; align-items: flex-start; }
+    .hierarquia-intro__icon { flex-shrink: 0; width: 44px; height: 44px; background: rgba(196,103,58,0.15); border: 1px solid rgba(196,103,58,0.3); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: var(--accent); }
+    .hierarquia-intro__text h3 { font-size: var(--text-base); font-weight: 800; margin-bottom: 6px; color: var(--text-primary); }
+    .hierarquia-intro__text p { font-size: var(--text-sm); color: var(--text-muted); line-height: 1.65; }
+    .hierarquia-intro__text strong { color: var(--text-primary); }
+
+    /* Seta de hierarquia */
+    .legend-grid { display: grid; grid-template-columns: 1fr 28px 1fr 28px 1fr; gap: 0; margin-top: 0; position: relative; align-items: stretch; }
+    .legend-grid::before { content: ''; display: none; }
+    .legend-arrow { display: flex; align-items: center; justify-content: center; color: var(--text-faint); padding: 0 4px; font-size: 20px; align-self: center; }
+
+    .legend-card { border-radius: 0; padding: var(--gap-lg); display: flex; flex-direction: column; gap: 12px; position: relative; border: 1px solid transparent; transition: transform 0.2s; }
+    .legend-card:first-child { border-radius: var(--radius-lg) 0 0 var(--radius-lg); }
+    .legend-card:last-child { border-radius: 0 var(--radius-lg) var(--radius-lg) 0; }
+
+    /* P — Pendência: urgente */
+    .legend-card--pendencia { background: rgba(224,85,85,0.08); border-color: rgba(224,85,85,0.35); border-right: none; }
+    .legend-card--pendencia:hover { transform: translateY(-2px); background: rgba(224,85,85,0.13); }
+
+    /* I — Indicador: atenção */
+    .legend-card--indicador { background: rgba(224,168,32,0.08); border-color: rgba(224,168,32,0.3); }
+    .legend-card--indicador:hover { transform: translateY(-2px); background: rgba(224,168,32,0.13); }
+
+    /* A — Acerto: resolvido */
+    .legend-card--acerto { background: rgba(76,175,125,0.07); border-color: rgba(76,175,125,0.25); border-left: none; }
+    .legend-card--acerto:hover { transform: translateY(-2px); background: rgba(76,175,125,0.12); }
+
+    /* Urgência badge */
+    .urgencia-tag { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: var(--radius-pill); font-size: 10px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; width: fit-content; margin-bottom: 2px; }
+    .urgencia-tag--alta { background: rgba(224,85,85,0.2); color: #ff6b6b; border: 1px solid rgba(224,85,85,0.4); }
+    .urgencia-tag--media { background: rgba(224,168,32,0.2); color: #ffc93c; border: 1px solid rgba(224,168,32,0.4); }
+    .urgencia-tag--baixa { background: rgba(76,175,125,0.15); color: #5ecc8a; border: 1px solid rgba(76,175,125,0.3); }
+
+    /* Letra código */
+    .legend-card__letra { width: 52px; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 900; font-family: 'JetBrains Mono', 'Courier New', monospace; flex-shrink: 0; }
+    .legend-card__letra--p { background: rgba(224,85,85,0.15); color: #ff6b6b; border: 1px solid rgba(224,85,85,0.3); }
+    .legend-card__letra--i { background: rgba(224,168,32,0.15); color: #ffc93c; border: 1px solid rgba(224,168,32,0.3); }
+    .legend-card__letra--a { background: rgba(76,175,125,0.12); color: #5ecc8a; border: 1px solid rgba(76,175,125,0.25); }
+
+    .legend-card__top { display: flex; align-items: center; gap: 14px; }
+    .legend-card__topinfo { display: flex; flex-direction: column; gap: 4px; }
+    .legend-card h3 { font-size: var(--text-base); font-weight: 800; }
+    .legend-card__sub { font-size: var(--text-xs); color: var(--text-faint); font-weight: 600; letter-spacing: 0.5px; }
+    .legend-card p { font-size: var(--text-sm); color: var(--text-muted); line-height: 1.6; }
+    .legend-card__acao { font-size: var(--text-xs); font-weight: 700; padding: 6px 12px; border-radius: var(--radius-sm); display: inline-block; margin-top: 4px; }
+    .legend-card__acao--p { background: rgba(224,85,85,0.15); color: #ff6b6b; }
+    .legend-card__acao--i { background: rgba(224,168,32,0.12); color: #ffc93c; }
+    .legend-card__acao--a { background: rgba(76,175,125,0.1); color: #5ecc8a; }
+
+    /* Separador com seta */
+    .legend-separator { display: flex; align-items: center; justify-content: center; background: var(--bg-deep); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); padding: 0 8px; }
+    .legend-separator svg { color: var(--text-faint); }
+
+    /* Badge legado (mantido para o JS) */
+    .badge--pendencia { background: rgba(224,85,85,0.15); color: #ff6b6b; border: 1px solid rgba(224,85,85,0.3); }
+    .badge--indicador { background: rgba(224,168,32,0.15); color: #ffc93c; border: 1px solid rgba(224,168,32,0.3); }
+    .badge--acerto { background: rgba(76,175,125,0.15); color: #5ecc8a; border: 1px solid rgba(76,175,125,0.3); }
+    .legend-card__badge { display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; border-radius: var(--radius-pill); font-size: var(--text-xs); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; width: fit-content; }
+
+    /* ── Busca e filtros ── */
+    .filter-section { padding: 40px 0 0; background: var(--bg-deep); }
+    .filter-bar { display: flex; gap: var(--gap-md); flex-wrap: wrap; align-items: center; }
+    .filter-search { flex: 1; min-width: 240px; position: relative; }
+    .filter-search input { width: 100%; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 12px 16px 12px 44px; font-family: inherit; font-size: var(--text-sm); color: var(--text-primary); outline: none; transition: border-color 0.2s; }
+    .filter-search input::placeholder { color: var(--text-faint); }
+    .filter-search input:focus { border-color: var(--accent-border-strong); }
+    .filter-search svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-faint); pointer-events: none; }
+    .filter-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+    .filter-btn { padding: 10px 18px; border-radius: var(--radius-pill); border: 1px solid var(--glass-border); background: var(--glass-bg); font-family: inherit; font-size: var(--text-xs); font-weight: 600; color: var(--text-muted); cursor: pointer; transition: all 0.2s; letter-spacing: 0.5px; }
+    .filter-btn:hover { border-color: var(--accent-border); color: var(--text-primary); }
+    .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    /* ── Grid de indicadores ── */
+    .indicators-section { padding: 32px 0 80px; background: var(--bg-deep); }
+    .indicators-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--gap-md); margin-top: var(--gap-lg); }
+    .indicator-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); padding: var(--gap-lg); display: flex; flex-direction: column; gap: 10px; transition: border-color 0.2s; }
+    .indicator-card:hover { border-color: var(--accent-border); }
+    .indicator-card__top { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--gap-md); }
+    .indicator-card__code { font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: var(--text-xs); font-weight: 700; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-sm); padding: 4px 10px; color: var(--text-primary); letter-spacing: 0.5px; white-space: nowrap; }
+    .indicator-card__grupo { font-size: var(--text-xs); color: var(--text-faint); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+    .indicator-card__desc { font-size: var(--text-sm); color: var(--text-muted); line-height: 1.6; }
+    .no-results { text-align: center; padding: 60px 0; color: var(--text-muted); }
+    .no-results p { font-size: var(--text-base); }
+
+    /* ── CTA ── */
+    .tool-cta { padding: var(--section-py) 0; background: var(--bg-mid); border-top: 1px solid var(--glass-border); text-align: center; }
+    .tool-cta h2 { font-size: var(--text-h2); margin-bottom: 1rem; }
+    .tool-cta p { color: var(--text-muted); max-width: 480px; margin: 0 auto 2rem; }
+
+    /* ── Footer ── */
+    footer { text-align: center; padding: var(--gap-xl) 0; background: var(--bg-deep); border-top: 1px solid var(--glass-border); }
+    footer p { font-size: var(--text-xs); color: var(--text-faint); }
+    .social-links { display: flex; justify-content: center; gap: var(--gap-md); margin-top: 12px; }
+    .social-links a { color: var(--text-faint); transition: color 0.2s; }
+    .social-links a:hover { color: var(--accent); }
+    .social-links svg { width: 18px; height: 18px; fill: currentColor; display: block; }
+
+    @media (max-width: 768px) {
+      .legend-grid { grid-template-columns: 1fr; }
+      .legend-separator { padding: 8px 0; transform: rotate(90deg); height: 28px; border: none; }
+      .legend-card:first-child { border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+      .legend-card:last-child { border-radius: 0 0 var(--radius-lg) var(--radius-lg); }
+      .legend-card--pendencia { border-right: 1px solid rgba(224,85,85,0.35); border-bottom: none; }
+      .legend-card--acerto { border-left: 1px solid rgba(76,175,125,0.25); border-top: none; }
+      .indicators-grid { grid-template-columns: 1fr; }
+      .site-nav__links { gap: var(--gap-md); }
+      .hierarquia-intro { flex-direction: column; gap: 14px; padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav class="site-nav" aria-label="Navegação">
+  <div class="container site-nav__inner">
+    <a href="../" class="site-nav__logo">Carlos<span>Costa</span>Prev</a>
+    <div class="site-nav__links" id="nav-links">
+      <a href="../">Início</a>
+      <a href="../beneficios.html">Benefícios</a>
+      <a href="../servicos.html">Serviços</a>
+      <a href="../blog/">Blog</a>
+      <div class="nav-ferramentas">
+        <button class="nav-ferramentas__btn" aria-expanded="false" aria-haspopup="true" id="btn-ferramentas">
+          Ferramentas
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-ferramentas__dropdown" id="dropdown-ferramentas" hidden>
+          <a href="../ferramentas/indicadores-do-cnis.html">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            Indicadores do CNIS
+          </a>
+          <a href="../ferramentas/calculadora.html">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h4M8 14h8M8 18h4"/></svg>
+            Calculadora de Aposentadoria
+          </a>
+          <a href="../ferramentas/louco-para-aposentar.html">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2m-6 0a2 2 0 012-2h2a2 2 0 012 2M9 12l2 2 4-4"/></svg>
+            Louco para Aposentar
+          </a>
+          <a href="../ferramentas/pdf.html">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6M9 15l3 3 3-3"/></svg>
+            Ferramentas de PDF
+          </a>
+        </div>
+      </div>
+    </div>
+    <a href="https://wa.me/5521964238080" class="btn btn--primary navbar__cta" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<header class="tool-hero">
+  <div class="container">
+    <p class="section-label">Ferramenta Gratuita</p>
+    <h1>Indicadores do <span class="accent">CNIS</span></h1>
+    <p>Banco de dados completo com todos os <strong>226 códigos</strong> de pendências, indicadores de alerta e acertos do extrato CNIS. Busque por código ou descrição para entender o que está registrado no seu histórico previdenciário.</p>
+  </div>
+</header>
+
+<!-- ── LEGENDA ── -->
+<section class="legend-section">
+  <div class="container">
+
+    <!-- Bloco intro -->
+    <div class="hierarquia-intro">
+      <div class="hierarquia-intro__icon">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="hierarquia-intro__text">
+        <h3>Como ler os indicadores do CNIS — hierarquia de urgência</h3>
+        <p>Cada código no extrato começa com uma letra que define <strong>o que é</strong> e <strong>o que você precisa fazer</strong>.
+        <strong style="color:#ff6b6b;">P</strong> = Pendência exige ação imediata — o INSS pode rejeitar aquele período.
+        <strong style="color:#ffc93c;">I</strong> = Indicador é um alerta que merece verificação.
+        <strong style="color:#5ecc8a;">A</strong> = Acerto significa que a regularização já foi feita.
+        Quanto antes a <strong style="color:#ff6b6b;">Pendência</strong> for resolvida, menor o risco de perda de benefício.</p>
+      </div>
+    </div>
+
+    <!-- Cards de hierarquia -->
+    <div class="legend-grid">
+
+      <!-- P — Urgência ALTA -->
+      <div class="legend-card legend-card--pendencia">
+        <span class="urgencia-tag urgencia-tag--alta">
+          <svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+          Urgência Alta — Trate Primeiro
+        </span>
+        <div class="legend-card__top">
+          <div class="legend-card__letra legend-card__letra--p">P</div>
+          <div class="legend-card__topinfo">
+            <h3 style="color:#ff6b6b;">Pendência</h3>
+            <span class="legend-card__sub">Começa com a letra P</span>
+          </div>
+        </div>
+        <p>O INSS <strong style="color:var(--text-primary);">não vai reconhecer</strong> aquele período ou salário automaticamente. Exige comprovação ou correção antes do pedido de benefício. Ignorar pode <strong style="color:#ff6b6b;">anular anos de contribuição</strong>.</p>
+        <span class="legend-card__acao legend-card__acao--p">
+          <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline;vertical-align:-1px;margin-right:4px"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+          Consulte um especialista imediatamente
+        </span>
+      </div>
+
+      <!-- Separador -->
+      <div class="legend-separator">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+
+      <!-- I — Urgência MÉDIA -->
+      <div class="legend-card legend-card--indicador">
+        <span class="urgencia-tag urgencia-tag--media">
+          <svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+          Atenção — Verifique
+        </span>
+        <div class="legend-card__top">
+          <div class="legend-card__letra legend-card__letra--i">I</div>
+          <div class="legend-card__topinfo">
+            <h3 style="color:#ffc93c;">Indicador</h3>
+            <span class="legend-card__sub">Começa com a letra I</span>
+          </div>
+        </div>
+        <p>O INSS identificou <strong style="color:var(--text-primary);">algo fora do padrão</strong>. Pode ser informativo (ex: remuneração de reclamatória trabalhista) ou pode esconder uma pendência. Precisa de análise para saber o impacto no benefício.</p>
+        <span class="legend-card__acao legend-card__acao--i">
+          <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline;vertical-align:-1px;margin-right:4px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Avalie com especialista antes do pedido
+        </span>
+      </div>
+
+      <!-- Separador -->
+      <div class="legend-separator">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+
+      <!-- A — Resolvido -->
+      <div class="legend-card legend-card--acerto">
+        <span class="urgencia-tag urgencia-tag--baixa">
+          <svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+          Resolvido — Histórico
+        </span>
+        <div class="legend-card__top">
+          <div class="legend-card__letra legend-card__letra--a">A</div>
+          <div class="legend-card__topinfo">
+            <h3 style="color:#5ecc8a;">Acerto</h3>
+            <span class="legend-card__sub">Começa com a letra A</span>
+          </div>
+        </div>
+        <p>A inconsistência <strong style="color:var(--text-primary);">já foi corrigida</strong> pelo INSS. É um registro histórico que confirma a regularização. Nenhuma ação imediata é necessária — mas vale revisar se o acerto foi feito de forma favorável.</p>
+        <span class="legend-card__acao legend-card__acao--a">
+          <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline;vertical-align:-1px;margin-right:4px"><polyline points="20 6 9 17 4 12"/></svg>
+          Regularizado — revise se foi favorável
+        </span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FILTROS ── -->
+<section class="filter-section">
+  <div class="container">
+    <div class="filter-bar">
+      <div class="filter-search">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="search-input" placeholder="Buscar por código ou descrição…" autocomplete="off">
+      </div>
+      <div class="filter-btns">
+        <button class="filter-btn active" data-filter="todos">Todos</button>
+        <button class="filter-btn" data-filter="Pendência">Pendências</button>
+        <button class="filter-btn" data-filter="Indicador">Indicadores</button>
+        <button class="filter-btn" data-filter="Acerto">Acertos</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GRID ── -->
+<section class="indicators-section">
+  <div class="container">
+    <div class="indicators-grid" id="indicators-grid"></div>
+    <div class="no-results" id="no-results" style="display:none;">
+      <p>Nenhum indicador encontrado para "<span id="search-term"></span>".</p>
+      <p style="margin-top:8px; font-size: var(--text-sm);">Tente outro termo ou <a href="https://wa.me/5521964238080?text=Tenho+dúvida+sobre+um+indicador+do+meu+CNIS" target="_blank" rel="noopener" style="color:var(--accent);">fale com o especialista</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="tool-cta">
+  <div class="container">
+    <p class="section-label">Encontrou algo irregular?</p>
+    <h2>Seu CNIS tem pendências?<br><span class="accent">A gente resolve.</span></h2>
+    <p>Pendências e indicadores no CNIS podem reduzir ou até impedir seu benefício. Carlos Costa analisa seu extrato e orienta cada passo para regularizar sua situação.</p>
+    <a href="https://wa.me/5521964238080?text=Quero+analisar+as+pendências+do+meu+CNIS" class="btn btn-whatsapp" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Falar com Carlos Costa
+    </a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <p>© 2026 CarlosCostaPrev — <a href="../" style="color: var(--accent);">Voltar ao site</a></p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/carloscostaprev" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/carloscostaprev" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://wa.me/5521964238080" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const INDICADORES = [
+  { codigo: "ACNISVR", tipo: "Acerto", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Acerto realizado pelo INSS" },
+  { codigo: "ADIV-DADOS-GFIP", tipo: "Acerto", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Validação de vínculo ou remuneração com divergência de dado cadastral do trabalhador em GFIP" },
+  { codigo: "AEXT-IND", tipo: "Acerto", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo extemporâneo não confirmado pelo INSS" },
+  { codigo: "AEXT-INDJ", tipo: "Acerto", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo extemporâneo não confirmado por decisão judicial" },
+  { codigo: "AEXT-INDR", tipo: "Acerto", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo extemporâneo não confirmado por decisão recursal" },
+  { codigo: "AEXT-VI", tipo: "Acerto", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo extemporâneo não confirmado pelo INSS" },
+  { codigo: "AEXT-VP", tipo: "Acerto", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo extemporâneo confirmado parcialmente pelo INSS" },
+  { codigo: "AEXT-VPR", tipo: "Acerto", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo extemporâneo confirmado parcialmente por decisão recursal" },
+  { codigo: "AEXT-VPT", tipo: "Acerto", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo extemporâneo confirmado parcialmente por decisão judicial" },
+  { codigo: "AEXT-VT", tipo: "Acerto", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo extemporâneo confirmado pelo INSS" },
+  { codigo: "AEXT-VTJ", tipo: "Acerto", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo extemporâneo confirmado por decisão judicial" },
+  { codigo: "AEXT-VTR", tipo: "Acerto", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo extemporâneo confirmado por decisão recursal" },
+  { codigo: "ASE-DEF", tipo: "Acerto", grupo: "SEGURADO ESPECIAL", descricao: "Acerto Período Segurado Especial Deferido" },
+  { codigo: "ASE-DEFJ", tipo: "Acerto", grupo: "SEGURADO ESPECIAL", descricao: "Acerto Período Segurado Especial Deferido Judicial" },
+  { codigo: "ASE-DEFR", tipo: "Acerto", grupo: "SEGURADO ESPECIAL", descricao: "Acerto Período Segurado Especial Deferido Recursal" },
+  { codigo: "ASEF-DEF", tipo: "Acerto", grupo: "SEGURADO ESPECIAL", descricao: "Acerto Período Segurado Especial FUNAI Deferido" },
+  { codigo: "ASEF-DEFJ", tipo: "Acerto", grupo: "SEGURADO ESPECIAL", descricao: "Acerto Período Segurado Especial FUNAI Deferido Judicial" },
+  { codigo: "ASE-IND", tipo: "Acerto", grupo: "SEGURADO ESPECIAL", descricao: "Acerto Período Segurado Especial Indeferido" },
+  { codigo: "ASE-INDR", tipo: "Acerto", grupo: "SEGURADO ESPECIAL", descricao: "Acerto Período Segurado Especial Indeferido Recursal" },
+  { codigo: "ASE-NSE", tipo: "Acerto", grupo: "SEGURADO ESPECIAL", descricao: "Acerto Período Não Segurado Especial" },
+  { codigo: "ASE-RNEG", tipo: "Acerto", grupo: "SEGURADO ESPECIAL", descricao: "Acerto Período Segurado Especial Negativo Ratificado" },
+  { codigo: "ASE-RPOS", tipo: "Acerto", grupo: "SEGURADO ESPECIAL", descricao: "Acerto Período Segurado Especial Positivo Ratificado" },
+  { codigo: "AVR-AGPVINC", tipo: "Acerto", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Acerto de Agrupamento de Vínculos" },
+  { codigo: "AVRC-AGPVINC", tipo: "Acerto", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Acerto de Agrupamento de Vínculos" },
+  { codigo: "AVRC-DEF", tipo: "Acerto", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Acerto confirmado pelo INSS" },
+  { codigo: "AVRC-DEFJ", tipo: "Acerto", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Acerto confirmado por decisão judicial" },
+  { codigo: "AVRC-DEFR", tipo: "Acerto", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Acerto confirmado por decisão recursal" },
+  { codigo: "AVRC-DGPVINC", tipo: "Acerto", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Acerto de Desagrupamento de Vínculos" },
+  { codigo: "AVRC-IND", tipo: "Acerto", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Acerto negado pelo INSS" },
+  { codigo: "AVRC-INDJ", tipo: "Acerto", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Acerto negado por decisão judicial" },
+  { codigo: "AVRC-INDR", tipo: "Acerto", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Acerto negado por decisão recursal" },
+  { codigo: "FBR-AUT-BAT", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento de segurado Facultativo de Baixa Renda com atualização cadastral/elos no CNIS aguardando batimentos" },
+  { codigo: "FBR-AUT-CONCBEN", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento de segurado Facultativo de Baixa Renda concomitante com benefício incompatível (previdenciário/BPC/PA)" },
+  { codigo: "FBR-AUT-CONCQSA", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento de segurado Facultativo de Baixa Renda participante de quadro societário (QSA) de empresa" },
+  { codigo: "FBR-AUT-CONCSD", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento de segurado Facultativo de Baixa Renda concomitante com período de Seguro Desemprego (SD/SDPA)" },
+  { codigo: "FBR-AUT-DUPGRUPFAM", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento de segurado Facultativo de Baixa Renda com duplicidade de grupo familiar" },
+  { codigo: "FBR-AUT-EXPCAD", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento de segurado Facultativo de Baixa Renda sem atualização bienal no CadÚnico" },
+  { codigo: "FBR-AUT-FACULTCONC", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento de segurado Facultativo de Baixa Renda concomitante com filiação incompatível (segurado obrigatório)" },
+  { codigo: "FBR-AUT-OBITO", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento de segurado Facultativo de Baixa Renda com óbito anterior à competência de referência ou à data do pagamento" },
+  { codigo: "FBR-AUT-PENDCAD", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento de segurado Facultativo de Baixa Renda sem cadastro no CadÚnico" },
+  { codigo: "FBR-AUT-PENDPROCES", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento de segurado Facultativo de Baixa Renda pendente de processamento no CadÚnico" },
+  { codigo: "FBR-AUT-RENPES", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento de segurado Facultativo de Baixa Renda com renda pessoal informada no CadÚnico" },
+  { codigo: "FBR-AUT-RENSUP", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento de segurado Facultativo de Baixa Renda com renda familiar superior a 2 salários mínimos" },
+  { codigo: "GFIP", tipo: "Indicador", grupo: "CONTRIBUIÇÕES", descricao: "Indica que remuneração da competência foi declarada em GFIP" },
+  { codigo: "IAGRU-MIN-SM-EC103", tipo: "Indicador", grupo: "AJUSTES EC103 - AGRUPAMENTO", descricao: "Indicador de competência objeto de agrupamento que recebeu um determinado valor mas permaneceu abaixo do mínimo (favorecido)" },
+  { codigo: "IAGRUP-MN-SM-EC103", tipo: "Indicador", grupo: "AJUSTES EC103 - AGRUPAMENTO", descricao: "Indicador de competência objeto de agrupamento que recebeu de outra competência mas permaneceu abaixo do mínimo (favorecida)" },
+  { codigo: "IAGRUP-SM-EC103", tipo: "Indicador", grupo: "AJUSTES EC103 - AGRUPAMENTO", descricao: "Indicador de competência objeto de agrupamento que resultou em salário de contribuição igual ao valor mínimo (favorecida)" },
+  { codigo: "IAGRUP-VR-EC103", tipo: "Indicador", grupo: "AJUSTES EC103 - AGRUPAMENTO", descricao: "Indicador de competência objeto de agrupamento onde restou valor residual (desfavorecida)" },
+  { codigo: "IAGRUP-ZER-EC103", tipo: "Indicador", grupo: "AJUSTES EC103 - AGRUPAMENTO", descricao: "Indicador de competência objeto de agrupamento que restou zerada (desfavorecida)" },
+  { codigo: "IAGRU-SP-M-SM-EC103", tipo: "Indicador", grupo: "AJUSTES EC103 - AGRUPAMENTO", descricao: "Indicador de competência objeto de agrupamento que resultou em salário de contribuição igual ao valor mínimo (favorecido)" },
+  { codigo: "ICED-VR-EXC-EC103", tipo: "Indicador", grupo: "AJUSTES EC103 - UTILIZAÇÃO", descricao: "Indicador de competência que cedeu valor excedente para outra competência" },
+  { codigo: "ICOMPL-VR-SM-EC103", tipo: "Indicador", grupo: "AJUSTES EC103 - COMPLEMENTAÇÃO", descricao: "Indicador de competência que possui recolhimento de complementação para o valor mínimo" },
+  { codigo: "IDARF-ALT-CODRECEITA", tipo: "Indicador", grupo: "DARF - EVENTOS", descricao: "Indicador de Darf incluído por alteração de código de receita aplicável pelo INSS por outro código também aplicável" },
+  { codigo: "IDARF-ALT-COMPETENCIA", tipo: "Indicador", grupo: "DARF - EVENTOS", descricao: "Indicador de Darf incluído por alteração de competência dentro do período de vigência" },
+  { codigo: "IDARF-ALT-CPF", tipo: "Indicador", grupo: "DARF - EVENTOS", descricao: "Indicador de Darf alterado pela RFB para o CPF do titular" },
+  { codigo: "IDARF-ALT-DADOS", tipo: "Indicador", grupo: "DARF - EVENTOS", descricao: "Indicador de Darf incluído por alteração de dados" },
+  { codigo: "IDARF-CPF-NAO-INF", tipo: "Indicador", grupo: "DARF - ERROS DE PROCESSAMENTO", descricao: "Indicador de Darf para CPF não informado no evento" },
+  { codigo: "IDARF-DESFAZ-CANCEL", tipo: "Indicador", grupo: "DARF - EVENTOS", descricao: "Indicador de Darf com Cancelamento Desfeito" },
+  { codigo: "IDARF-DESFAZ-RESTIT-PARCIAL", tipo: "Indicador", grupo: "DARF - EVENTOS", descricao: "Indicador de Darf com Valor Restituído Parcial Desfeito" },
+  { codigo: "IDARF-DESFAZRESTITPARCIAL", tipo: "Indicador", grupo: "DARF - EVENTOS", descricao: "Indicador de Darf com Valor Restituído Parcial Desfeito" },
+  { codigo: "IDARF-DESFAZ-RESTIT-TOTAL", tipo: "Indicador", grupo: "DARF - EVENTOS", descricao: "Indicador de Darf com Valor Restituído Total Desfeito" },
+  { codigo: "IDARF-DESFAZRESTITTOTAL", tipo: "Indicador", grupo: "DARF - EVENTOS", descricao: "Indicador de Darf com Valor Restituído Total Desfeito" },
+  { codigo: "IDARF-ESPECIE-CI-INVALIDA", tipo: "Indicador", grupo: "DARF - ERROS DE PROCESSAMENTO", descricao: "Indicador de Darf para Espécie CI inválida na competência" },
+  { codigo: "IDARF-EXT-SEM-ANO-CIV", tipo: "Indicador", grupo: "DARF - ERROS DE PROCESSAMENTO", descricao: "Indicador de Darf para a inexistência de ano civil presente na Extrato" },
+  { codigo: "IDARF-FIL-CAD-DIV", tipo: "Indicador", grupo: "DARF - ERROS DE PROCESSAMENTO", descricao: "Indicador de DARF para filiado com dados cadastrais divergentes entre CNIS e RFB" },
+  { codigo: "IDARF-FIL-NAO-ENC", tipo: "Indicador", grupo: "DARF - ERROS DE PROCESSAMENTO", descricao: "Indicador de Darf para filiado não encontrado no cadastro de pessoas físicas" },
+  { codigo: "IDARF-SEM-EMISS-ANT", tipo: "Indicador", grupo: "DARF - ERROS DE PROCESSAMENTO", descricao: "Indicador de Darf sem emissão registrada anteriormente" },
+  { codigo: "IDARF-TIPO-FILIADO-INVALIDO", tipo: "Indicador", grupo: "DARF - ERROS DE PROCESSAMENTO", descricao: "Indicador de Darf para Tipo de Filiado inválido na competência" },
+  { codigo: "IDARF-TIPO-FILIADO-NAO-INFORMADO", tipo: "Indicador", grupo: "DARF - ERROS DE PROCESSAMENTO", descricao: "Indicador de Darf para Tipo de Filiado não informado na competência" },
+  { codigo: "IDESINDEXA", tipo: "Indicador", grupo: "CONTRIBUIÇÕES", descricao: "Indica que a contribuição da competência foi desindexada" },
+  { codigo: "IDT", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Indicador de Demanda de Natureza Trabalhista" },
+  { codigo: "IEAN", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Exposição a agente nocivo informada pelo empregador, passível de comprovação" },
+  { codigo: "IREC-DESINDEXA", tipo: "Indicador", grupo: "CONTRIBUIÇÕES", descricao: "Indica que a contribuição da competência foi desindexada" },
+  { codigo: "IREC-FBR", tipo: "Indicador", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento de segurado Facultativo de Baixa Renda (L 12470/2011)" },
+  { codigo: "IREC-FBR-DEF", tipo: "Indicador", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento de segurado Facultativo de Baixa Renda deferido/válido via Portal CNIS" },
+  { codigo: "IREC-FBR-IND", tipo: "Indicador", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento de segurado Facultativo de Baixa Renda indeferido/inválido via Portal CNIS" },
+  { codigo: "IREC-INDPEND", tipo: "Indicador", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimentos com indicadores/pendências" },
+  { codigo: "IREC-LC123", tipo: "Indicador", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento no Plano Simplificado de Previdência Social (LC 123/2006)" },
+  { codigo: "IREC-LC123-SUP", tipo: "Indicador", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento no Plano Simplificado de Previdência Social (LC 123/2006) superior ao salário mínimo" },
+  { codigo: "IREC-LIM-SM", tipo: "Indicador", grupo: "CONTRIBUIÇÕES", descricao: "Indica que a contribuição da competência foi limitada ao salário mínimo" },
+  { codigo: "IREC-MEI", tipo: "Indicador", grupo: "CONTRIBUIÇÕES", descricao: "Indica que a contribuição da competência foi recolhida com código MEI" },
+  { codigo: "IRECOL", tipo: "Indicador", grupo: "CONTRIBUIÇÕES", descricao: "Indica que a contribuição da competência é recolhimento" },
+  { codigo: "IRECOL (ILEI123)", tipo: "Indicador", grupo: "CONTRIBUIÇÕES", descricao: "Indica que a contribuição da competência foi recolhida com código da Lei Complementar 123" },
+  { codigo: "IRECOL (IMEI)", tipo: "Indicador", grupo: "CONTRIBUIÇÕES", descricao: "Indica que a contribuição da competência foi recolhida com código MEI" },
+  { codigo: "IRECOL (LEI123)", tipo: "Indicador", grupo: "CONTRIBUIÇÕES", descricao: "Indica que a contribuição da competência foi recolhida com código da Lei Complementar 123" },
+  { codigo: "IREL-PREV-POSSUI-COMP-AJUST", tipo: "Indicador", grupo: "AJUSTES EC103 - OUTROS INDICADORES", descricao: "Relação Previdenciária possui alguma competência que foi ajustada (favorecida/desfavorecida)" },
+  { codigo: "IREL-PREV-POSSUI-COMPA-JUST", tipo: "Indicador", grupo: "AJUSTES EC103 - OUTROS INDICADORES", descricao: "Relação Previdenciária possui alguma competência que foi ajustada (favorecida/desfavorecida)" },
+  { codigo: "IREM-ACD", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Remuneração possui parcela de Acordo, Convenção ou Dissídio Coletivo" },
+  { codigo: "IREM-INDPEND", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Remunerações com indicadores/pendência" },
+  { codigo: "IREM-PARC-CEDIDO", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Remuneração possui parcela de remuneração decorrente de Trabalhador Cedido" },
+  { codigo: "IREM-PARC-DIR-SIND", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Remuneração possui parcela de remuneração decorrente de Dirigente Sindical" },
+  { codigo: "IREM-PARC-DIRSIND", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Remuneração possui parcela de remuneração decorrente de Dirigente Sindical" },
+  { codigo: "IREM-PERQRT", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Remuneração em período de quarentena" },
+  { codigo: "IREM-PER-QUARENTENA", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Remuneração informada após o desligamento referente ao período de quarentena" },
+  { codigo: "IREM-RECL-TRAB", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Remuneração possui parcela de reclamatória trabalhista" },
+  { codigo: "IREM-REINTEG-PARC-PROC-TRAB", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Remuneração de período de Reintegração parcial oriunda de Processo Trabalhista" },
+  { codigo: "IREM-REINTEG-TOT-PROC-TRAB", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Remuneração de período de Reintegração total oriunda de Processo Trabalhista" },
+  { codigo: "IREM-TRAB-INTERM", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Remuneração relacionada a Trabalho Intermitente" },
+  { codigo: "IREM-TRAB-VERDE-AMARELO", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Indicador remunerações pertencentes aos Vínculo que possua algum período de categoria relacionada a carteira verde amarela" },
+  { codigo: "IREM-TRANSF-TSVE-PROC-TRAB", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Remunerações transferidas para o vínculo resultante de unicidade contratual de TSVE oriunda de Processo Trabalhista" },
+  { codigo: "IREM-TSVE-PER-QUARENTENA", tipo: "Indicador", grupo: "CONTRIBUIÇÕES", descricao: "Remuneração informada após o término do TSVE referente ao período de Quarentena" },
+  { codigo: "IREM-VINC-PROC-TRAB", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Remuneração no Vínculo oriunda de Processo Trabalhista" },
+  { codigo: "ISALMIN", tipo: "Indicador", grupo: "CONTRIBUIÇÕES", descricao: "Indica que a contribuição da competência foi limitada ao salário mínimo" },
+  { codigo: "ISE-CVU", tipo: "Indicador", grupo: "SEGURADO ESPECIAL", descricao: "Período de segurado especial concomitante com outro período urbano" },
+  { codigo: "IUTILIZ-EXC-EC103", tipo: "Indicador", grupo: "AJUSTES EC103 - UTILIZAÇÃO", descricao: "Indicador de competência que foi favorecida por valor de remuneração(-ões) excedente(s) de outra(s) competência(s)" },
+  { codigo: "IUTILIZ-EXC-MN-SM-EC103", tipo: "Indicador", grupo: "AJUSTES EC103 - UTILIZAÇÃO", descricao: "Indicador de competência que foi favorecida por valor de remuneração(-ões) excedente(s) de outra(s) competência(s), mas permaneceu inferior ao mínimo" },
+  { codigo: "IVIN-AGRUP-VINC", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Indicador de Vínculo Trabalhista gerado pelo Serviço de agrupamento de vínculos" },
+  { codigo: "IVIN-AGRUP-VINC-PART", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Indicador que marca o vínculo que foi alvo do Serviço de agrupamento de vínculos" },
+  { codigo: "IVIN-DESLIG-JUSTICA-TRAB", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Inclusão da Data de Desligamento feita pela Justiça do Trabalho por meio do Evento S-8299 – Baixa Judicial do Vínculo do eSocial" },
+  { codigo: "IVIN-DESLIG-JUSTIÇA-TRAB", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Inclusão da Data de Desligamento feita pela Justiça do Trabalho por meio do Evento S-8299 – Baixa Judicial do Vínculo do eSocial" },
+  { codigo: "IVIN-JORN-DIFERENCIADA", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo possui regime de jornada diferenciada" },
+  { codigo: "IVIN-MAND-ELETIVO-PARCIAL", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo parcialmente caracterizado como mandato eletivo" },
+  { codigo: "IVIN-POSSUI-REG-PRELIM", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Indicador que informa que a Relação Trabalhista possui um registro preliminar informado anteriormente em eSocial" },
+  { codigo: "IVIN-POSSUI-REM-TRAB-INTERM", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Relação Trabalhista possui Remunerações de Trabalho Intermitente" },
+  { codigo: "IVIN-POSSUI-REM-TRANS", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo possui remuneração que foi transferida para este por Cessionário de Dirigente Sindical ou Trabalhador Cedido" },
+  { codigo: "IVIN-PROC-TRAB", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo possui Processo Trabalhista" },
+  { codigo: "IVIN-REG-PRELIM", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Indicador que informa que a Relação Trabalhista é um registro preliminar de vínculo informado eSocial" },
+  { codigo: "IVIN-REINTEG", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo possui reintegração no último desligamento por 1- Reintegração por decisão judicial ou 3- Reversão de servidor público ou 4- Recondução de servidor público ou 5- Reinclusão de militar" },
+  { codigo: "IVIN-REINTEG-ANISTIA", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Indicador de Reintegração por Anistia Legal" },
+  { codigo: "IVIN-REINTEG-OUTROSTIPOS", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo possui reintegração no último desligamento por iniciativa do empregador ou por outros motivos" },
+  { codigo: "IVIN-REINTEG-PARC", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Sentença trabalhista determinando reintegração do trabalhador e pagamento de remunerações de período parcial" },
+  { codigo: "IVIN-REINTEG-PARC-PROC-TRAB", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo possui reintegração parcial oriunda de Processo Trabalhista" },
+  { codigo: "IVIN-REINTEG-PROC-TRAB", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo possui reintegração no último desligamento oriunda de Processo Trabalhista" },
+  { codigo: "IVIN-REINTEG-TOT", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Sentença trabalhista determinando reintegração e pagamento de remunerações retroativas do período total" },
+  { codigo: "IVIN-REINTEG-TOT-PROC-TRAB", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo possui reintegração total oriunda de Processo Trabalhista" },
+  { codigo: "IVIN-TRAB-INTERM", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Indicador de Vínculo que possui informações de trabalho intermitente" },
+  { codigo: "IVIN-TRAB-VERDE-AMARELO", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Indicador de Vínculo que possua algum período de categoria (eSocial ou GFIP) relacionada a carteira verde amarela" },
+  { codigo: "IVIN-UNIC-CONTR-PROC-TRAB", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo possui Unicidade Contratual oriunda de Processo Trabalhista" },
+  { codigo: "IVIN-UNIC-CONTR-TSVE-PROC-TRAB", tipo: "Indicador", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo possui Unicidade Contratual do período de TSVE oriunda de Processo Trabalhista" },
+  { codigo: "IVLR-DARF-LIMITADO", tipo: "Indicador", grupo: "AJUSTES EC103 - COMPLEMENTAÇÃO", descricao: "Valor de DARF foi limitado de forma que o valor total da competência não ultrapasse o valor do Salário Mínimo na competência" },
+  { codigo: "NDET", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Data de início de atividade foi estimada na migração" },
+  { codigo: "PADM-EMPR", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Data de admissão incompatível com o período de atividade do empregador" },
+  { codigo: "PCEI-EQP-INV", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Empregador com identificador inválido" },
+  { codigo: "PCTC-NTR", tipo: "Indicador", grupo: "GERAIS DO NIT OU DE DADOS CADASTRAIS", descricao: "Certidão de Tempo de Contribuição pendente de análise do INSS" },
+  { codigo: "PDARF-ALT-COMP-FORA-VIG", tipo: "Pendência", grupo: "DARF - EVENTOS", descricao: "Indicador de Darf incluído por alteração de competência fora do período de vigência" },
+  { codigo: "PDARF-ALT-CPF", tipo: "Pendência", grupo: "DARF - EVENTOS", descricao: "Darf desassociado do CPF originário pela RFB" },
+  { codigo: "PDARF-EVENTO-INCONSISTENTE", tipo: "Pendência", grupo: "DARF - EVENTOS", descricao: "Evento inconsistente" },
+  { codigo: "PDARF-INV-ALT-CODRECEITA", tipo: "Pendência", grupo: "DARF - EVENTOS", descricao: "Indicador de Darf invalidado por alteração pela RFB para código de receita não tratado" },
+  { codigo: "PDARF-RESTIT-PARCIAL", tipo: "Pendência", grupo: "DARF - EVENTOS", descricao: "Indicador de Darf com Valor Restituído Parcial" },
+  { codigo: "PDARF-RESTIT-TOTAL", tipo: "Pendência", grupo: "DARF - EVENTOS", descricao: "Indicador de Darf com Valor Restituído Total" },
+  { codigo: "PDESFAZ-AJ-EC103", tipo: "Pendência", grupo: "AJUSTES EC103 - OUTROS INDICADORES", descricao: "Pendência por desfazimento de agrupamento ou utilização" },
+  { codigo: "PDIV-DADOS-GFIP", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo ou remuneração pendente por divergência de dado cadastral do trabalhador em GFIP" },
+  { codigo: "PDT-NASC-FIL-INV", tipo: "Pendência", grupo: "CONTRIBUIÇÕES/VÍNCULOS E REMUNERAÇÕES", descricao: "Idade do filiado menor que a permitida pela legislação" },
+  { codigo: "PDT-NASC-FIL-MENOR-INV", tipo: "Pendência", grupo: "CONTRIBUIÇÕES/VÍNCULOS E REMUNERAÇÕES", descricao: "Idade do filiado menor aprendiz menor que a permitida pela legislação" },
+  { codigo: "PEMP-CAD", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Faltam dados cadastrais do empregador (CNPJ ou CEI)" },
+  { codigo: "PEMP-IDINV", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Empregador com identificador inválido" },
+  { codigo: "PEXT", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo com informação extemporânea, passível de comprovação" },
+  { codigo: "PMOV-INCONSIST", tipo: "Pendência", grupo: "AJUSTES EC103 - OUTROS INDICADORES", descricao: "Pendência de registro inconsistente de movimentação entre competências" },
+  { codigo: "PNIT-0094", tipo: "Pendência", grupo: "GERAIS DO NIT OU DE DADOS CADASTRAIS", descricao: "NIT invalidado pertencente à faixa crítica do tipo Ofício INSS 094" },
+  { codigo: "PNIT-CRIT", tipo: "Pendência", grupo: "GERAIS DO NIT OU DE DADOS CADASTRAIS", descricao: "NIT em faixa crítica" },
+  { codigo: "PNIT-IND", tipo: "Pendência", grupo: "GERAIS DO NIT OU DE DADOS CADASTRAIS", descricao: "NIT Indeterminado" },
+  { codigo: "PNIT-O094", tipo: "Pendência", grupo: "GERAIS DO NIT OU DE DADOS CADASTRAIS", descricao: "NIT invalidado pertencente à faixa crítica do tipo Ofício INSS 094" },
+  { codigo: "PNIT-SC", tipo: "Pendência", grupo: "GERAIS DO NIT OU DE DADOS CADASTRAIS", descricao: "NIT não encontrado cadastrado/inexistente" },
+  { codigo: "PNIT-SUP", tipo: "Pendência", grupo: "GERAIS DO NIT OU DE DADOS CADASTRAIS", descricao: "NIT com indício de superposição de dados" },
+  { codigo: "PREC-CDCONC", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento ou período atividade de contribuinte em dobro concomitante com outro TFV (Tipo de Filiado no Vínculo)" },
+  { codigo: "PREC-CDONC", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento ou período atividade de contribuinte em dobro concomitante com outro TPV (Tipo de Filiação no Vínculo)" },
+  { codigo: "PREC-COD1821", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento com código de pagamento 1821 - mandato eletivo" },
+  { codigo: "PREC-COD1821_FORA_VIG", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Recolhimento com código de pagamento 1821 - mandato eletivo, fora da vigência" },
+  { codigo: "PREC-CSE", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento de segurado especial pendente de comprovação da atividade" },
+  { codigo: "PREC-FACULTCONC", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento ou período de contribuinte facultativo concomitante com outros vínculos" },
+  { codigo: "PREC-FAUCULTCONC", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento ou período de contribuinte facultativo concomitante com outros vínculos" },
+  { codigo: "PREC-FBR", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento de segurado Facultativo de Baixa Renda não validado" },
+  { codigo: "PREC-FBR-ANT", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento de segurado Facultativo de Baixa Renda anterior a 09/2011 (inválido)" },
+  { codigo: "PREC-LC123-ANT", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento no Plano Simplificado de Previdência Social (LC 123/2006) anterior à competência 04/2007" },
+  { codigo: "PREC-LC150-DOM", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Pagamento de doméstica em GPS em período de remuneração de fonte INSS/eSocial" },
+  { codigo: "PREC-MENOR-MIN", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento abaixo do valor mínimo" },
+  { codigo: "PREC-OBITO", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Competência do recolhimento posterior ao mês do óbito" },
+  { codigo: "PREC-PMIG-DOM", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Recolhimento de empregado doméstico sem comprovação de vínculo" },
+  { codigo: "PREM-BLOQ-EC103", tipo: "Pendência", grupo: "AJUSTES EC103 - OUTROS INDICADORES", descricao: "Pendência de bloqueio de remuneração/contribuição para ajuste entre competências" },
+  { codigo: "PREM-EMPR", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Remunerações incompatíveis com o período de atividade do empregador" },
+  { codigo: "PREM-EXT", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Remuneração informada fora do prazo, passível de comprovação" },
+  { codigo: "PREM_EXT", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Remuneração informada fora do prazo, passível de comprovação" },
+  { codigo: "PREM-FORA-ATIV-INTERM", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Remuneração de trabalho intermitente fora do período de atividade de intermitente" },
+  { codigo: "PREM-FORA-CONVOC", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Remuneração de trabalho intermitente não coberta por Convocatória" },
+  { codigo: "PREM-FORA-REINTEG-ANISTIA", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Pendência de Remuneração fora do período da Reintegração por Anistia Legal" },
+  { codigo: "PREM-FORA-REINTEG-OUTROSTIPOS", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Pendência de Remuneração fora do período da Reintegração por iniciativa do empregador ou por outros motivos" },
+  { codigo: "PREM-FORA-REINTEG-PROC-TRAB", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Pendência de Remuneração fora do período da Reintegração oriunda de Processo Trabalhista" },
+  { codigo: "PREM-FVIN", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Remuneração após o fim do vínculo" },
+  { codigo: "PREM-IVIN", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Remuneração antes do início do vínculo" },
+  { codigo: "PREM-NASC", tipo: "Pendência", grupo: "CONTRIBUIÇÕES/VÍNCULOS E REMUNERAÇÕES", descricao: "Remuneração antes da data de nascimento do Filiado" },
+  { codigo: "PREM-OBITO", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Remuneração após óbito" },
+  { codigo: "PREM-PER-DESLIG-APOSENT", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Pendência de Remuneração após o desligamento por aposentadoria de servidor com data anterior à competência de remuneração já informada no eSocial" },
+  { codigo: "PREM-PER-DESLIG-JUD", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Pendência de Remuneração após o desligamento reconhecido judicialmente com data anterior à competência de remuneração já informada no eSocial" },
+  { codigo: "PREM-PER-QUARENTENA", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Remuneração informada após o desligamento referente ao período de Quarentena" },
+  { codigo: "PREM-POS-DESLIG-APOSENT", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Pendência de Remuneração após o período entre o desligamento por aposentadoria de servidor e o último dia trabalhado" },
+  { codigo: "PREM-POS-DESLIG-JUD", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Pendência de Remuneração após o período entre o desligamento e o último dia trabalhado" },
+  { codigo: "PREM-POSGRT", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Remuneração posterior ao período de quarentena" },
+  { codigo: "PREM-POSQRT", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Remuneração posterior ao período de quarentena" },
+  { codigo: "PREM-POS-QUARENTENA", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Pendência de Remuneração informada após o período de Quarentena" },
+  { codigo: "PREM-REINTEG-ANISTIA", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Pendência em Remuneração de período de Anistia Legal" },
+  { codigo: "PREM-REINTEG-OUTROSTIPOS", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Pendência em Remuneração de período de Reintegração por iniciativa do empregador ou por outros motivos" },
+  { codigo: "PREM-TSVE-PER-QUARENTENA", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Remuneração informada após o término do TSVE referente ao período de Quarentena" },
+  { codigo: "PREM-TSVE-PER-TERM-JUD", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Pendência de Remuneração após o término do TSVE reconhecido judicialmente com data anterior a competências de remunerações já informadas no eSocial" },
+  { codigo: "PREM-TSVE-POS-QUARENTENA", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Pendência de Remuneração informada para TSVE após o período de Quarentena" },
+  { codigo: "PREM-TSVE-POS-TERM-JUD", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Pendência de Remuneração após o período entre o término do TSVE e o último dia trabalhado" },
+  { codigo: "PREM-TSVE-PROC-TRAB", tipo: "Pendência", grupo: "CONTRIBUIÇÕES", descricao: "Pendência de Reconhecimento de Remuneração de Trabalhador sem Vínculo oriundo de Processo Trabalhista" },
+  { codigo: "PREM-TSVE-RESP-INDIRETO-PROC-TRAB", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Pendência de Remuneração de TSVE informada por Responsável Indireto em Processo Trabalhista" },
+  { codigo: "PREM-VINC-PROC-TRAB", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Pendência de Reconhecimento de Remuneração no Vínculo oriunda de Processo Trabalhista" },
+  { codigo: "PREM-VINV", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Remuneração antes do início do vínculo" },
+  { codigo: "PRES-EMPR", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Data de rescisão incompatível com o período de atividade do empregador" },
+  { codigo: "PRPPS", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo de empregado com informações de Regime Próprio (Servidor Público)" },
+  { codigo: "PRPSE", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo de empregado do Regime de Previdência no Exterior (não é possível atualização pelo INSS visto não ser vínculo utilizável pelo RGPS)" },
+  { codigo: "PSC-MEN-SM-EC103", tipo: "Pendência", grupo: "AJUSTES EC103 - OUTROS INDICADORES", descricao: "Pendência que sinaliza que a competência possui salário de contribuição menor do que o mínimo. Competência não tratada, passível de complementação, utilização ou agrupamento" },
+  { codigo: "PSE-NEG", tipo: "Pendência", grupo: "SEGURADO ESPECIAL", descricao: "Período Segurado Especial Negativo" },
+  { codigo: "PSE-PEN", tipo: "Pendência", grupo: "SEGURADO ESPECIAL", descricao: "Período Segurado Especial Pendente" },
+  { codigo: "PSE-POS", tipo: "Pendência", grupo: "SEGURADO ESPECIAL", descricao: "Período Segurado Especial Positivo" },
+  { codigo: "PSUC-DIVERG-DT-ADM", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Pendência que indica que o vínculo é sucessor e foram encontradas uma ou mais divergências envolvendo a data de admissão do vínculo sucedido e este sucessor" },
+  { codigo: "PVIN-ADMISSAO-DESLIG-PROC-TRAB", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Pendência por Alteração da Data de Admissão e Inclusão ou Alteração da Data de Desligamento, oriundas de Processo Trabalhista" },
+  { codigo: "PVIN-ADMISSAO-PROC-TRAB", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Pendência por Alteração da Data de Admissão oriunda de Processo Trabalhista" },
+  { codigo: "PVIN-ADM-OBITO", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Data de admissão posterior ao óbito" },
+  { codigo: "PVIN-AGRUP-INC", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Pendência que sinaliza inconsistência em Vínculo agrupador quando não foi possível encontrar todos os seus vínculos agrupados relacionados" },
+  { codigo: "PVIN-CAGED", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo Oriundo da fonte CAGED" },
+  { codigo: "PVIN-DESLIG-JUSTIÇA-TRAB", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Pendência por Inclusão da Data de Desligamento feita pela Justiça do Trabalho por meio do Evento S-8299 – Baixa Judicial do Vínculo do eSocial" },
+  { codigo: "PVIN-DESLIG-OBITO", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Data do desligamento posterior à data do óbito" },
+  { codigo: "PVIN-DESLIG-PROC-TRAB", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Pendência por Inclusão ou Alteração da Data de Desligamento oriunda de Processo Trabalhista" },
+  { codigo: "PVIN-IRREG", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo em situação de irregularidade" },
+  { codigo: "PVIN-MAND-ELETIVO-TOTAL", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo totalmente caracterizado como mandato eletivo" },
+  { codigo: "PVIN-ME", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Vínculo de mandato eletivo, passível de comprovação" },
+  { codigo: "PVIN-OBITO", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Data de admissão posterior ao óbito" },
+  { codigo: "PVIN-RE", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Causa de rescisão estimada por não ter sido informada pela fonte (RAIS/FGTS/GRE)" },
+  { codigo: "PVIN-REC-PROC-TRAB", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Pendência de Reconhecimento de Vínculo oriundo de Processo Trabalhista" },
+  { codigo: "PVIN-RESP-INDIRETO-PROC-TRAB", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Pendência de Reconhecimento de Vínculo informado por Responsável Indireto em Processo Trabalhista" },
+  { codigo: "PVIN-SUBSTIT-INC", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Pendência que sinaliza inconsistência em Vínculo prevalente quando não foi possível encontrar todos os seus vínculos relacionados" },
+  { codigo: "PVIN-TRAB-INTERM", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Pendência relacionada a Vínculo que possui informações de trabalho intermitente" },
+  { codigo: "PVIN-UNIC-CONTR-PROC-TRAB", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Pendência de Vínculo que possui Unicidade Contratual oriunda de Processo Trabalhista" },
+  { codigo: "PVIN-UNIC-CONTR-TSVE-PROC-TRAB", tipo: "Pendência", grupo: "VÍNCULOS E REMUNERAÇÕES", descricao: "Pendência de Vínculo que possui Unicidade Contratual do período de TSVE oriunda de Processo Trabalhista" }
+];
+
+const TIPO_CONFIG = {
+  "Pendência": { cor: "#e05555", classe: "badge--pendencia", label: "Pendência" },
+  "Indicador": { cor: "#e0a820", classe: "badge--indicador", label: "Indicador" },
+  "Acerto":    { cor: "#4caf7d", classe: "badge--acerto",    label: "Acerto" }
+};
+
+let filtroAtivo = "todos";
+let buscaAtiva = "";
+
+function renderCard(ind) {
+  const cfg = TIPO_CONFIG[ind.tipo] || TIPO_CONFIG["Indicador"];
+  return `
+    <div class="indicator-card" data-tipo="${ind.tipo}">
+      <div class="indicator-card__top">
+        <code class="indicator-card__code">${ind.codigo}</code>
+        <span class="legend-card__badge ${cfg.classe}" style="white-space:nowrap;">${cfg.label}</span>
+      </div>
+      <p class="indicator-card__grupo">${ind.grupo}</p>
+      <p class="indicator-card__desc">${ind.descricao}</p>
+    </div>`;
+}
+
+function filtrar() {
+  const grid = document.getElementById("indicators-grid");
+  const noResults = document.getElementById("no-results");
+  const searchTerm = document.getElementById("search-term");
+
+  const term = buscaAtiva.toLowerCase();
+  const resultado = INDICADORES.filter(ind => {
+    const matchTipo = filtroAtivo === "todos" || ind.tipo === filtroAtivo;
+    const matchBusca = !term || ind.codigo.toLowerCase().includes(term) || ind.descricao.toLowerCase().includes(term);
+    return matchTipo && matchBusca;
+  });
+
+  const ORDEM_TIPO = { "Pendência": 0, "Indicador": 1, "Acerto": 2 };
+  resultado.sort((a, b) => (ORDEM_TIPO[a.tipo] ?? 1) - (ORDEM_TIPO[b.tipo] ?? 1));
+
+  if (resultado.length === 0) {
+    grid.innerHTML = "";
+    searchTerm.textContent = buscaAtiva;
+    noResults.style.display = "block";
+  } else {
+    grid.innerHTML = resultado.map(renderCard).join("");
+    noResults.style.display = "none";
+  }
+}
+
+// Busca
+document.getElementById("search-input").addEventListener("input", function() {
+  buscaAtiva = this.value.trim();
+  filtrar();
+});
+
+// Filtros
+document.querySelectorAll(".filter-btn").forEach(btn => {
+  btn.addEventListener("click", function() {
+    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+    this.classList.add("active");
+    filtroAtivo = this.dataset.filter;
+    filtrar();
+  });
+});
+
+// Dropdown navbar
+const btnF = document.getElementById("btn-ferramentas");
+const dropF = document.getElementById("dropdown-ferramentas");
+if (btnF && dropF) {
+  btnF.addEventListener("click", function(e) {
+    e.stopPropagation();
+    const open = !dropF.hidden;
+    dropF.hidden = open;
+    btnF.setAttribute("aria-expanded", String(!open));
+  });
+  document.addEventListener("click", function() { dropF.hidden = true; btnF.setAttribute("aria-expanded","false"); });
+  dropF.addEventListener("click", function(e) { e.stopPropagation(); });
+}
+
+// Render inicial
+filtrar();
+</script>
+
+</body>
+</html>

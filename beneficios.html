@@ -1,0 +1,606 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benefícios Previdenciários — CarlosCostaPrev | BPC/LOAS e Incapacidade</title>
+  <meta name="description" content="Especialista em BPC/LOAS (idoso e deficiente), Auxílio-Doença, Aposentadoria por Invalidez, Aposentadoria da PcD e Auxílio-Acidente. Análise gratuita em Irajá, RJ.">
+  <meta name="theme-color" content="#c4673a">
+  <link rel="canonical" href="https://carloscostaprev.com.br/beneficios.html">
+
+  <!-- SEO -->
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Carlos Costa — CarlosCostaPrev">
+  <meta name="keywords" content="BPC LOAS, auxílio-doença, aposentadoria por invalidez, aposentadoria PcD, benefícios previdenciários, INSS Irajá, advocacia previdenciária">
+
+  <!-- GEO -->
+  <meta name="geo.region" content="BR-RJ">
+  <meta name="geo.placename" content="Irajá, Rio de Janeiro, Brasil">
+  <meta name="geo.position" content="-22.8383;-43.3202">
+  <meta name="ICBM" content="-22.8383, -43.3202">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CarlosCostaPrev">
+  <meta property="og:title" content="Benefícios Previdenciários — BPC/LOAS e Incapacidade | CarlosCostaPrev">
+  <meta property="og:description" content="Especialista em BPC/LOAS, Auxílio-Doença, Aposentadoria por Invalidez e Aposentadoria da PcD. Análise gratuita. Irajá, RJ.">
+  <meta property="og:url" content="https://carloscostaprev.com.br/beneficios.html">
+  <meta property="og:image" content="https://carloscostaprev.com.br/assets/images/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Benefícios Previdenciários — CarlosCostaPrev">
+  <meta name="twitter:description" content="BPC/LOAS, Auxílio-Doença, Aposentadoria por Invalidez. Especialista em Irajá, RJ.">
+  <meta name="twitter:image" content="https://carloscostaprev.com.br/assets/images/og-cover.jpg">
+
+  <!-- Social -->
+  <link rel="me" href="https://www.instagram.com/carloscostaprev">
+  <link rel="me" href="https://www.facebook.com/carloscostaprev">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+
+  <style>
+    .beneficio__hero {
+      padding: 100px 0 60px;
+      background: linear-gradient(160deg, var(--bg-deep) 0%, var(--bg-mid) 100%);
+      text-align: center;
+    }
+    .beneficio__section {
+      padding: var(--section-py) 0;
+    }
+    .beneficio__section + .beneficio__section {
+      border-top: 1px solid var(--glass-border);
+    }
+    .beneficio__inner {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: clamp(32px, 5vw, 72px);
+      align-items: start;
+    }
+    .beneficio__aside {
+      position: sticky;
+      top: 90px;
+    }
+    .beneficio__aside-card {
+      background: var(--accent-glass);
+      border: 1px solid var(--accent-border);
+      border-radius: var(--radius-lg);
+      padding: var(--gap-xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-md);
+      text-align: center;
+    }
+    .beneficio__icon-big {
+      font-size: 3.5rem;
+      line-height: 1;
+    }
+    .beneficio__tipo {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .beneficio__aside-card h2 {
+      font-size: var(--text-xl);
+      margin: 0;
+    }
+    .beneficio__body h3 {
+      font-size: var(--text-lg);
+      color: var(--text-primary);
+      margin: var(--gap-lg) 0 var(--gap-sm);
+    }
+    .beneficio__body p {
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: var(--gap-md);
+    }
+    .beneficio__body ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: var(--gap-lg);
+    }
+    .beneficio__body ul li {
+      color: var(--text-muted);
+      font-size: var(--text-base);
+      padding-left: 1.4rem;
+      position: relative;
+    }
+    .beneficio__body ul li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .alert-box {
+      background: var(--accent-glass);
+      border: 1px solid var(--accent-border);
+      border-radius: var(--radius-md);
+      padding: var(--gap-md) var(--gap-lg);
+      font-size: var(--text-sm);
+      color: var(--text-muted);
+      margin: var(--gap-lg) 0;
+    }
+    .alert-box strong { color: var(--accent); }
+    .section-anchor { scroll-margin-top: 90px; }
+    @media (max-width: 900px) {
+      .beneficio__inner { grid-template-columns: 1fr; }
+      .beneficio__aside { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="Menu principal">
+  <div class="container navbar__inner">
+    <a href="/" class="navbar__logo" aria-label="CarlosCostaPrev - Início">
+      Carlos<span>Costa</span>Prev
+    </a>
+    <ul class="navbar__links" id="nav-links" role="list">
+      <li><a href="/">Início</a></li>
+      <li><a href="beneficios.html" aria-current="page">Benefícios</a></li>
+      <li><a href="servicos.html">Serviços</a></li>
+      <li><a href="blog/">Blog</a></li>
+      <li class="nav-ferramentas">
+        <button class="nav-ferramentas__btn" aria-expanded="false" aria-haspopup="true" id="btn-ferramentas">
+          Ferramentas
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-ferramentas__dropdown" id="dropdown-ferramentas" hidden>
+          <a href="ferramentas/indicadores-do-cnis.html">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            Indicadores do CNIS
+          </a>
+          <a href="ferramentas/calculadora.html">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h4M8 14h8M8 18h4"/></svg>
+            Calculadora de Aposentadoria
+          </a>
+          <a href="ferramentas/louco-para-aposentar.html">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2m-6 0a2 2 0 012-2h2a2 2 0 012 2M9 12l2 2 4-4"/></svg>
+            Louco para Aposentar
+          </a>
+          <a href="ferramentas/pdf.html">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6M9 15l3 3 3-3"/></svg>
+            Ferramentas de PDF
+          </a>
+        </div>
+      </li>
+    </ul>
+    <a href="https://wa.me/5521964238080?text=Ol%C3%A1%2C+gostaria+de+uma+an%C3%A1lise+gratuita+do+meu+caso." class="btn btn-primary navbar__cta" target="_blank" rel="noopener">
+      📱 WhatsApp
+    </a>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="beneficio__hero">
+  <div class="container" style="max-width: 720px;">
+    <p class="tag" style="margin-bottom: var(--gap-md);">⚖️ Benefícios Previdenciários</p>
+    <h1 style="font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1.2; margin-bottom: var(--gap-lg);">
+      Os benefícios que defendo —<br>
+      <em style="color: var(--accent); font-style: normal;">com conhecimento e estratégia.</em>
+    </h1>
+    <p style="color: var(--text-muted); font-size: var(--text-base); max-width: 600px; margin: 0 auto;">
+      Cada benefício tem requisitos, prazos e armadilhas específicas. Minha especialidade é
+      exatamente nos casos que o INSS mais nega.
+    </p>
+    <!-- Índice rápido -->
+    <div style="display: flex; flex-wrap: wrap; gap: var(--gap-sm); justify-content: center; margin-top: var(--gap-xl);">
+      <a href="#bpc" class="chip">🏛️ BPC/LOAS</a>
+      <a href="#auxilio-doenca" class="chip">🩺 Auxílio-Doença</a>
+      <a href="#aposentadoria-invalidez" class="chip">🛡️ Aposentadoria por Invalidez</a>
+      <a href="#aposentadoria-pcd" class="chip">🏅 Aposentadoria da PcD</a>
+      <a href="#auxilio-acidente" class="chip">⚠️ Auxílio-Acidente</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══ BPC/LOAS ═══ -->
+<section class="beneficio__section" id="bpc" aria-labelledby="bpc-title">
+  <div class="container beneficio__inner section-anchor">
+    <div class="beneficio__aside">
+      <div class="beneficio__aside-card">
+        <div class="beneficio__icon-big">🏛️</div>
+        <div class="beneficio__tipo">Benefício Assistencial</div>
+        <h2 id="bpc-title">BPC / LOAS</h2>
+        <p style="color: var(--text-muted); font-size: var(--text-sm);">Para idosos e pessoas com deficiência em situação de baixa renda. Não exige contribuição ao INSS.</p>
+        <a href="https://wa.me/5521964238080?text=Quero+saber+se+tenho+direito+ao+BPC%2FLOAS." class="btn btn-whatsapp" target="_blank" rel="noopener">
+          📱 Analisar meu caso
+        </a>
+      </div>
+    </div>
+    <div class="beneficio__body">
+      <h3>O que é o BPC/LOAS?</h3>
+      <p>
+        O Benefício de Prestação Continuada (BPC), previsto na Lei Orgânica da Assistência Social (LOAS),
+        é um salário mínimo mensal pago pelo INSS a idosos com 65 anos ou mais e a pessoas com deficiência
+        de qualquer idade que comprovem não ter meios de prover sua própria subsistência.
+      </p>
+      <p>
+        A grande diferença em relação às aposentadorias: <strong>o BPC não exige nenhuma contribuição prévia ao INSS.</strong>
+        É um direito assistencial, financiado pelo governo — e por isso mesmo é o benefício
+        com maior taxa de indeferimento. O critério de renda exige análise técnica precisa.
+      </p>
+
+      <h3>BPC Idoso — Requisitos</h3>
+      <ul>
+        <li>65 anos de idade ou mais</li>
+        <li>Renda per capita familiar inferior a 1/4 do salário mínimo</li>
+        <li>Comprovação de situação de vulnerabilidade socioeconômica</li>
+        <li>Inscrição no CadÚnico (recomendado — não obrigatório)</li>
+      </ul>
+
+      <h3>BPC Pessoa com Deficiência — Requisitos</h3>
+      <ul>
+        <li>Deficiência de longo prazo (física, mental, intelectual ou sensorial)</li>
+        <li>Impedimento por no mínimo 2 anos que limite participação plena na sociedade</li>
+        <li>Renda per capita familiar inferior a 1/4 do salário mínimo</li>
+        <li>Avaliação médica e social pelo INSS</li>
+      </ul>
+
+      <div class="alert-box">
+        <strong>Atenção:</strong> O critério de renda admite exceções que muitos requerentes desconhecem.
+        Gastos com medicamentos, cuidadores e despesas médicas podem ser excluídos do cálculo.
+        Uma análise técnica pode fazer diferença entre aprovação e indeferimento.
+      </div>
+
+      <h3>Por que o BPC é negado?</h3>
+      <ul>
+        <li>Cálculo de renda incorreto (inclusão de rendas que deveriam ser excluídas)</li>
+        <li>Documentação insuficiente para comprovação da deficiência</li>
+        <li>Avaliação do perito do INSS não reconhece a limitação funcional</li>
+        <li>Composição familiar mal documentada</li>
+      </ul>
+
+      <h3>O que faço pelo seu caso</h3>
+      <p>
+        Analiso a composição familiar e os rendimentos para identificar o cálculo correto da renda per capita.
+        Oriento na documentação médica necessária para comprovar a deficiência. Em casos de indeferimento,
+        monto a estratégia de recurso com base na legislação e na jurisprudência atual.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AUXÍLIO-DOENÇA ═══ -->
+<section class="beneficio__section" id="auxilio-doenca" aria-labelledby="auxdoenca-title">
+  <div class="container beneficio__inner section-anchor">
+    <div class="beneficio__aside">
+      <div class="beneficio__aside-card">
+        <div class="beneficio__icon-big">🩺</div>
+        <div class="beneficio__tipo">Incapacidade Temporária</div>
+        <h2 id="auxdoenca-title">Auxílio-Doença</h2>
+        <p style="color: var(--text-muted); font-size: var(--text-sm);">Para segurados incapacitados temporariamente por doença ou acidente. Um dos mais negados pelo INSS.</p>
+        <a href="https://wa.me/5521964238080?text=Meu+aux%C3%ADlio-doen%C3%A7a+foi+negado+e+quero+uma+an%C3%A1lise." class="btn btn-whatsapp" target="_blank" rel="noopener">
+          📱 Falar sobre meu caso
+        </a>
+      </div>
+    </div>
+    <div class="beneficio__body">
+      <h3>O que é o Auxílio-Doença?</h3>
+      <p>
+        O auxílio-doença (hoje chamado de Benefício por Incapacidade Temporária) é pago ao segurado do INSS
+        que fica temporariamente incapaz de trabalhar por motivo de doença ou acidente por mais de 15 dias consecutivos.
+      </p>
+
+      <h3>Requisitos</h3>
+      <ul>
+        <li>Qualidade de segurado (contribuindo ou dentro do período de graça)</li>
+        <li>12 meses de contribuição (carência) — com exceções importantes</li>
+        <li>Incapacidade laboral reconhecida em perícia médica do INSS</li>
+      </ul>
+
+      <div class="alert-box">
+        <strong>Dispensa de carência:</strong> Acidentes de qualquer natureza, doenças graves (câncer, AIDS, cardiopatia grave, entre outras) e doenças profissionais dispensam os 12 meses de carência. Muitos segurados têm benefícios negados por desconhecer esse direito.
+      </div>
+
+      <h3>Por que é negado — e como contesto</h3>
+      <ul>
+        <li>Perito do INSS não reconheceu a incapacidade → recurso com laudo médico detalhado</li>
+        <li>Documentação médica insuficiente → orientação sobre o laudo correto</li>
+        <li>Carência não cumprida → verificação de exceções legais</li>
+        <li>Qualidade de segurado perdida → análise do histórico contributivo</li>
+      </ul>
+
+      <h3>Prazo para recurso</h3>
+      <p>
+        Após o indeferimento, você tem <strong>30 dias</strong> para interpor recurso administrativo ao CRPS.
+        Não perca esse prazo — após vencido, só resta a via judicial.
+        Entre em contato assim que receber a carta de indeferimento.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ APOSENTADORIA POR INVALIDEZ ═══ -->
+<section class="beneficio__section" id="aposentadoria-invalidez" aria-labelledby="invalidez-title">
+  <div class="container beneficio__inner section-anchor">
+    <div class="beneficio__aside">
+      <div class="beneficio__aside-card">
+        <div class="beneficio__icon-big">🛡️</div>
+        <div class="beneficio__tipo">Incapacidade Permanente</div>
+        <h2 id="invalidez-title">Aposentadoria por Invalidez</h2>
+        <p style="color: var(--text-muted); font-size: var(--text-sm);">Para segurados com incapacidade permanente e insuscetível de reabilitação para qualquer atividade.</p>
+        <a href="https://wa.me/5521964238080?text=Quero+saber+sobre+Aposentadoria+por+Invalidez." class="btn btn-whatsapp" target="_blank" rel="noopener">
+          📱 Analisar meu caso
+        </a>
+      </div>
+    </div>
+    <div class="beneficio__body">
+      <h3>O que é a Aposentadoria por Invalidez?</h3>
+      <p>
+        Concedida ao segurado que for considerado incapaz para o trabalho e insuscetível de reabilitação
+        profissional para o exercício de atividade que lhe garanta a subsistência. A incapacidade deve
+        ser de caráter permanente.
+      </p>
+
+      <h3>Requisitos</h3>
+      <ul>
+        <li>Qualidade de segurado no momento da incapacidade</li>
+        <li>12 meses de contribuição (com exceções para acidente e doenças graves)</li>
+        <li>Incapacidade permanente reconhecida em perícia médica</li>
+        <li>Impossibilidade de reabilitação para outra atividade laboral</li>
+      </ul>
+
+      <h3>Valor do benefício</h3>
+      <p>
+        A aposentadoria por invalidez corresponde a <strong>100% do salário de benefício</strong>.
+        Nos casos em que o segurado necessita de assistência permanente de outra pessoa,
+        há acréscimo de 25% — o chamado adicional de grande invalidez.
+      </p>
+
+      <div class="alert-box">
+        <strong>Importante:</strong> O INSS frequentemente tenta converter a aposentadoria por invalidez
+        em auxílio-doença (temporário), subestimando a gravidade da condição. A documentação médica
+        precisa ser técnica e específica sobre a permanência da incapacidade.
+      </div>
+
+      <h3>Estratégia de aprovação</h3>
+      <ul>
+        <li>Laudo médico pericial particular com CID, prognóstico e grau de limitação</li>
+        <li>Documentação de tentativas de reabilitação, quando aplicável</li>
+        <li>Análise do histórico profissional para fortalecer o pedido</li>
+        <li>Acompanhamento na perícia e recurso em caso de negativa</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ APOSENTADORIA DA PcD ═══ -->
+<section class="beneficio__section" id="aposentadoria-pcd" aria-labelledby="pcd-title">
+  <div class="container beneficio__inner section-anchor">
+    <div class="beneficio__aside">
+      <div class="beneficio__aside-card">
+        <div class="beneficio__icon-big">🏅</div>
+        <div class="beneficio__tipo">Pessoa com Deficiência</div>
+        <h2 id="pcd-title">Aposentadoria da PcD</h2>
+        <p style="color: var(--text-muted); font-size: var(--text-sm);">Tempo de contribuição reduzido para pessoas com deficiência. Exige avaliação técnica do grau de impedimento.</p>
+        <a href="https://wa.me/5521964238080?text=Quero+saber+sobre+Aposentadoria+da+PcD." class="btn btn-whatsapp" target="_blank" rel="noopener">
+          📱 Analisar meu caso
+        </a>
+      </div>
+    </div>
+    <div class="beneficio__body">
+      <h3>O que é a Aposentadoria da PcD?</h3>
+      <p>
+        Prevista na Lei Complementar 142/2013, garante aposentadoria com tempo de contribuição
+        reduzido para pessoas com deficiência. O tempo exigido varia conforme o grau de deficiência
+        avaliado pelo INSS.
+      </p>
+
+      <h3>Tempo de contribuição exigido</h3>
+      <ul>
+        <li><strong>Deficiência grave:</strong> 25 anos (homem) / 20 anos (mulher)</li>
+        <li><strong>Deficiência moderada:</strong> 29 anos (homem) / 24 anos (mulher)</li>
+        <li><strong>Deficiência leve:</strong> 33 anos (homem) / 28 anos (mulher)</li>
+      </ul>
+
+      <div class="alert-box">
+        <strong>Atenção ao período de carência:</strong> A deficiência não precisa existir desde o início das contribuições. Apenas o tempo contribuído <em>com</em> a deficiência conta para os prazos reduzidos. A análise do CNIS é essencial para calcular esse período corretamente.
+      </div>
+
+      <h3>O que faço pelo seu caso</h3>
+      <ul>
+        <li>Análise do CNIS para identificar o período exato com deficiência</li>
+        <li>Orientação sobre a documentação médica necessária para a avaliação</li>
+        <li>Cálculo do tempo de contribuição e simulação do benefício</li>
+        <li>Acompanhamento completo do requerimento e perícia</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AUXÍLIO-ACIDENTE ═══ -->
+<section class="beneficio__section" id="auxilio-acidente" aria-labelledby="acidente-title">
+  <div class="container beneficio__inner section-anchor">
+    <div class="beneficio__aside">
+      <div class="beneficio__aside-card">
+        <div class="beneficio__icon-big">⚠️</div>
+        <div class="beneficio__tipo">Sequela de Acidente</div>
+        <h2 id="acidente-title">Auxílio-Acidente</h2>
+        <p style="color: var(--text-muted); font-size: var(--text-sm);">Indenização para segurados que ficaram com sequela permanente de acidente, reduzindo a capacidade laboral.</p>
+        <a href="https://wa.me/5521964238080?text=Quero+saber+sobre+Aux%C3%ADlio-Acidente." class="btn btn-whatsapp" target="_blank" rel="noopener">
+          📱 Analisar meu caso
+        </a>
+      </div>
+    </div>
+    <div class="beneficio__body">
+      <h3>O que é o Auxílio-Acidente?</h3>
+      <p>
+        É uma indenização paga ao segurado empregado, trabalhador avulso e segurado especial que,
+        após a consolidação de lesões decorrentes de acidente de qualquer natureza, resultar
+        em sequela que implique redução da capacidade para o trabalho que habitualmente exercia.
+      </p>
+      <p>
+        Diferente do auxílio-doença, o segurado <strong>continua trabalhando</strong> e recebe
+        o auxílio-acidente como complemento salarial, correspondente a 50% do salário de benefício.
+      </p>
+
+      <h3>Requisitos</h3>
+      <ul>
+        <li>Acidente de qualquer natureza (não precisa ser acidente de trabalho)</li>
+        <li>Sequela permanente que reduza a capacidade laboral</li>
+        <li>Qualidade de segurado (empregado, avulso ou segurado especial)</li>
+        <li>Não se aplica a contribuinte individual ou MEI</li>
+      </ul>
+
+      <div class="alert-box">
+        <strong>Cumulação:</strong> O auxílio-acidente pode ser cumulado com o salário. Não pode ser
+        acumulado com outro benefício por incapacidade (auxílio-doença) pelo mesmo motivo.
+        Com a aposentadoria, o auxílio cessa.
+      </div>
+
+      <h3>O que faço pelo seu caso</h3>
+      <ul>
+        <li>Análise da sequela e verificação dos requisitos</li>
+        <li>Orientação sobre documentação para comprovar a redução da capacidade</li>
+        <li>Cálculo do valor correto do benefício</li>
+        <li>Recurso em caso de negativa ou encerramento indevido</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- CTA FINAL -->
+<section class="cta-final section" aria-label="Contato">
+  <div class="container">
+    <div class="cta-final__box glass-card--accent">
+      <h2>Análise gratuita do seu caso</h2>
+      <p>Envie sua situação pelo WhatsApp. Identifico o benefício correto e a melhor estratégia para o seu caso.</p>
+      <a href="https://wa.me/5521964238080?text=Quero+uma+an%C3%A1lise+gratuita+do+meu+caso+previdenci%C3%A1rio." class="btn btn-whatsapp" target="_blank" rel="noopener">
+        📱 Falar com Carlos Costa
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- RODAPÉ -->
+<footer class="rodape" role="contentinfo">
+  <div class="container">
+    <div class="rodape__grid">
+      <div class="rodape__col">
+        <div class="rodape__logo">Carlos<span>Costa</span>Prev</div>
+        <p>Especialista em Previdência Social.<br>Irajá, Rio de Janeiro.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/carloscostaprev" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/carloscostaprev" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://g.page/r/CcJNe240Go7AEBM/review" target="_blank" rel="noopener" aria-label="Avaliar no Google" title="Deixar avaliação no Google">
+            <svg viewBox="0 0 24 24"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
+          </a>
+        </div>
+      </div>
+      <nav class="rodape__col" aria-label="Links do rodapé">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="beneficios.html">Benefícios</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </nav>
+      <address class="rodape__col" aria-label="Contato e endereço">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/5521964238080" target="_blank" rel="noopener">📱 WhatsApp: (21) 96423-8080</a></li>
+        </ul>
+        <h4 style="margin-top: 1rem;">Endereço</h4>
+        <p>
+          Praça Nossa Sra. da Apresentação, 223 — Sala 206<br>
+          Irajá · Rio de Janeiro · RJ<br>
+          CEP 21231-230
+        </p>
+      </address>
+    </div>
+    <div class="rodape__bottom">
+      <p>© 2026 CarlosCostaPrev — Especialista em Previdência Social. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════ SCHEMA MARKUP ═══════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://carloscostaprev.com.br/beneficios.html#beneficios",
+      "name": "Benefícios Previdenciários — CarlosCostaPrev",
+      "description": "Especialista em BPC/LOAS (idoso e deficiente), Auxílio-Doença, Aposentadoria por Invalidez, Aposentadoria da PcD e Auxílio-Acidente. Análise gratuita em Irajá, RJ.",
+      "provider": {
+        "@type": "Person",
+        "@id": "https://carloscostaprev.com.br/#carloscosta",
+        "name": "Carlos Costa",
+        "jobTitle": "Especialista em Previdência Social",
+        "url": "https://carloscostaprev.com.br"
+      },
+      "areaServed": { "@type": "Country", "name": "Brasil" },
+      "url": "https://carloscostaprev.com.br/beneficios.html",
+      "serviceType": [
+        "BPC/LOAS para Idosos",
+        "BPC/LOAS para Deficientes",
+        "Auxílio-Doença",
+        "Aposentadoria por Invalidez",
+        "Aposentadoria da PcD",
+        "Auxílio-Acidente"
+      ]
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://carloscostaprev.com.br/#organization",
+      "name": "CarlosCostaPrev",
+      "url": "https://carloscostaprev.com.br",
+      "telephone": "+5521964238080",
+      "sameAs": [
+        "https://www.instagram.com/carloscostaprev",
+        "https://www.facebook.com/carloscostaprev",
+        "https://g.page/r/CcJNe240Go7AEBM"
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/animations.js"></script>
+
+<a href="https://wa.me/5521964238080?text=Ol%C3%A1%2C+gostaria+de+uma+an%C3%A1lise+gratuita." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<div class="mobile-cta-bar">
+  <a href="https://wa.me/5521964238080?text=Ol%C3%A1%2C+vi+a+p%C3%A1gina+de+benef%C3%ADcios+e+quero+uma+an%C3%A1lise+gratuita." class="mcta-wpp" target="_blank" rel="noopener">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Análise Gratuita
+  </a>
+</div>
+
+</body>
+</html>

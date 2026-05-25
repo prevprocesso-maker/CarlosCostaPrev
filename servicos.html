@@ -1,0 +1,973 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serviços Previdenciários — Planejamento, CNIS, Análise | CarlosCostaPrev</title>
+  <meta name="description" content="Planejamento previdenciário 360°, análise de CNIS, revisão de benefícios negados e muito mais. Atendimento presencial em Irajá/RJ e online para todo o Brasil.">
+  <meta name="theme-color" content="#c4673a">
+  <link rel="canonical" href="https://carloscostaprev.com.br/servicos.html">
+
+  <!-- SEO -->
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Carlos Costa — CarlosCostaPrev">
+  <meta name="keywords" content="planejamento previdenciário, correção CNIS, análise previdenciária, revisão benefícios INSS, aposentadoria, Irajá RJ, atendimento online">
+
+  <!-- GEO -->
+  <meta name="geo.region" content="BR-RJ">
+  <meta name="geo.placename" content="Irajá, Rio de Janeiro, Brasil">
+  <meta name="geo.position" content="-22.8383;-43.3202">
+  <meta name="ICBM" content="-22.8383, -43.3202">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CarlosCostaPrev">
+  <meta property="og:title" content="Serviços Previdenciários — Planejamento, CNIS, Análise | CarlosCostaPrev">
+  <meta property="og:description" content="Planejamento previdenciário 360°, análise de CNIS, revisão de benefícios. Atendimento online para todo o Brasil.">
+  <meta property="og:url" content="https://carloscostaprev.com.br/servicos.html">
+  <meta property="og:image" content="https://carloscostaprev.com.br/assets/images/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Serviços Previdenciários — CarlosCostaPrev">
+  <meta name="twitter:description" content="Planejamento 360°, análise de CNIS, revisão de benefícios. Online para todo o Brasil.">
+  <meta name="twitter:image" content="https://carloscostaprev.com.br/assets/images/og-cover.jpg">
+
+  <!-- Social -->
+  <link rel="me" href="https://www.instagram.com/carloscostaprev">
+  <link rel="me" href="https://www.facebook.com/carloscostaprev">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+
+  <style>
+    /* ── HERO SERVIÇOS ── */
+    .servicos-hero {
+      padding: 110px 0 70px;
+      background: linear-gradient(160deg, var(--bg-deep) 0%, var(--bg-mid) 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .servicos-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(196,103,58,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(196,103,58,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .servicos-hero__badges {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: var(--gap-lg);
+    }
+    .badge-online {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(37,211,102,0.12);
+      border: 1px solid rgba(37,211,102,0.35);
+      color: #25D366;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: var(--radius-pill);
+      letter-spacing: 0.5px;
+    }
+    .badge-online::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #25D366;
+      animation: pulseDot 1.5s ease-in-out infinite;
+    }
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(1.4); }
+    }
+
+    /* ── CARROS-CHEFE ── */
+    .carros-chefe {
+      margin-top: var(--gap-xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-xl);
+    }
+    .carro-chefe__card {
+      position: relative;
+      padding: clamp(28px, 5vw, 48px);
+      border-radius: var(--radius-xl);
+      border: 2px solid var(--accent-border-strong);
+      background: linear-gradient(135deg, rgba(196,103,58,0.08) 0%, rgba(196,103,58,0.03) 100%);
+      backdrop-filter: var(--glass-blur);
+      overflow: hidden;
+    }
+    .carro-chefe__card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), rgba(196,103,58,0.3));
+    }
+    .carro-chefe__label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      margin-bottom: var(--gap-md);
+    }
+    .carro-chefe__meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(196,103,58,0.12);
+      border: 1px solid var(--accent-border);
+      color: var(--accent);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      margin-bottom: var(--gap-md);
+      margin-left: 8px;
+    }
+    .carro-chefe__card h2 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 900;
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin-bottom: var(--gap-md);
+    }
+    .carro-chefe__body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--gap-xl);
+      align-items: start;
+    }
+    .carro-chefe__pain {
+      background: rgba(0,0,0,0.2);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: var(--gap-md) var(--gap-lg);
+    }
+    .carro-chefe__pain-label {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .carro-chefe__pain p {
+      font-size: var(--text-base);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-style: italic;
+    }
+    .carro-chefe__solution {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-md);
+    }
+    .carro-chefe__solution p {
+      font-size: var(--text-base);
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+    .carro-chefe__solution strong {
+      color: var(--text-primary);
+    }
+    .carro-chefe__bottom {
+      margin-top: var(--gap-lg);
+      display: flex;
+      align-items: center;
+      gap: var(--gap-md);
+      flex-wrap: wrap;
+    }
+    .carro-chefe__num {
+      position: absolute;
+      top: 20px; right: 28px;
+      font-size: 5rem;
+      font-weight: 900;
+      color: rgba(196,103,58,0.07);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    @media (max-width: 768px) {
+      .carro-chefe__body { grid-template-columns: 1fr; }
+      .carro-chefe__num { display: none; }
+    }
+
+    /* ── ETAPAS DO ATENDIMENTO ── */
+    .etapas { background: var(--bg-mid); }
+    .etapas__inner {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: clamp(40px, 6vw, 72px);
+      align-items: start;
+    }
+    .etapas__intro { position: sticky; top: 120px; }
+    .etapas__overline {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: var(--gap-sm);
+    }
+    .etapas__title {
+      font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: var(--gap-md);
+    }
+    .etapas__desc {
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: var(--gap-lg);
+    }
+    .etapas__online-box {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--gap-md);
+      background: rgba(196,103,58,0.07);
+      border: 1px solid var(--accent-border);
+      border-radius: var(--radius-md);
+      padding: 14px var(--gap-lg);
+      margin-bottom: var(--gap-lg);
+    }
+    .etapas__online-icon {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--accent-glass);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .etapas__online-box strong { display: block; color: var(--text-primary); font-size: var(--text-sm); margin-bottom: 2px; }
+    .etapas__online-box p { font-size: var(--text-xs); color: var(--text-muted); margin: 0; }
+
+    /* Accordion cards */
+    .etapas__accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .etapa-card {
+      width: 100%;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: var(--gap-lg);
+      cursor: pointer;
+      text-align: left;
+      display: grid;
+      grid-template-columns: 1fr 40px;
+      gap: var(--gap-md);
+      align-items: center;
+      transition: border-color 0.25s, background 0.3s;
+    }
+    .etapa-card:hover:not(.active) { border-color: var(--accent-border); }
+    .etapa-card__passo {
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 5px;
+      transition: color 0.25s;
+    }
+    .etapa-card h3 {
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.35;
+      transition: color 0.25s, font-size 0.2s;
+    }
+    .etapa-card__desc {
+      display: none;
+      font-size: var(--text-sm);
+      color: rgba(255,255,255,0.6);
+      line-height: 1.75;
+      margin-top: 10px;
+    }
+    .etapa-card__arrow {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      border: 1px solid var(--glass-border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-faint);
+      flex-shrink: 0;
+      align-self: flex-start;
+      transition: background 0.25s, border-color 0.25s, color 0.25s;
+    }
+    /* Active state */
+    .etapa-card.active {
+      background: rgba(7, 13, 33, 0.97);
+      border-color: rgba(196,103,58,0.4);
+      align-items: start;
+    }
+    .etapa-card.active .etapa-card__passo { color: var(--accent); }
+    .etapa-card.active h3 { color: var(--text-primary); font-size: var(--text-base); }
+    .etapa-card.active .etapa-card__desc { display: block; }
+    .etapa-card.active .etapa-card__arrow {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    @media (max-width: 768px) {
+      .etapas__inner { grid-template-columns: 1fr; gap: var(--gap-xl); }
+      .etapas__intro { position: static; }
+    }
+
+    /* ── GRID SERVIÇOS ── */
+    .servicos-page__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--gap-lg);
+      margin-top: var(--gap-xl);
+    }
+    .servico__card {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-md);
+      padding: var(--gap-xl);
+    }
+    .servico__num {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      color: var(--accent);
+      opacity: 0.6;
+      letter-spacing: 0.08em;
+    }
+    .servico__card h3 {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0;
+      line-height: 1.3;
+    }
+    .servico__card p {
+      font-size: var(--text-sm);
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin: 0;
+      flex: 1;
+    }
+    .servico__card .btn {
+      align-self: flex-start;
+      font-size: var(--text-xs);
+      padding: 8px 16px;
+    }
+    @media (max-width: 768px) {
+      .servicos-page__grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="Menu principal">
+  <div class="container navbar__inner">
+    <a href="/" class="navbar__logo" aria-label="CarlosCostaPrev - Início">
+      Carlos<span>Costa</span>Prev
+    </a>
+    <ul class="navbar__links" id="nav-links" role="list">
+      <li><a href="/">Início</a></li>
+      <li><a href="beneficios.html">Benefícios</a></li>
+      <li><a href="servicos.html" aria-current="page">Serviços</a></li>
+      <li><a href="blog/">Blog</a></li>
+      <li class="nav-ferramentas">
+        <button class="nav-ferramentas__btn" aria-expanded="false" aria-haspopup="true" id="btn-ferramentas">
+          Ferramentas
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-ferramentas__dropdown" id="dropdown-ferramentas" hidden>
+          <a href="ferramentas/indicadores-do-cnis.html">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            Indicadores do CNIS
+          </a>
+          <a href="ferramentas/calculadora.html">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h4M8 14h8M8 18h4"/></svg>
+            Calculadora de Aposentadoria
+          </a>
+          <a href="ferramentas/louco-para-aposentar.html">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2m-6 0a2 2 0 012-2h2a2 2 0 012 2M9 12l2 2 4-4"/></svg>
+            Louco para Aposentar
+          </a>
+          <a href="ferramentas/pdf.html">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6M9 15l3 3 3-3"/></svg>
+            Ferramentas de PDF
+          </a>
+        </div>
+      </li>
+    </ul>
+    <a href="https://wa.me/5521964238080?text=Ol%C3%A1%2C+gostaria+de+uma+consulta+sobre+servi%C3%A7os+previdenci%C3%A1rios." class="btn btn-primary navbar__cta" target="_blank" rel="noopener">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<header class="servicos-hero">
+  <div class="container" style="max-width: 760px; position: relative; z-index: 1;">
+    <div class="servicos-hero__badges">
+      <span class="badge-online">Atendimento Online — Brasil inteiro</span>
+      <span class="tag">Serviços Previdenciários</span>
+    </div>
+    <h1 class="fade-up" style="font-size: clamp(1.75rem, 4vw, 2.8rem); line-height: 1.15; margin-bottom: var(--gap-lg);">
+      O INSS não vai<br>
+      <em style="color: var(--accent); font-style: normal;">trabalhar pelo seu benefício.</em><br>
+      Mas eu, sim.
+    </h1>
+    <p class="fade-up" style="color: var(--text-muted); font-size: var(--text-lg); max-width: 620px; margin: 0 auto var(--gap-lg);">
+      Mais de 10 anos identificando o que o INSS não enxerga — ou finge não ver.
+      Análise técnica, planejamento e acompanhamento completo do seu caso.
+      Presencial em Irajá/RJ e <strong style="color: var(--text-primary);">online para todo o Brasil.</strong>
+    </p>
+    <div class="fade-up" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+      <a href="https://wa.me/5521964238080?text=Ol%C3%A1%2C+gostaria+de+uma+an%C3%A1lise+gratuita+dos+meus+servi%C3%A7os+previdenci%C3%A1rios." class="btn btn-whatsapp" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Análise Gratuita Agora
+      </a>
+      <a href="#carros-chefe" class="btn btn-secondary">Ver serviços principais →</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══ CARROS-CHEFE ═══ -->
+<section class="section" id="carros-chefe" aria-labelledby="carros-title">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom: var(--gap-xl);">
+      <p class="section-label">Nossos Carros-Chefe</p>
+      <h2 id="carros-title" class="section-title">Os 3 serviços mais procurados</h2>
+      <p class="section-subtitle">Onde está a dor da maioria dos nossos clientes — e onde entregamos o resultado mais transformador.</p>
+    </div>
+
+    <div class="carros-chefe">
+
+      <!-- CARRO 1: Planejamento 360° -->
+      <article class="carro-chefe__card fade-up" id="planejamento360">
+        <div class="carro-chefe__num">01</div>
+        <div>
+          <span class="carro-chefe__label">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Mais Procurado
+          </span>
+          <span class="carro-chefe__meta">
+            <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Foco no Futuro
+          </span>
+        </div>
+        <h2>Planejamento Previdenciário 360°</h2>
+        <div class="carro-chefe__body">
+          <div class="carro-chefe__pain">
+            <div class="carro-chefe__pain-label">A realidade de quem procura esse serviço</div>
+            <p>"Estou trabalhando há 20 anos. Mas nunca parei para calcular quando posso me aposentar de verdade — e quanto vou receber. Tenho medo de chegar nos 65 anos e descobrir que perdi dinheiro por não ter planejado."</p>
+          </div>
+          <div class="carro-chefe__solution">
+            <p>
+              Cada ano que passa sem planejamento pode custar <strong>anos a mais de contribuição</strong> — ou uma aposentadoria com valor muito abaixo do que você teria direito. O INSS não vai te avisar quando é a hora certa. Isso é trabalho nosso.
+            </p>
+            <p>
+              Analisamos seu CNIS completo, identificamos todos os seus vínculos, calculamos todos os cenários possíveis e projetamos a <strong>melhor data e o maior valor</strong> de aposentadoria que você pode alcançar. Com planejamento, a diferença pode ser de centenas de reais por mês — pelo resto da vida.
+            </p>
+            <p>
+              <strong>Uma hora de análise pode valer décadas de benefício no valor certo.</strong>
+            </p>
+          </div>
+        </div>
+        <div class="carro-chefe__bottom">
+          <a href="https://wa.me/5521964238080?text=Quero+um+Planejamento+Previdenci%C3%A1rio+360%C2%BA." class="btn btn-whatsapp" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Quero meu planejamento
+          </a>
+          <span style="font-size: var(--text-xs); color: var(--text-faint);">Atendimento presencial e online</span>
+        </div>
+      </article>
+
+      <!-- CARRO 2: Análise Previdenciária Completa -->
+      <article class="carro-chefe__card fade-up" id="analise-completa">
+        <div class="carro-chefe__num">02</div>
+        <div>
+          <span class="carro-chefe__label">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Alta Demanda
+          </span>
+          <span class="carro-chefe__meta">
+            <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            Situação Presente
+          </span>
+        </div>
+        <h2>Análise Previdenciária Completa</h2>
+        <div class="carro-chefe__body">
+          <div class="carro-chefe__pain">
+            <div class="carro-chefe__pain-label">A realidade de quem procura esse serviço</div>
+            <p>"Trabalhei a vida toda. Já peço minha aposentadoria faz tempo. O INSS diz que tem algo errado no meu histórico — mas ninguém explica o que é. Preciso entender o que está travando o meu caso."</p>
+          </div>
+          <div class="carro-chefe__solution">
+            <p>
+              Seu CNIS pode ter erros que você nem imagina. <strong>Vínculos faltantes, períodos apagados, remunerações incorretas.</strong> O INSS não corrige por conta própria — e essas inconsistências estão, agora mesmo, reduzindo ou bloqueando o benefício que é seu por direito.
+            </p>
+            <p>
+              Auditamos linha por linha do seu cadastro previdenciário: todos os vínculos, todas as competências, todas as contribuições como MEI, autônomo ou empregado. Identificamos cada erro, cada oportunidade de regularização e montamos o caminho correto para o pedido.
+            </p>
+            <p>
+              <strong>Essa análise pode revelar dinheiro que você está perdendo agora — e tem direito de recuperar.</strong>
+            </p>
+          </div>
+        </div>
+        <div class="carro-chefe__bottom">
+          <a href="https://wa.me/5521964238080?text=Quero+uma+An%C3%A1lise+Previdenci%C3%A1ria+Completa." class="btn btn-whatsapp" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Quero minha análise
+          </a>
+          <span style="font-size: var(--text-xs); color: var(--text-faint);">Atendimento presencial e online</span>
+        </div>
+      </article>
+
+      <!-- CARRO 3: Análise de CNIS -->
+      <article class="carro-chefe__card fade-up" id="analise-cnis">
+        <div class="carro-chefe__num">03</div>
+        <div>
+          <span class="carro-chefe__label">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Onde Tudo Começa
+          </span>
+          <span class="carro-chefe__meta">
+            <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h18M3 6h18M3 18h12"/></svg>
+            A Base de Tudo
+          </span>
+        </div>
+        <h2>Análise de CNIS — A Fundação do Seu Benefício</h2>
+        <div class="carro-chefe__body">
+          <div class="carro-chefe__pain">
+            <div class="carro-chefe__pain-label">A realidade de quem procura esse serviço</div>
+            <p>"Fui ao INSS dar entrada no meu benefício. Falaram que está faltando tempo de contribuição. Mas eu tenho carteira assinada desde os 18 anos. Não entendo o que está errado."</p>
+          </div>
+          <div class="carro-chefe__solution">
+            <p>
+              Antes de qualquer pedido, existe uma verdade que a maioria ignora: <strong>o CNIS decide tudo.</strong> É ele que o INSS consulta para calcular seu benefício. Se tiver erros, seu pedido vai ser negado — ou aprovado com valor menor do que você merece.
+            </p>
+            <p>
+              Fazemos uma leitura técnica completa do seu extrato previdenciário. Identificamos cada vínculo ausente, cada período apagado, cada remuneração incorreta — e apresentamos um relatório claro do que precisa ser corrigido antes de dar entrada no pedido.
+            </p>
+            <p>
+              <strong>Sem análise do CNIS, qualquer pedido é um tiro no escuro. Comece pelo certo.</strong>
+            </p>
+          </div>
+        </div>
+        <div class="carro-chefe__bottom">
+          <a href="https://wa.me/5521964238080?text=Quero+uma+An%C3%A1lise+do+meu+CNIS." class="btn btn-whatsapp" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Analisar meu CNIS agora
+          </a>
+          <span style="font-size: var(--text-xs); color: var(--text-faint);">Atendimento presencial e online</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ETAPAS DO ATENDIMENTO ═══ -->
+<section class="etapas section" aria-labelledby="etapas-title">
+  <div class="container">
+    <div class="etapas__inner">
+
+      <!-- Intro esquerda -->
+      <div class="etapas__intro fade-up">
+        <p class="etapas__overline">// Como funciona</p>
+        <h2 id="etapas-title" class="etapas__title">
+          Simples para você.<br>
+          <em class="accent" style="font-style:normal;">Completo para o INSS.</em>
+        </h2>
+        <p class="etapas__desc">Do primeiro contato até a conclusão do caso, você sabe o que está acontecendo em cada etapa. Sem surpresas, sem burocracia — só resultado.</p>
+
+        <div class="etapas__online-box">
+          <div class="etapas__online-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <div>
+            <strong>Atendimento 100% Online</strong>
+            <p>Todo o Brasil. Sem precisar sair de casa.</p>
+          </div>
+        </div>
+
+        <a href="https://wa.me/5521964238080?text=Ol%C3%A1%2C+quero+iniciar+meu+atendimento+online." class="btn btn-whatsapp" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Começar pelo WhatsApp
+        </a>
+      </div>
+
+      <!-- Accordion direita -->
+      <div class="etapas__accordion">
+
+        <button class="etapa-card active fade-up" aria-expanded="true">
+          <div>
+            <span class="etapa-card__passo">Passo 01</span>
+            <h3>Conversa inicial pelo WhatsApp</h3>
+            <p class="etapa-card__desc">Você nos conta sua situação. Nossa equipe ouve o caso e identifica os pontos relevantes para a análise técnica — sem jargão, sem burocracia.</p>
+          </div>
+          <div class="etapa-card__arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </div>
+        </button>
+
+        <button class="etapa-card fade-up" aria-expanded="false">
+          <div>
+            <span class="etapa-card__passo">Passo 02</span>
+            <h3>Montagem do processo do jeito certo</h3>
+            <p class="etapa-card__desc">Orientamos sobre os documentos que fortalecem o pedido e descartamos os que podem atrapalhar. Um processo bem montado no início evita anos de espera depois.</p>
+          </div>
+          <div class="etapa-card__arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </button>
+
+        <button class="etapa-card fade-up" aria-expanded="false">
+          <div>
+            <span class="etapa-card__passo">Passo 03</span>
+            <h3>A gente conduz, você acompanha</h3>
+            <p class="etapa-card__desc">Cuidamos do protocolo, do acompanhamento, das respostas ao INSS e dos recursos. Você não precisa lidar com isso sozinho — só se manter informado.</p>
+          </div>
+          <div class="etapa-card__arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </button>
+
+        <button class="etapa-card fade-up" aria-expanded="false">
+          <div>
+            <span class="etapa-card__passo">Passo 04</span>
+            <h3>Preparação para perícia ou audiência</h3>
+            <p class="etapa-card__desc">Antes de qualquer perícia médica ou audiência, você recebe orientação completa do que vai acontecer e como se posicionar. Nada de surpresas.</p>
+          </div>
+          <div class="etapa-card__arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </button>
+
+        <button class="etapa-card fade-up" aria-expanded="false">
+          <div>
+            <span class="etapa-card__passo">Passo 05</span>
+            <h3>Na Justiça, se for o caso</h3>
+            <p class="etapa-card__desc">Se o pedido administrativo é negado, conduzimos a discussão no Judiciário com fundamentação técnica. Negativa administrativa não encerra o caminho.</p>
+          </div>
+          <div class="etapa-card__arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </button>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TODOS OS SERVIÇOS ═══ -->
+<section class="section" aria-labelledby="todos-title">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom: 0;">
+      <p class="section-label">Todos os Serviços</p>
+      <h2 id="todos-title" class="section-title">14 serviços disponíveis</h2>
+      <p class="section-subtitle">Cada caso é analisado individualmente. Sem resposta genérica, sem promessa vazia.</p>
+    </div>
+
+    <div class="servicos-page__grid">
+
+      <article class="glass-card card-accent-line servico__card fade-up">
+        <span class="servico__num">01</span>
+        <h3>Planejamento Previdenciário 360°</h3>
+        <p>Você trabalhou anos — mas sabe exatamente quando pode se aposentar e quanto vai receber? Projetamos todos os cenários, identificamos a data mais vantajosa e o maior valor possível. Ideal para quem está a 5–10 anos da aposentadoria e não quer se arrepender depois.</p>
+        <a href="#planejamento360" class="btn btn-secondary">Ver detalhes →</a>
+      </article>
+
+      <article class="glass-card card-accent-line servico__card fade-up">
+        <span class="servico__num">02</span>
+        <h3>Análise Previdenciária Completa</h3>
+        <p>Seu histórico tem erros que você não sabe. Fazemos uma auditoria completa do CNIS, vínculos, contribuições e histórico de MEI/autônomo. Identificamos inconsistências, períodos faltantes e tudo que está reduzindo ou bloqueando seu benefício agora.</p>
+        <a href="#analise-completa" class="btn btn-secondary">Ver detalhes →</a>
+      </article>
+
+      <article class="glass-card card-accent-line servico__card fade-up">
+        <span class="servico__num">03</span>
+        <h3>Análise e Correção de CNIS</h3>
+        <p>O CNIS decide o valor do seu benefício — e erros são mais comuns do que você imagina. Identificamos e solicitamos a correção de vínculos faltantes, datas erradas, competências ausentes e remunerações incorretas. É o ponto de partida de qualquer processo.</p>
+        <a href="#analise-cnis" class="btn btn-secondary">Ver detalhes →</a>
+      </article>
+
+      <article class="glass-card card-accent-line servico__card fade-up">
+        <span class="servico__num">04</span>
+        <h3>Cálculo de Tempo de Contribuição</h3>
+        <p>Falta quanto tempo para você se aposentar? Simulamos com precisão — considerando todos os vínculos, períodos especiais, averbações e contribuições como MEI ou autônomo. Você sai sabendo exatamente onde está e o que falta.</p>
+        <a href="https://wa.me/5521964238080?text=Quero+calcular+meu+tempo+de+contribui%C3%A7%C3%A3o." class="btn btn-secondary" target="_blank" rel="noopener">Consultar →</a>
+      </article>
+
+      <article class="glass-card card-accent-line servico__card fade-up">
+        <span class="servico__num">05</span>
+        <h3>Revisão de Benefício Negado</h3>
+        <p>Seu benefício foi indeferido e você não entende o motivo? Analisamos a carta de negativa e o histórico completo. Montamos a estratégia de recurso — administrativo (CRPS) ou judicial — e agimos antes de o prazo de 30 dias acabar.</p>
+        <a href="https://wa.me/5521964238080?text=Meu+benef%C3%ADcio+foi+negado+e+preciso+de+ajuda." class="btn btn-secondary" target="_blank" rel="noopener">Consultar →</a>
+      </article>
+
+      <article class="glass-card card-accent-line servico__card fade-up">
+        <span class="servico__num">06</span>
+        <h3>Análise de PPP / LTCAT</h3>
+        <p>Trabalhou em ambiente insalubre ou perigoso? O PPP e o LTCAT podem garantir sua aposentadoria especial. Analisamos se os documentos do seu empregador foram emitidos corretamente e se você tem direito à aposentadoria com menos tempo de contribuição.</p>
+        <a href="https://wa.me/5521964238080?text=Quero+analisar+meu+PPP+e+LTCAT." class="btn btn-secondary" target="_blank" rel="noopener">Consultar →</a>
+      </article>
+
+      <article class="glass-card card-accent-line servico__card fade-up">
+        <span class="servico__num">07</span>
+        <h3>CTC — Certidão de Tempo de Contribuição</h3>
+        <p>Precisa levar tempo de serviço público para o INSS — ou vice-versa? Cuidamos de todo o processo de CTC para averbação entre RPPS e RGPS. Documentação correta, procedimento certo, sem perder nenhum dia de contribuição.</p>
+        <a href="https://wa.me/5521964238080?text=Preciso+de+CTC+para+averbação+de+tempo." class="btn btn-secondary" target="_blank" rel="noopener">Consultar →</a>
+      </article>
+
+      <article class="glass-card card-accent-line servico__card fade-up">
+        <span class="servico__num">08</span>
+        <h3>Orientação de Contribuições</h3>
+        <p>MEI, autônomo, facultativo — cada modalidade tem regras diferentes. Muita gente contribui do jeito errado e perde direitos sem saber. Analisamos seu perfil e indicamos o regime correto para você não pagar mais do que precisa nem perder o que construiu.</p>
+        <a href="https://wa.me/5521964238080?text=Preciso+de+orienta%C3%A7%C3%A3o+sobre+contribui%C3%A7%C3%B5es." class="btn btn-secondary" target="_blank" rel="noopener">Consultar →</a>
+      </article>
+
+      <article class="glass-card card-accent-line servico__card fade-up">
+        <span class="servico__num">09</span>
+        <h3>Averbação Trabalhista</h3>
+        <p>Trabalhou anos sem carteira assinada ou períodos que não aparecem no CNIS? Esses períodos podem ser reconhecidos. Orientamos sobre documentação (carteira, holerites, declarações) e conduzimos o processo de averbação junto ao INSS.</p>
+        <a href="https://wa.me/5521964238080?text=Preciso+averbar+per%C3%ADodo+de+trabalho." class="btn btn-secondary" target="_blank" rel="noopener">Consultar →</a>
+      </article>
+
+      <article class="glass-card card-accent-line servico__card fade-up">
+        <span class="servico__num">10</span>
+        <h3>Averbação de Serviço Militar</h3>
+        <p>Serviu às Forças Armadas? Esse tempo pode ser aproveitado na sua aposentadoria civil. O serviço militar obrigatório pode ser averbado no RGPS — e muita gente ainda não sabe disso. Avaliamos e conduzimos o processo completo.</p>
+        <a href="https://wa.me/5521964238080?text=Quero+averbar+tempo+de+servi%C3%A7o+militar." class="btn btn-secondary" target="_blank" rel="noopener">Consultar →</a>
+      </article>
+
+      <article class="glass-card card-accent-line servico__card fade-up">
+        <span class="servico__num">11</span>
+        <h3>Revisão de Aposentadoria Concedida</h3>
+        <p>Sua aposentadoria foi aprovada — mas o valor está correto? Analisamos os índices de cálculo, períodos computados e possíveis erros do INSS. Uma revisão pode aumentar seu benefício com efeito retroativo, recuperando o que você deveria ter recebido desde o início.</p>
+        <a href="https://wa.me/5521964238080?text=Quero+revisar+o+valor+da+minha+aposentadoria." class="btn btn-secondary" target="_blank" rel="noopener">Consultar →</a>
+      </article>
+
+      <article class="glass-card card-accent-line servico__card fade-up">
+        <span class="servico__num">12</span>
+        <h3>Revisão de Auxílio-Doença Encerrado</h3>
+        <p>Seu auxílio-doença foi cortado antes do tempo — e você ainda não está recuperado? Isso é mais comum do que parece. Analisamos o histórico médico, montamos a documentação para recurso e acompanhamos a nova perícia quando necessário.</p>
+        <a href="https://wa.me/5521964238080?text=Meu+aux%C3%ADlio-doen%C3%A7a+foi+encerrado+indevidamente." class="btn btn-secondary" target="_blank" rel="noopener">Consultar →</a>
+      </article>
+
+      <article class="glass-card card-accent-line servico__card fade-up">
+        <span class="servico__num">13</span>
+        <h3>Monitoramento MOB</h3>
+        <p>O INSS pode bloquear seu benefício sem aviso — por erro de dados, suspeita de fraude ou cruzamento incorreto de informações. Fazemos o monitoramento preventivo e atuamos rapidamente quando qualquer bloqueio indevido acontece.</p>
+        <a href="https://wa.me/5521964238080?text=Quero+monitoramento+do+meu+benef%C3%ADcio." class="btn btn-secondary" target="_blank" rel="noopener">Consultar →</a>
+      </article>
+
+      <article class="glass-card card-accent-line servico__card fade-up">
+        <span class="servico__num">14</span>
+        <h3>Pareceres Jurídicos Previdenciários</h3>
+        <p>Precisa de uma análise técnica fundamentada para embasar um pedido administrativo, recurso ou processo judicial? Elaboramos pareceres com base em legislação atualizada e jurisprudência dos tribunais — para que seu caso seja apresentado com solidez.</p>
+        <a href="https://wa.me/5521964238080?text=Preciso+de+um+parecer+jur%C3%ADdico+previdenci%C3%A1rio." class="btn btn-secondary" target="_blank" rel="noopener">Consultar →</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══ CTA FINAL ═══ -->
+<section class="cta-final section" aria-label="Contato">
+  <div class="container">
+    <div class="cta-final__box glass-card--accent fade-up">
+      <h2>Não sabe qual serviço precisa?</h2>
+      <p>Me conta sua situação. Analiso gratuitamente e digo o caminho certo — sem enrolação, sem compromisso.</p>
+      <a href="https://wa.me/5521964238080?text=Ol%C3%A1+Carlos%2C+preciso+de+ajuda+com+minha+situa%C3%A7%C3%A3o+previdenci%C3%A1ria.+Pode+me+orientar%3F" class="btn btn-whatsapp" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Falar com Carlos Costa
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RODAPÉ ═══ -->
+<footer class="rodape" role="contentinfo">
+  <div class="container">
+    <div class="rodape__grid">
+      <div class="rodape__col">
+        <div class="rodape__logo">Carlos<span>Costa</span>Prev</div>
+        <p>Especialista em Previdência Social.<br>Irajá, Rio de Janeiro.<br>Atendimento online para todo o Brasil.</p>
+        <div class="social-links" aria-label="Redes sociais">
+          <a href="https://www.instagram.com/carloscostaprev" target="_blank" rel="noopener" aria-label="Instagram @carloscostaprev">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/carloscostaprev" target="_blank" rel="noopener" aria-label="Facebook Carlos Costa Prev">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://g.page/r/CcJNe240Go7AEBM/review" target="_blank" rel="noopener" aria-label="Avaliar no Google">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <nav class="rodape__col" aria-label="Links do rodapé">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="beneficios.html">Benefícios</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </nav>
+      <address class="rodape__col" aria-label="Contato e endereço">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/5521964238080" target="_blank" rel="noopener">📱 WhatsApp: (21) 96423-8080</a></li>
+        </ul>
+        <h4 style="margin-top: 1rem;">Endereço</h4>
+        <p>
+          Praça Nossa Sra. da Apresentação, 223 — Sala 206<br>
+          Irajá · Rio de Janeiro · RJ<br>
+          CEP 21231-230<br>
+          <em style="color: var(--accent); font-style: normal; font-size: var(--text-xs);">+ Atendimento online para todo o Brasil</em>
+        </p>
+      </address>
+    </div>
+    <div class="rodape__bottom">
+      <p>© 2026 CarlosCostaPrev — Especialista em Previdência Social. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/animations.js"></script>
+<script>
+// Accordion etapas
+(function() {
+  var cards = document.querySelectorAll('.etapa-card');
+  var arrowActive = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>';
+  var arrowInactive = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+  cards.forEach(function(card) {
+    card.addEventListener('click', function() {
+      var isActive = card.classList.contains('active');
+      cards.forEach(function(c) {
+        c.classList.remove('active');
+        c.setAttribute('aria-expanded', 'false');
+        var arr = c.querySelector('.etapa-card__arrow');
+        if (arr) arr.innerHTML = arrowInactive;
+      });
+      if (!isActive) {
+        card.classList.add('active');
+        card.setAttribute('aria-expanded', 'true');
+        var arr = card.querySelector('.etapa-card__arrow');
+        if (arr) arr.innerHTML = arrowActive;
+        card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  });
+})();
+</script>
+
+<a href="https://wa.me/5521964238080?text=Ol%C3%A1%2C+gostaria+de+uma+an%C3%A1lise+gratuita." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<div class="mobile-cta-bar">
+  <a href="https://wa.me/5521964238080?text=Ol%C3%A1%2C+vi+os+servi%C3%A7os+e+quero+uma+an%C3%A1lise+gratuita." class="mcta-wpp" target="_blank" rel="noopener">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Análise Gratuita
+  </a>
+</div>
+
+<!-- ═══════════════════════════ SCHEMA MARKUP ═══════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://carloscostaprev.com.br/servicos.html#servicos",
+      "name": "Serviços Previdenciários — CarlosCostaPrev",
+      "description": "Planejamento previdenciário 360°, análise de CNIS, revisão de benefícios negados e representação no INSS. Atendimento presencial em Irajá/RJ e online para todo o Brasil.",
+      "provider": {
+        "@type": "Person",
+        "@id": "https://carloscostaprev.com.br/#carloscosta",
+        "name": "Carlos Costa",
+        "jobTitle": "Especialista em Previdência Social",
+        "url": "https://carloscostaprev.com.br"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Brasil"
+      },
+      "url": "https://carloscostaprev.com.br/servicos.html",
+      "serviceType": [
+        "Planejamento Previdenciário",
+        "Análise de CNIS",
+        "Revisão de Benefício Negado",
+        "Representação no INSS",
+        "Aposentadoria por Tempo de Contribuição",
+        "Aposentadoria por Idade"
+      ],
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://wa.me/5521964238080",
+        "servicePhone": "+5521964238080",
+        "availableLanguage": "Portuguese"
+      }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://carloscostaprev.com.br/#organization",
+      "name": "CarlosCostaPrev",
+      "url": "https://carloscostaprev.com.br",
+      "telephone": "+5521964238080",
+      "sameAs": [
+        "https://www.instagram.com/carloscostaprev",
+        "https://www.facebook.com/carloscostaprev",
+        "https://g.page/r/CcJNe240Go7AEBM"
+      ]
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
