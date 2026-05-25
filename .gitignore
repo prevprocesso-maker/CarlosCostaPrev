@@ -7,3 +7,16 @@ node_modules/
 # OS
 .DS_Store
 Thumbs.db
+
+# Wrangler cache
+.wrangler/
+
+# Claude config
+.claude/
+
+# Netlify config
+.netlify/
+
+# Scripts com chaves
+scripts/GeradorPost.bat
+scripts/log.txt

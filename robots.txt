@@ -2,3 +2,9 @@ User-agent: *
 Allow: /
 
 Sitemap: https://carloscostaprev.com.br/sitemap.xml
+
+Disallow: /scripts/
+Disallow: /.wrangler/
+Disallow: /.claude/
+Disallow: /.netlify/
+Disallow: /.github/

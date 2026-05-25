@@ -331,6 +331,17 @@ Se o INSS negar seu benefício, não desanime. Existe o direito ao recurso admin
 Conhecer seus direitos previdenciários é o primeiro passo para garanti-los. Se você tiver dúvidas sobre este tema, entre em contato — ofereço análise gratuita do seu caso.`;
 }
 
+// ── Escape de HTML para prevenir XSS em conteúdo gerado ─────────────────────
+function escapeHtml(str) {
+  if (!str) return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 // ── Gerar HTML do artigo ─────────────────────────────────────────────────────
 function gerarHtmlArtigo(tema, conteudo, imgPath) {
   const data = slugParaData();
@@ -345,8 +356,8 @@ function gerarHtmlArtigo(tema, conteudo, imgPath) {
   sections.forEach(section => {
     const lines = section.split('\n').filter(l => l.trim());
     if (lines.length === 0) return;
-    const titulo = lines[0].replace(/^##\s*/, '').trim();
-    const paras  = lines.slice(1).filter(l => l.trim()).map(l => `<p>${l.trim()}</p>`).join('\n          ');
+    const titulo = escapeHtml(lines[0].replace(/^##\s*/, '').trim());
+    const paras  = lines.slice(1).filter(l => l.trim()).map(l => `<p>${escapeHtml(l.trim())}</p>`).join('\n          ');
     htmlSections += `
         <h2>${titulo}</h2>
         ${paras}`;
