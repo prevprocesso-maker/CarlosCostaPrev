@@ -58,7 +58,7 @@
       Carlos<span>Costa</span>Prev
     </a>
     <ul class="navbar__links" id="nav-links" role="list">
-      <li><a href="/">Início</a></li>
+      <li><a href="/" aria-current="page">Início</a></li>
       <li><a href="beneficios.html">Benefícios</a></li>
       <li><a href="servicos.html">Serviços</a></li>
       <li><a href="bpc-loas.html">BPC/LOAS ↗</a></li>
@@ -237,39 +237,31 @@
         o INSS sozinhas. Cada caso que chega até mim é tratado com a seriedade que merece.
       </p>
       <div class="historia__valores fade-up">
-        <p class="section-label" style="margin-bottom: 0.75rem;">Missão e Valores</p>
-        <div class="valores__grid">
-          <div class="chip">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v1.5M12 4.5l-5 10M12 4.5l5 10M5.5 14.5h13"/></svg>
-            Ética
+        <p class="section-label" style="margin-bottom: 1.25rem;">MISSÃO · VISÃO · VALORES</p>
+        <div class="mvv__grid">
+          <div class="mvv__card mvv__card--missao">
+            <div class="mvv__glow"></div>
+            <div class="mvv__icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <h3 class="mvv__title">Missão</h3>
+            <p class="mvv__desc">Garantir que cada pessoa receba o benefício que construiu — com análise técnica e dedicação total.</p>
           </div>
-          <div class="chip">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 20h5v-1a4 4 0 00-5.5-3.7M9 20H4v-1a4 4 0 015.5-3.7M12 12a4 4 0 100-8 4 4 0 000 8z"/></svg>
-            Clientes em 1º lugar
+          <div class="mvv__card mvv__card--visao">
+            <div class="mvv__glow"></div>
+            <div class="mvv__icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h3 class="mvv__title">Visão</h3>
+            <p class="mvv__desc">Ser referência em advocacia previdenciária no Rio de Janeiro, conhecido pela excelência e pelos resultados.</p>
           </div>
-          <div class="chip">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
-            Resultado
-          </div>
-          <div class="chip">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            Excelência técnica
-          </div>
-          <div class="chip">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-            Confiança
-          </div>
-          <div class="chip">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21c-4-4-7-7.5-7-11a7 7 0 1114 0c0 3.5-3 7-7 11z"/></svg>
-            Responsabilidade
-          </div>
-          <div class="chip">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            Agilidade
-          </div>
-          <div class="chip">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-            Transparência
+          <div class="mvv__card mvv__card--valores">
+            <div class="mvv__glow"></div>
+            <div class="mvv__icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            </div>
+            <h3 class="mvv__title">Valores</h3>
+            <p class="mvv__desc">Ética · Confiança · Transparência · Agilidade · Responsabilidade · Clientes em 1º lugar.</p>
           </div>
         </div>
       </div>
@@ -580,22 +572,25 @@
           <li><a href="https://wa.me/5521964238080" target="_blank" rel="noopener">📱 WhatsApp: (21) 96423-8080</a></li>
         </ul>
         <div class="social-links" aria-label="Redes sociais">
-          <!-- Instagram -->
-          <a href="https://www.instagram.com/carloscostaprev" target="_blank" rel="noopener" aria-label="Instagram @carloscostaprev">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          <a href="https://www.instagram.com/carloscostaprev" target="_blank" rel="noopener noreferrer" aria-label="Instagram @carloscostaprev" class="social-link" title="Instagram — @carloscostaprev">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            <span>carloscostaprev</span>
           </a>
-          <!-- Facebook -->
-          <a href="https://www.facebook.com/carloscostaprev" target="_blank" rel="noopener" aria-label="Facebook Carlos Costa Prev">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <a href="https://www.instagram.com/portaldobpc" target="_blank" rel="noopener noreferrer" aria-label="Instagram @portaldobpc" class="social-link" title="Instagram — @portaldobpc">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            <span>portaldobpc</span>
           </a>
-          <!-- Google My Business → avaliação direta -->
-          <a href="https://g.page/r/CcJNe240Go7AEBM/review" target="_blank" rel="noopener" aria-label="Avaliar no Google" title="Deixar avaliação no Google">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-            </svg>
+          <a href="https://www.facebook.com/carlosrogeriocosta" target="_blank" rel="noopener noreferrer" aria-label="Facebook carlosrogeriocosta" class="social-link" title="Facebook — carlosrogeriocosta">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            <span>carlosrogeriocosta</span>
+          </a>
+          <a href="https://www.facebook.com/portaldobpc" target="_blank" rel="noopener noreferrer" aria-label="Facebook portaldobpc" class="social-link" title="Facebook — portaldobpc">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            <span>portaldobpc</span>
+          </a>
+          <a href="https://g.page/r/CcJNe240Go7AEBM/review" target="_blank" rel="noopener noreferrer" aria-label="Avaliar no Google" class="social-link" title="Avaliar no Google">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/><path d="M8 12h8"/></svg>
+            <span>Google</span>
           </a>
         </div>
         <h4 style="margin-top: 1rem;">Endereço</h4>

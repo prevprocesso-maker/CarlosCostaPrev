@@ -94,3 +94,17 @@ if (hamburger && navLinks) {
     });
   }, { passive: true });
 })();
+
+// ── Marcador aba ativa via URL ────────────────────────────────────────────
+(function() {
+  var links = document.querySelectorAll('.navbar__links a');
+  var path = window.location.pathname;
+  links.forEach(function(a) {
+    var href = a.getAttribute('href');
+    if (!href) return;
+    if (href === '/' && (path === '/' || path === '/index.html')) return; // já tem aria-current
+    if (href !== '/' && path.includes(href.replace('.html',''))) {
+      a.setAttribute('aria-current', 'page');
+    }
+  });
+})();

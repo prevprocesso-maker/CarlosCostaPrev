@@ -175,8 +175,29 @@
 
 /* ══════════════ NAV ATIVO ══════════════ */
 .navbar__links a[aria-current="page"],
-.navbar__links a.active {
+.navbar__links a.active,
+.navbar__links a.nav-active {
   color: var(--accent);
+}
+
+/* ── Navbar: marcador aba ativa ─────────────────────────────────────────── */
+.navbar__links a[aria-current="page"],
+.navbar__links a.nav-active {
+  color: var(--accent);
+  position: relative;
+}
+.navbar__links a[aria-current="page"]::after,
+.navbar__links a.nav-active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 99px;
+  box-shadow: 0 0 8px rgba(196,103,58,0.7), 0 0 16px rgba(196,103,58,0.3);
 }
 
 /* ══════════════ DROPDOWN FERRAMENTAS ══════════════ */
@@ -1049,4 +1070,98 @@
   font-size: 12px;
   color: var(--text-muted);
   margin: 0;
+}
+
+/* ── MVV: Missão · Visão · Valores ─────────────────────────────────────── */
+.mvv__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.mvv__card {
+  position: relative;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(196,103,58,0.15);
+  border-radius: 20px;
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.mvv__card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(196,103,58,0.4);
+}
+.mvv__glow {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 60px;
+  background: radial-gradient(ellipse, rgba(196,103,58,0.35) 0%, transparent 70%);
+  pointer-events: none;
+}
+.mvv__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background: rgba(196,103,58,0.1);
+  border: 1px solid rgba(196,103,58,0.25);
+  border-radius: 14px;
+  margin: 0 auto 1rem;
+  color: var(--accent);
+}
+.mvv__title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 0.6rem;
+  letter-spacing: 0.02em;
+}
+.mvv__desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+@media (max-width: 640px) {
+  .mvv__grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+/* ── Social links rodapé ────────────────────────────────────────────────── */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 1rem;
+}
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
+}
+.social-link:hover {
+  color: var(--accent);
+  background: rgba(196,103,58,0.08);
+  border-color: rgba(196,103,58,0.2);
+}
+.social-link svg {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+.social-link:hover svg {
+  opacity: 1;
 }
