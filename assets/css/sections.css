@@ -882,10 +882,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
-  border-radius: var(--radius-xl);
+  border-radius: 32px;
   overflow: hidden;
   min-height: 380px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  box-shadow: 0 24px 72px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.06);
 }
 .avaliacao-google__mapa {
   position: relative;
@@ -979,7 +979,7 @@
   flex-shrink: 0;
 }
 .avaliacao-google__qr img {
-  border-radius: 10px;
+  border-radius: 16px;
   display: block;
 }
 .avaliacao-google__qr-label {
