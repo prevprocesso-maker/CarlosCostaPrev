@@ -897,148 +897,184 @@
   .formulario__row { grid-template-columns: 1fr; }
 }
 
-/* ══════════════ AVALIAÇÃO GOOGLE ══════════════ */
-.avaliacao-google__grid {
+/* ════════════════════════════════════════════════════════════
+   FOOTER TOP — Mapa + Card de Avaliação (lado a lado)
+   ════════════════════════════════════════════════════════════ */
+.footer-top {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
-  gap: 0;
+  gap: 24px;
+  margin-bottom: 56px;
+  align-items: stretch;
+}
+
+/* ---- MAPA (esquerda) ---- */
+.footer-map {
   border-radius: 20px;
   overflow: hidden;
-  min-height: 260px;
-  box-shadow: 0 16px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  min-height: 320px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
 }
-.avaliacao-google__mapa {
+.footer-map iframe { width: 100%; height: 100%; min-height: 320px; }
+
+/* ---- CARD DE AVALIAÇÃO (direita) ---- */
+.review-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: center;
+  margin: 0;
+  padding: 28px 32px;
+  background:
+    radial-gradient(circle at 90% 0%, rgba(196, 103, 58, 0.18) 0%, transparent 55%),
+    linear-gradient(135deg, rgba(196, 103, 58, 0.06) 0%, rgba(20, 16, 12, 0.4) 100%);
+  border: 1px solid rgba(196, 103, 58, 0.18);
+  border-radius: 20px;
+  text-decoration: none;
+  color: inherit;
   position: relative;
-  min-height: 220px;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 380ms cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 380ms ease,
+              box-shadow 380ms ease;
 }
-.avaliacao-google__mapa iframe {
-  width: 100%;
-  height: 100%;
-  display: block;
-  filter: grayscale(20%) contrast(1.05);
+.review-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 90% 0%, rgba(245, 200, 69, 0.12) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 380ms ease;
+  pointer-events: none;
+  z-index: -1;
 }
-.avaliacao-google__card {
-  background: rgba(26,18,9,0.92);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  padding: clamp(var(--gap-lg), 3vw, 36px);
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-md);
+.review-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(245, 200, 69, 0.5);
+  box-shadow: 0 24px 60px rgba(196, 103, 58, 0.20), 0 6px 20px rgba(0, 0, 0, 0.25);
 }
-.avaliacao-google__card .avaliacao-google__stars {
-  display: flex;
+.review-card:hover::before { opacity: 1; }
+
+/* Estrelas */
+.review-card-stars {
+  display: inline-flex;
   gap: 4px;
+  font-size: 18px;
+  color: #f5c845;
+  text-shadow: 0 0 12px rgba(245, 200, 69, 0.4);
+  margin-bottom: 14px;
+  line-height: 1;
 }
-.avaliacao-google__card .avaliacao-google__stars svg {
-  width: 17px; height: 17px;
-}
-.avaliacao-google__body {
-  display: flex;
-  gap: var(--gap-lg);
-  align-items: flex-start;
-  flex: 1;
-}
-.avaliacao-google__text {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-md);
-}
-.avaliacao-google__label {
+
+/* Kicker */
+.review-card-kicker {
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--text-muted);
-  margin: 0;
+  color: rgba(245, 237, 224, 0.65);
+  margin-bottom: 8px;
 }
-.avaliacao-google__text h2 {
-  font-size: clamp(1.1rem, 2.2vw, 1.45rem);
-  font-weight: 800;
-  line-height: 1.25;
-  color: var(--text-primary);
-  margin: 0;
+
+/* Título */
+.review-card-title {
+  font-size: clamp(22px, 2.6vw, 28px);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  color: #f5ede0;
+  margin: 0 0 8px;
 }
-.avaliacao-google__text h2 em {
+.review-card-title em {
   font-style: italic;
-  color: var(--accent);
+  color: #e89564;
 }
-.avaliacao-google__text p {
-  color: var(--text-muted);
-  font-size: var(--text-sm);
-  line-height: 1.65;
-  margin: 0;
+
+/* Subtítulo */
+.review-card-sub {
+  font-size: 14px;
+  color: rgba(245, 237, 224, 0.65);
+  line-height: 1.5;
+  margin: 0 0 20px;
+  max-width: 480px;
 }
-.btn-avaliar {
+
+/* Botão CTA */
+.review-card-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: var(--accent);
+  gap: 10px;
+  padding: 12px 22px;
+  background: #c4673a;
   color: #fff;
+  border-radius: 999px;
   font-weight: 700;
-  font-size: var(--text-sm);
-  padding: 13px 24px;
-  border-radius: var(--radius-md);
-  text-decoration: none;
-  align-self: flex-start;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 16px rgba(196,103,58,0.35);
+  font-size: 14px;
+  letter-spacing: -0.005em;
+  transition: gap 220ms ease, background 220ms ease;
+  box-shadow: 0 6px 18px rgba(196, 103, 58, 0.32);
 }
-.btn-avaliar:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(196,103,58,0.5);
-  opacity: 1;
+.review-card:hover .review-card-btn {
+  gap: 14px;
+  background: #d97f4f;
 }
-.avaliacao-google__qr {
+
+/* ---- QR CODE ---- */
+.review-card-qr {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   flex-shrink: 0;
 }
-.avaliacao-google__qr img {
-  border-radius: 16px;
+.review-card-qr-frame {
+  padding: 12px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(245, 200, 69, 0.2);
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.review-card:hover .review-card-qr-frame {
+  transform: scale(1.04) rotate(-1deg);
+}
+.review-card-qr-frame img {
   display: block;
+  width: 120px;
+  height: 120px;
 }
-.avaliacao-google__qr-label {
-  display: flex;
+.review-card-qr-cap {
+  display: inline-flex;
   align-items: center;
-  gap: 5px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: rgba(245, 237, 224, 0.7);
 }
+.review-card-qr-cap-icon {
+  display: inline-flex;
+  color: #e89564;
+}
+
+/* ---- RESPONSIVO ---- */
 @media (max-width: 900px) {
-  .avaliacao-google__grid {
-    grid-template-columns: 1fr;
-  }
-  .avaliacao-google__mapa {
-    min-height: 200px;
-  }
-  .avaliacao-google__card {
-    border-radius: 0 0 20px 20px;
-  }
+  .footer-top { grid-template-columns: 1fr; gap: 20px; }
+  .footer-map { min-height: 260px; }
+  .footer-map iframe { min-height: 260px; }
 }
-@media (max-width: 600px) {
-  .avaliacao-google__body {
-    flex-direction: column;
+@media (max-width: 720px) {
+  .review-card {
+    grid-template-columns: 1fr;
+    padding: 24px 22px;
+    gap: 24px;
+    text-align: left;
   }
-  .avaliacao-google__qr {
-    flex-direction: row;
-    align-items: center;
-  }
-  .avaliacao-google__qr img {
-    width: 90px;
-    height: 90px;
-  }
-  .btn-avaliar {
-    width: 100%;
-    justify-content: center;
-  }
+  .review-card-qr { align-self: center; }
+  .review-card-btn { width: 100%; justify-content: center; }
 }
 
 /* ── Footer marca irmã ──────────────────────────────────────────────────── */
