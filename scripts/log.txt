@@ -42,3 +42,20 @@
 ═══════════════════════════════════════════
 [24/05/2026, 19:01:21] WhatsApp: backend retornou 401 (backend pode estar offline)
 [24/05/2026, 19:01:21] === Post #5 publicado: Aposentadoria por Invalidez: Requisitos e Diferenças para Auxílio-Doença ===
+[26/05/2026, 08:00:01] === Iniciando gerador de post ===
+ERRO FATAL: Error: EBUSY: resource busy or locked, open 'C:\Users\NIKE\carloscostaprev-site\scripts\log.txt'
+    at Object.writeFileSync (node:fs:2413:20)
+    at Object.appendFileSync (node:fs:2495:6)
+    at log (C:\Users\NIKE\carloscostaprev-site\scripts\gerar-post.js:89:6)
+    at main (C:\Users\NIKE\carloscostaprev-site\scripts\gerar-post.js:525:3)
+    at Object.<anonymous> (C:\Users\NIKE\carloscostaprev-site\scripts\gerar-post.js:567:1)
+    at Module._compile (node:internal/modules/cjs/loader:1812:14)
+    at Object..js (node:internal/modules/cjs/loader:1943:10)
+    at Module.load (node:internal/modules/cjs/loader:1533:32)
+    at Module._load (node:internal/modules/cjs/loader:1335:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19) {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\NIKE\\carloscostaprev-site\\scripts\\log.txt'
+}

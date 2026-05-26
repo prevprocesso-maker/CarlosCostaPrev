@@ -722,120 +722,211 @@
 .cta-final__box p  { color: var(--text-muted); max-width: 480px; }
 
 /* ══════════════ RODAPÉ ══════════════ */
+/* ═══════════════════════════════════════════════════════════
+   RODAPÉ — redesign
+═══════════════════════════════════════════════════════════ */
 .rodape {
-  background: linear-gradient(180deg, var(--bg-deep) 0%, #050302 100%);
-  border-top: 1px solid var(--glass-border);
-  padding: clamp(48px, 7vw, 80px) 0 0;
+  position: relative;
+  background: linear-gradient(180deg, var(--bg-deep) 0%, #020100 100%);
+  padding: clamp(56px, 7vw, 88px) 0 0;
+  overflow: hidden;
 }
+
+/* Linha gradiente terracota no topo */
+.rodape::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(196,103,58,0.55) 20%,
+    rgba(196,103,58,0.55) 80%,
+    transparent 100%);
+}
+
+/* Grid 3 colunas (home) — col 1 = marca, col 2 = nav, col 3 = contato+endereço */
 .rodape__grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: clamp(24px, 4vw, 56px);
-  margin-bottom: var(--gap-xl);
+  grid-template-columns: 1fr 1fr 1.35fr;
+  gap: clamp(28px, 4vw, 56px);
+  margin-bottom: clamp(40px, 6vw, 64px);
+  align-items: start;
 }
+
+/* Grid 4 colunas (páginas internas) — col 2 = mapa+review */
+.rodape__grid--4col {
+  grid-template-columns: 1fr 1.35fr 1fr 1.2fr;
+  gap: clamp(20px, 3vw, 40px);
+  align-items: start;
+}
+
+/* ── Marca ── */
 .rodape__logo {
-  font-size: var(--text-xl);
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
   font-weight: 900;
+  letter-spacing: -0.025em;
   color: var(--text-primary);
-  margin-bottom: var(--gap-sm);
+  margin-bottom: 10px;
+  line-height: 1.1;
 }
 .rodape__logo span { color: var(--accent); }
-.rodape__col p, .rodape__col a {
-  font-size: var(--text-sm);
+
+/* ── Texto e links ── */
+.rodape__col p {
+  font-size: 0.83rem;
   color: var(--text-faint);
   line-height: 1.8;
-  display: block;
-  transition: color 0.2s;
+  margin-bottom: 0;
 }
-.rodape__col a:hover { color: var(--accent); }
+.rodape__col a {
+  font-size: 0.83rem;
+  color: var(--text-faint);
+  line-height: 2;
+  display: block;
+  transition: color 0.18s, transform 0.18s;
+}
+.rodape__col a:hover {
+  color: var(--accent);
+  transform: translateX(4px);
+}
 
-/* Link portal irmão */
+/* ── Headings das colunas ── */
+.rodape__col h4 {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.88;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(196,103,58,0.22);
+  font-style: normal;
+}
+
+/* Segundo h4 dentro de address (Endereço) */
+.rodape__col address h4 {
+  margin-top: 22px;
+}
+
+/* ── Lista de navegação ── */
+.rodape__col ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0;
+}
+
+/* ── Portal irmão ── */
 .rodape__portal-irma {
-  margin-top: 14px;
+  margin-top: 16px;
   padding-top: 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-top: 1px solid rgba(255,255,255,0.07);
   display: flex !important;
   flex-direction: column;
   gap: 4px;
 }
 .rodape__portal-label {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent);
-  opacity: 0.85;
+  opacity: 0.8;
 }
 .rodape__portal-irma a {
   display: inline-flex !important;
   align-items: center;
-  gap: 5px;
-  font-size: 13px;
-  font-weight: 600;
+  gap: 4px;
+  font-size: 12.5px;
+  font-weight: 500;
   color: var(--text-faint);
-  transition: color 0.2s;
+  transition: color 0.18s;
+  transform: none !important;
 }
-.rodape__portal-irma a:hover { color: var(--accent); }
-/* ── Footer com mapa embutido — 4 colunas (páginas internas) ── */
-.rodape__grid--4col {
-  grid-template-columns: 1fr 1.6fr 1fr 1fr;
-  gap: 28px;
-  align-items: start;
+.rodape__portal-irma a:hover {
+  color: var(--accent);
+  transform: none !important;
 }
 
+/* ── Mapa compacto (colunas 4-col) ── */
 .rodape__map-block {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-
 .rodape__map-block .footer-map {
-  min-height: 170px;
+  min-height: 172px;
   border-radius: 12px;
   margin-bottom: 0;
 }
-
 .rodape__map-block .review-card {
   grid-template-columns: 1fr;
   padding: 16px 18px;
   gap: 0;
   border-radius: 12px;
 }
-
-.rodape__map-block .review-card-qr {
-  display: none;
-}
-
-.rodape__map-block .review-card-stars span {
-  font-size: 13px;
-}
-
+.rodape__map-block .review-card-qr { display: none; }
+.rodape__map-block .review-card-stars span { font-size: 13px; }
 .rodape__map-block .review-card-kicker {
   font-size: 9px;
   letter-spacing: 0.12em;
   margin-bottom: 6px;
 }
-
 .rodape__map-block .review-card-title {
-  font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+  font-size: clamp(0.78rem, 1.1vw, 0.88rem);
   margin-bottom: 8px;
   line-height: 1.35;
 }
-
 .rodape__map-block .review-card-sub {
-  font-size: 0.72rem;
+  font-size: 0.71rem;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin-bottom: 12px;
 }
-
 .rodape__map-block .review-card-btn {
   padding: 8px 14px;
-  font-size: 0.78rem;
+  font-size: 0.77rem;
 }
 
+/* ── Barra inferior ── */
+.rodape__bottom {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 18px 0 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.rodape__bottom p {
+  font-size: 11px;
+  color: var(--text-faint);
+  opacity: 0.5;
+  text-align: left;
+  margin: 0;
+}
+.rodape__bottom p:last-child { text-align: right; }
+.rodape__bottom a {
+  display: inline !important;
+  font-size: 11px;
+  color: var(--text-faint) !important;
+  opacity: 0.7;
+  transition: color 0.18s, opacity 0.18s !important;
+  transform: none !important;
+}
+.rodape__bottom a:hover {
+  color: var(--accent) !important;
+  opacity: 1;
+  transform: none !important;
+}
+
+/* ── Responsive ── */
 @media (max-width: 1100px) {
   .rodape__grid--4col {
     grid-template-columns: 1fr 1fr;
@@ -844,40 +935,18 @@
   .rodape__map-block {
     grid-column: 1 / -1;
   }
-  .rodape__map-block .footer-map {
-    min-height: 220px;
-  }
-}
-
-@media (max-width: 640px) {
-  .rodape__grid--4col {
-    grid-template-columns: 1fr;
-  }
-  .rodape__map-block {
-    grid-column: auto;
-  }
-}
-
-.rodape__col h4 {
-  font-size: var(--text-xs);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: var(--gap-sm);
-}
-.rodape__col ul { display: flex; flex-direction: column; }
-.rodape__bottom {
-  border-top: 1px solid var(--glass-border);
-  padding: var(--gap-md) 0;
-}
-.rodape__bottom p {
-  font-size: var(--text-xs);
-  color: var(--text-faint);
-  text-align: center;
+  .rodape__map-block .footer-map { min-height: 220px; }
 }
 
 @media (max-width: 768px) {
   .rodape__grid { grid-template-columns: 1fr; }
+  .rodape__bottom { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .rodape__bottom p:last-child { text-align: left; }
+}
+
+@media (max-width: 640px) {
+  .rodape__grid--4col { grid-template-columns: 1fr; }
+  .rodape__map-block { grid-column: auto; }
 }
 
 /* ══════════════ GLOBAL MOBILE SAFETY ══════════════ */
