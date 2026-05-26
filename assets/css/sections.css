@@ -968,20 +968,29 @@
   transform: none !important;
 }
 
-/* ── Responsive 5col ── */
+/* ── Responsive 5col — mantém 5 colunas, só encolhe fontes/espaços ── */
 @media (max-width: 1100px) {
-  .rodape__grid--5col {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  .rodape__map-col {
-    grid-column: 1 / -1;
-    height: 220px;
-  }
-  .rodape__review-col {
-    grid-column: span 1;
-    height: auto;
-    min-height: 180px;
-  }
+  .rodape__grid--5col { gap: clamp(10px, 1.5vw, 18px); }
+  .rodape__map-col { height: 170px; }
+  .rodape__review-col { height: 170px; }
+  .rodape__review-col .review-card-title { font-size: 0.73rem; }
+  .rodape__review-col .review-card-btn { font-size: 0.66rem; padding: 5px 10px; }
+  .rodape__col p, .rodape__col a { font-size: 0.75rem; }
+  .rodape__col h4 { font-size: 9px; }
+}
+
+@media (max-width: 900px) {
+  .rodape__grid--5col { gap: 8px; }
+  .rodape__map-col { height: 150px; }
+  .rodape__review-col { height: 150px; padding: 12px; }
+  .rodape__logo { font-size: 1rem !important; }
+  .rodape__col p, .rodape__col a { font-size: 0.68rem; }
+  .rodape__col h4 { font-size: 8px; margin-bottom: 10px; }
+  .rodape__review-col .review-card-title { font-size: 0.67rem; }
+  .rodape__review-col .review-card-btn { font-size: 0.62rem; padding: 5px 8px; margin-top: 6px; }
+  .rodape__review-col .review-card-kicker { font-size: 7px; }
+  .rodape__portal-label { font-size: 7.5px; }
+  .rodape__portal-irma a { font-size: 10px; }
 }
 
 @media (max-width: 768px) {
@@ -991,9 +1000,9 @@
 }
 
 @media (max-width: 640px) {
-  .rodape__grid--5col { grid-template-columns: 1fr; }
-  .rodape__map-col { grid-column: auto; height: 200px; }
-  .rodape__review-col { height: auto; }
+  .rodape__grid--5col { grid-template-columns: 1fr 1fr; }
+  .rodape__map-col { grid-column: 1 / -1; height: 180px; }
+  .rodape__review-col { grid-column: 1 / -1; height: auto; }
 }
 
 /* ══════════════ GLOBAL MOBILE SAFETY ══════════════ */
