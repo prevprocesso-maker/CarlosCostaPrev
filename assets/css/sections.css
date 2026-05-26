@@ -5,8 +5,10 @@
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  padding: 16px 0;
-  transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+  height: 64px;                          /* altura fixa — nunca muda */
+  display: flex;
+  align-items: center;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 .navbar.scrolled {
   background: rgba(14, 8, 6, 0.92);
@@ -14,7 +16,6 @@
   -webkit-backdrop-filter: var(--glass-blur);
   border-bottom: 1px solid var(--glass-border);
   box-shadow: 0 2px 20px rgba(0,0,0,0.4);
-  padding: 10px 0;
 }
 .navbar__inner {
   display: flex;
@@ -40,9 +41,35 @@
   font-weight: 500;
   position: relative;
   white-space: nowrap;
-  transition: color 0.2s;
+  transition: color 0.2s ease;
+  padding-bottom: 4px;
 }
-.navbar__links a:hover { color: var(--text-primary); }
+
+/* Underline base — invisível por padrão */
+.navbar__links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 20px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 99px;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Hover — underline aparece suave */
+.navbar__links a:hover {
+  color: var(--text-primary);
+}
+.navbar__links a:hover::after {
+  transform: translateX(-50%) scaleX(1);
+  opacity: 0.45;
+}
 .navbar__cta { margin-left: var(--gap-md); flex-shrink: 0; }
 .navbar__hamburger {
   display: none;
@@ -181,20 +208,15 @@
 .navbar__links a.nav-active {
   color: var(--accent);
 }
+
+/* Active — underline terracota fixo e brilhante */
 .navbar__links a[aria-current="page"]::after,
 .navbar__links a.active::after,
 .navbar__links a.nav-active::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20px;
+  transform: translateX(-50%) scaleX(1);
+  opacity: 1;
   height: 3px;
-  background: var(--accent);
-  border-radius: 99px;
   box-shadow: 0 0 8px rgba(196,103,58,0.7), 0 0 16px rgba(196,103,58,0.3);
-  pointer-events: none;
 }
 
 /* ══════════════ DROPDOWN FERRAMENTAS ══════════════ */
