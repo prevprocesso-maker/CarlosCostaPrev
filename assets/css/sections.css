@@ -754,11 +754,10 @@
   align-items: start;
 }
 
-/* Grid 4 colunas (páginas internas) — col 2 = mapa+review */
-.rodape__grid--4col {
-  grid-template-columns: 1fr 1.35fr 1fr 1.2fr;
-  gap: clamp(20px, 3vw, 40px);
-  align-items: start;
+/* Grid 5 colunas (páginas internas) — mapa e avaliação separados */
+.rodape__grid--5col {
+  grid-template-columns: 1.1fr 1.15fr 1.15fr 0.9fr 1fr;
+  gap: clamp(14px, 2vw, 24px);
 }
 
 /* ── Marca ── */
@@ -852,46 +851,89 @@
   transform: none !important;
 }
 
-/* ── Mapa compacto (colunas 4-col) ── */
-.rodape__map-block {
+/* ── Coluna do mapa (5-col) ── */
+.rodape__map-col {
+  height: 200px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.07);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+.rodape__map-col iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+  filter: grayscale(0.2) brightness(0.9);
+}
+
+/* ── Coluna do review card (5-col) ── */
+.rodape__review-col {
+  height: 200px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-}
-.rodape__map-block .footer-map {
-  min-height: 172px;
-  border-radius: 12px;
-  margin-bottom: 0;
-}
-.rodape__map-block .review-card {
-  grid-template-columns: 1fr;
+  justify-content: space-between;
   padding: 16px 18px;
-  gap: 0;
-  border-radius: 12px;
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 90% 0%, rgba(196,103,58,0.2) 0%, transparent 55%),
+    linear-gradient(135deg, rgba(196,103,58,0.08) 0%, rgba(20,16,12,0.5) 100%);
+  border: 1px solid rgba(196,103,58,0.2);
+  text-decoration: none;
+  transition: border-color 0.3s, transform 0.3s;
 }
-.rodape__map-block .review-card-qr { display: none; }
-.rodape__map-block .review-card-stars span { font-size: 13px; }
-.rodape__map-block .review-card-kicker {
-  font-size: 9px;
-  letter-spacing: 0.12em;
+.rodape__review-col:hover {
+  border-color: rgba(245,200,69,0.45);
+  transform: translateY(-2px);
+}
+.rodape__review-col .review-card-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.rodape__review-col .review-card-stars {
+  display: flex;
+  gap: 1px;
+  margin-bottom: 4px;
+}
+.rodape__review-col .review-card-stars span {
+  font-size: 13px;
+  color: #f5c845;
+}
+.rodape__review-col .review-card-kicker {
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245,237,224,0.5);
   margin-bottom: 6px;
 }
-.rodape__map-block .review-card-title {
-  font-size: clamp(0.78rem, 1.1vw, 0.88rem);
-  margin-bottom: 8px;
+.rodape__review-col .review-card-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
   line-height: 1.35;
+  margin: 0;
+  flex: 1;
 }
-.rodape__map-block .review-card-sub {
-  font-size: 0.71rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  margin-bottom: 12px;
+.rodape__review-col .review-card-title em {
+  color: var(--accent);
+  font-style: italic;
 }
-.rodape__map-block .review-card-btn {
-  padding: 8px 14px;
-  font-size: 0.77rem;
+.rodape__review-col .review-card-sub { display: none; }
+.rodape__review-col .review-card-qr  { display: none; }
+.rodape__review-col .review-card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 7px 13px;
+  border-radius: 999px;
+  width: fit-content;
+  margin-top: 10px;
 }
 
 /* ── Barra inferior ── */
@@ -926,16 +968,20 @@
   transform: none !important;
 }
 
-/* ── Responsive ── */
+/* ── Responsive 5col ── */
 @media (max-width: 1100px) {
-  .rodape__grid--4col {
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
+  .rodape__grid--5col {
+    grid-template-columns: 1fr 1fr 1fr;
   }
-  .rodape__map-block {
+  .rodape__map-col {
     grid-column: 1 / -1;
+    height: 220px;
   }
-  .rodape__map-block .footer-map { min-height: 220px; }
+  .rodape__review-col {
+    grid-column: span 1;
+    height: auto;
+    min-height: 180px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -945,8 +991,9 @@
 }
 
 @media (max-width: 640px) {
-  .rodape__grid--4col { grid-template-columns: 1fr; }
-  .rodape__map-block { grid-column: auto; }
+  .rodape__grid--5col { grid-template-columns: 1fr; }
+  .rodape__map-col { grid-column: auto; height: 200px; }
+  .rodape__review-col { height: auto; }
 }
 
 /* ══════════════ GLOBAL MOBILE SAFETY ══════════════ */
