@@ -45,15 +45,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ── Marca link ativo na navbar ──
+  // ── Marca link ativo na navbar — apenas UM por vez ──
   const path = window.location.pathname;
+  const normPath = path.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+
   document.querySelectorAll('.navbar__links a').forEach(link => {
     const href = link.getAttribute('href');
     if (!href) return;
-    const isHome = (href === '/' || href === '/index.html') && (path === '/' || path.endsWith('index.html'));
-    const isActive = !isHome
-      ? path.includes(href.replace('.html', ''))
-      : isHome;
+
+    const normHref = href.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+    let isActive = false;
+
+    if (normHref === '/' || normHref === '') {
+      // Início: só ativo na home exata
+      isActive = path === '/' || path === '/index.html' || normPath === '';
+    } else {
+      // Outras páginas: match exato
+      isActive = normPath === normHref || normPath.endsWith(normHref);
+    }
+
     if (isActive) link.setAttribute('aria-current', 'page');
   });
 
