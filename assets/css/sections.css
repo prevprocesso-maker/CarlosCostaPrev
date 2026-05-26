@@ -751,6 +751,34 @@
   transition: color 0.2s;
 }
 .rodape__col a:hover { color: var(--accent); }
+
+/* Link portal irmão */
+.rodape__portal-irma {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex !important;
+  flex-direction: column;
+  gap: 4px;
+}
+.rodape__portal-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.85;
+}
+.rodape__portal-irma a {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-faint);
+  transition: color 0.2s;
+}
+.rodape__portal-irma a:hover { color: var(--accent); }
 .rodape__col h4 {
   font-size: var(--text-xs);
   letter-spacing: 2px;
