@@ -38,6 +38,8 @@
   font-size: var(--text-sm);
   color: var(--text-muted);
   font-weight: 500;
+  position: relative;
+  white-space: nowrap;
   transition: color 0.2s;
 }
 .navbar__links a:hover { color: var(--text-primary); }
@@ -179,18 +181,12 @@
 .navbar__links a.nav-active {
   color: var(--accent);
 }
-
-/* ── Navbar: marcador aba ativa ─────────────────────────────────────────── */
-.navbar__links a[aria-current="page"],
-.navbar__links a.nav-active {
-  color: var(--accent);
-  position: relative;
-}
 .navbar__links a[aria-current="page"]::after,
+.navbar__links a.active::after,
 .navbar__links a.nav-active::after {
   content: '';
   position: absolute;
-  bottom: -4px;
+  bottom: -6px;
   left: 50%;
   transform: translateX(-50%);
   width: 20px;
@@ -198,6 +194,7 @@
   background: var(--accent);
   border-radius: 99px;
   box-shadow: 0 0 8px rgba(196,103,58,0.7), 0 0 16px rgba(196,103,58,0.3);
+  pointer-events: none;
 }
 
 /* ══════════════ DROPDOWN FERRAMENTAS ══════════════ */
