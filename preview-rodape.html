@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preview Rodapé</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0a0705; font-family: -apple-system, sans-serif; padding: 40px 20px; }
+
+  /* ── RODAPÉ ── */
+  .rodape {
+    position: relative;
+    background: linear-gradient(180deg, #0f0b08 0%, #020100 100%);
+    padding: 48px 0 0;
+    overflow: hidden;
+  }
+  .rodape::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(196,103,58,0.6) 25%, rgba(196,103,58,0.6) 75%, transparent 100%);
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── GRID 5 COLUNAS ── */
+  .rodape__grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1.3fr 1.3fr 0.9fr 1fr;
+    gap: 20px;
+    align-items: start;
+    margin-bottom: 36px;
+  }
+
+  /* ── COL 1: MARCA ── */
+  .rodape__logo {
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    color: #f5ede0;
+    margin-bottom: 10px;
+  }
+  .rodape__logo span { color: #c4673a; }
+  .rodape__col p {
+    font-size: 0.78rem;
+    color: rgba(245,237,224,0.45);
+    line-height: 1.75;
+  }
+  .rodape__col a {
+    font-size: 0.78rem;
+    color: rgba(245,237,224,0.45);
+    line-height: 2;
+    display: block;
+    text-decoration: none;
+    transition: color 0.18s;
+  }
+  .rodape__col a:hover { color: #c4673a; }
+
+  .rodape__portal-irma {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .rodape__portal-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #c4673a;
+    opacity: 0.8;
+  }
+  .rodape__portal-irma a {
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* ── COL 2: MAPA ── */
+  .rodape__map-col {
+    border-radius: 14px;
+    overflow: hidden;
+    height: 200px;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    background: #1a1410;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .map-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1410 0%, #0f0b08 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .map-pin {
+    width: 32px; height: 32px;
+    background: #c4673a;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    box-shadow: 0 4px 12px rgba(196,103,58,0.5);
+  }
+  .map-label {
+    font-size: 11px;
+    color: rgba(245,237,224,0.5);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── COL 3: CARD AVALIAÇÃO ── */
+  .review-card-mini {
+    height: 200px;
+    border-radius: 14px;
+    background:
+      radial-gradient(circle at 90% 0%, rgba(196,103,58,0.2) 0%, transparent 55%),
+      linear-gradient(135deg, rgba(196,103,58,0.08) 0%, rgba(20,16,12,0.5) 100%);
+    border: 1px solid rgba(196,103,58,0.2);
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .review-card-mini:hover {
+    border-color: rgba(245,200,69,0.5);
+    transform: translateY(-2px);
+  }
+  .review-stars {
+    color: #f5c845;
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+  .review-kicker {
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(245,237,224,0.5);
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+  .review-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #f5ede0;
+    line-height: 1.35;
+    flex: 1;
+  }
+  .review-title em {
+    color: #c4673a;
+    font-style: italic;
+  }
+  .review-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #c4673a;
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 7px 12px;
+    border-radius: 999px;
+    text-decoration: none;
+    width: fit-content;
+    margin-top: 8px;
+  }
+
+  /* ── COL 4: NAVEGAÇÃO ── */
+  .rodape__col h4 {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c4673a;
+    opacity: 0.88;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(196,103,58,0.22);
+  }
+  .rodape__col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* ── COL 5: CONTATO ── */
+  .rodape__col address { font-style: normal; }
+  .rodape__col address h4:not(:first-child) { margin-top: 18px; }
+  .wa-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.78rem;
+    color: rgba(245,237,224,0.45);
+    text-decoration: none;
+  }
+
+  /* ── SOCIAL ── */
+  .footer-social {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .social-btn-mini {
+    width: 32px; height: 32px;
+    border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.04);
+    text-decoration: none;
+  }
+  .social-btn-mini svg { fill: rgba(245,237,224,0.5); }
+
+  /* ── BOTTOM BAR ── */
+  .rodape__bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 16px 0 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .rodape__bottom p {
+    font-size: 10.5px;
+    color: rgba(245,237,224,0.3);
+  }
+  .rodape__bottom a {
+    font-size: 10.5px;
+    color: rgba(245,237,224,0.3);
+    text-decoration: none;
+  }
+  .rodape__bottom a:hover { color: #c4673a; }
+</style>
+</head>
+<body>
+<footer class="rodape">
+  <div class="container">
+    <div class="rodape__grid">
+
+      <!-- COL 1: Marca -->
+      <div class="rodape__col">
+        <div class="rodape__logo">Carlos<span>Costa</span>Prev</div>
+        <p>Especialista em Previdência Social.<br>Irajá, Rio de Janeiro — desde 2014.</p>
+        <div class="rodape__portal-irma">
+          <span class="rodape__portal-label">Precisa de BPC/LOAS?</span>
+          <a href="#">portaldobpc.com.br ↗</a>
+        </div>
+      </div>
+
+      <!-- COL 2: Mapa (simulado) -->
+      <div class="rodape__map-col">
+        <div class="map-placeholder">
+          <div class="map-pin"></div>
+          <span class="map-label">Irajá, Rio de Janeiro</span>
+        </div>
+      </div>
+
+      <!-- COL 3: Card Avaliação -->
+      <a href="#" class="review-card-mini">
+        <div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-kicker">Uma avaliação sua salva outra família</div>
+          <div class="review-title">
+            Conseguiu seu benefício?
+            <em> Conta pra quem ainda está perdido.</em>
+          </div>
+        </div>
+        <span class="review-btn">
+          Avaliar no Google
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </span>
+      </a>
+
+      <!-- COL 4: Navegação -->
+      <nav class="rodape__col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#">Início</a></li>
+          <li><a href="#">Benefícios</a></li>
+          <li><a href="#">Serviços</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </nav>
+
+      <!-- COL 5: Contato -->
+      <address class="rodape__col">
+        <h4>Contato</h4>
+        <a href="#" class="wa-link">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          WhatsApp: (21) 96423-8080
+        </a>
+        <div class="footer-social">
+          <a href="#" class="social-btn-mini" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" class="social-btn-mini" aria-label="Facebook">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+          </a>
+          <a href="#" class="social-btn-mini" aria-label="Google">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+          </a>
+        </div>
+        <h4 style="margin-top:18px;">Endereço</h4>
+        <p>Praça N. Sra. da Apresentação, 223 — Sala 206<br>Irajá · RJ · CEP 21231-230</p>
+      </address>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="rodape__bottom">
+      <p>© 2026 CarlosCostaPrev — Todos os direitos reservados.</p>
+      <p><a href="#">Política de Privacidade</a> &nbsp;·&nbsp; <a href="#">Termos de Uso</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

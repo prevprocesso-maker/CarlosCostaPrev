@@ -2,6 +2,18 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <!-- ===== Analytics (Google Analytics 4) ===== -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T7ZNB2FXZY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied'
+    });
+    gtag('config', 'G-T7ZNB2FXZY', { 'anonymize_ip': true });
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aposentadoria por Invalidez: Requisitos e Diferenças para Auxílio-Doença — CarlosCostaPrev</title>
   <meta name="description" content="Aposentadoria por Invalidez: Requisitos e Diferenças para Auxílio-Doença. Orientação especializada em Direito Previdenciário por CarlosCostaPrev, Irajá/RJ.">
@@ -106,5 +118,36 @@
     <p>© 2026 CarlosCostaPrev — <a href="../" style="color: var(--accent);">Voltar ao site</a> · <a href="index.html" style="color: var(--accent);">Blog</a></p>
   </div>
 </footer>
-</body>
+
+<!-- ===== LGPD Cookie Banner ===== -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;max-width:560px;margin:0 auto;background:#1f1812;border:1px solid #382a20;border-radius:16px;padding:20px 24px;z-index:9999;color:#f5ede0;font-family:system-ui,sans-serif;box-shadow:0 8px 32px rgba(0,0,0,0.4);">
+  <p style="margin:0 0 14px 0;font-size:15px;line-height:1.5;">
+    Usamos cookies para entender como o site é usado e melhorar sua experiência.
+    <a href="/privacidade" style="color:#d68559;">Saiba mais</a>.
+  </p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    <button id="cookie-accept" style="flex:1;min-width:120px;padding:10px 16px;border-radius:999px;border:none;background:#c4673a;color:#fff;font-weight:600;font-size:14px;cursor:pointer;">Aceitar</button>
+    <button id="cookie-reject" style="flex:1;min-width:120px;padding:10px 16px;border-radius:999px;border:1px solid #382a20;background:transparent;color:#f5ede0;font-weight:600;font-size:14px;cursor:pointer;">Rejeitar</button>
+  </div>
+</div>
+<script>
+  (function() {
+    var key = 'ccp_cookie_consent_v1';
+    var saved = localStorage.getItem(key);
+    var banner = document.getElementById('cookie-banner');
+    function grant() {
+      localStorage.setItem(key, 'granted');
+      banner.style.display = 'none';
+      if (window.gtag) gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+    function deny() {
+      localStorage.setItem(key, 'denied');
+      banner.style.display = 'none';
+    }
+    if (!saved) banner.style.display = 'block';
+    else if (saved === 'granted' && window.gtag) gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    document.getElementById('cookie-accept').onclick = grant;
+    document.getElementById('cookie-reject').onclick = deny;
+  })();
+</script></body>
 </html>
