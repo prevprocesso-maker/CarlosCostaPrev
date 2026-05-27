@@ -190,8 +190,8 @@
 }
 /* Borda brilhante na foto */
 @keyframes borderPulse {
-  0%, 100% { border-color: var(--accent-border); box-shadow: 0 8px 40px rgba(196,103,58,0.15); }
-  50%       { border-color: var(--accent-border-strong); box-shadow: 0 8px 48px rgba(196,103,58,0.3); }
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50%       { opacity: 1;    transform: scale(1.008); }
 }
 .hero__photo-frame img { animation: borderPulse 4s ease-in-out infinite; }
 

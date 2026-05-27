@@ -38,10 +38,11 @@
   <link rel="me" href="https://www.instagram.com/carloscostaprev">
   <link rel="me" href="https://www.facebook.com/carloscostaprev">
 
-  <!-- Fonte -->
+  <!-- Fonte — carregamento assíncrono (não bloqueia renderização) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet"></noscript>
 
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/variables.css">
@@ -703,10 +704,10 @@
 </script>
 
 <!-- Scripts -->
-<script src="assets/js/main.js"></script>
-<script src="assets/js/animations.js"></script>
-<script src="assets/js/countup.js"></script>
-<script src="assets/js/faq.js"></script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/animations.js" defer></script>
+<script src="assets/js/countup.js" defer></script>
+<script src="assets/js/faq.js" defer></script>
 
 <!-- WhatsApp Flutuante (desktop) -->
 <a href="https://wa.me/5521964238080?text=Ol%C3%A1%2C+gostaria+de+uma+an%C3%A1lise+gratuita." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
