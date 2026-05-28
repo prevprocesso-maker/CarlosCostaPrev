@@ -119,12 +119,17 @@ function notificarWhatsApp(titulo, slug) {
     const msg = '🟢 *Novo post publicado no blog!*\n\n📄 *' + titulo + '*\n\n🔗 ' + url;
     const body = JSON.stringify({ toNumber: WA_AVISO_NUMERO, content: msg });
 
+    const internalKey = process.env.INTERNAL_API_KEY || 'blog-notify-carloscostaprev-2026';
     const opts = {
       hostname: 'localhost',
       port: 3001,
-      path: '/api/v1/whatsapp/send-direct',
+      path: '/api/v1/whatsapp/internal/blog-notify',
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(body) },
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(body),
+        'x-internal-key': internalKey,
+      },
     };
 
     const req = http.request(opts, res => {
