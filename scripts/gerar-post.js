@@ -31,7 +31,7 @@ const TEMAS = [
   { slug: 'bpc-loas-como-requerer',           titulo: 'BPC/LOAS: Como Requerer e Quem Tem Direito',                              tag: 'BPC/LOAS',      q: 'elderly senior social welfare support' },
   { slug: 'aposentadoria-por-invalidez',       titulo: 'Aposentadoria por Invalidez: Requisitos e Diferenças para Auxílio-Doença', tag: 'Aposentadoria',  q: 'disability pension documents healthcare' },
   { slug: 'tempo-especial-insalubridade',      titulo: 'Tempo Especial: Como Converter Insalubridade em Aposentadoria',           tag: 'Aposentadoria',  q: 'factory worker safety industrial' },
-  { slug: 'revisao-vida-toda',                 titulo: 'Revisão da Vida Toda: O Que É e Quem Pode Pedir',                         tag: 'Revisão',        q: 'legal review documents desk lawyer' },
+  // REMOVIDO: Revisão da Vida Toda — encerrada pelo STF (mai/2026), não tem mais aplicação prática
   { slug: 'auxilio-acidente',                  titulo: 'Auxílio-Acidente: Quando o INSS Paga Mesmo Você Trabalhando',             tag: 'Auxílio',        q: 'workplace accident safety construction' },
   { slug: 'pensao-por-morte',                  titulo: 'Pensão por Morte: Quem Tem Direito e Como Requerer',                      tag: 'Pensão',         q: 'family support social security benefit' },
   { slug: 'salario-maternidade',               titulo: 'Salário-Maternidade: Regras para MEI, Autônoma e CLT',                    tag: 'Benefícios',     q: 'maternity pregnancy mother healthcare' },
