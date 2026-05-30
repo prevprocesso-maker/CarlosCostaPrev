@@ -23,12 +23,50 @@
   gap: var(--gap-xl);
 }
 .navbar__logo {
-  font-size: var(--text-lg);
-  font-weight: 900;
-  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 9px;
   flex-shrink: 0;
+  text-decoration: none;
+  color: var(--text-primary);
 }
-.navbar__logo span { color: var(--accent); }
+.header-logo-mark {
+  width: 48px;
+  height: 48px;
+  flex: none;
+  object-fit: contain;
+}
+.header-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  position: relative;
+  padding-bottom: 16px;
+}
+.header-logo-text-1 {
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+.header-logo-text-2 {
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+.header-logo-dot { color: var(--accent); }
+.header-logo-tagline {
+  position: absolute;
+  top: calc(100% - 14px);
+  left: 0;
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  white-space: nowrap;
+  opacity: 0.85;
+}
 .navbar__links {
   display: flex;
   align-items: center;
@@ -784,14 +822,38 @@
 
 /* ── Marca ── */
 .rodape__logo {
-  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+.rodape__logo-mark {
+  height: 72px;
+  width: 72px;
+  object-fit: contain;
+  display: block;
+  flex: none;
+}
+.rodape__logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.rodape__logo-name1 {
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
   font-weight: 900;
   letter-spacing: -0.025em;
   color: var(--text-primary);
-  margin-bottom: 10px;
-  line-height: 1.1;
 }
-.rodape__logo span { color: var(--accent); }
+.rodape__logo-name2 {
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.025em;
+  color: var(--accent);
+  margin-top: 2px;
+}
+.rodape__logo-name2 span { color: color-mix(in srgb, var(--accent) 60%, transparent); }
 
 /* ── Texto e links ── */
 .rodape__col p {
@@ -844,11 +906,11 @@
 /* ── Portal irmão ── */
 .rodape__portal-irma {
   margin-top: 16px;
-  padding-top: 14px;
-  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.08);
   display: flex !important;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
 }
 .rodape__portal-label {
   font-size: 9px;
@@ -856,20 +918,40 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent);
-  opacity: 0.8;
+  opacity: 0.88;
+  display: block;
 }
-.rodape__portal-irma a {
-  display: inline-flex !important;
-  align-items: center;
-  gap: 4px;
-  font-size: 12.5px;
-  font-weight: 500;
-  color: var(--text-faint);
-  transition: color 0.18s;
+.rodape__portal-link {
+  display: block !important;
+  text-decoration: none;
   transform: none !important;
 }
-.rodape__portal-irma a:hover {
-  color: var(--accent);
+.rodape__portal-brand {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  color: #f5ede0;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.2;
+}
+.rodape__portal-mark {
+  height: 44px;
+  width: 44px;
+  object-fit: contain;
+  display: block;
+  flex: none;
+}
+.rodape__portal-desc {
+  display: block;
+  margin-top: 5px;
+  font-size: 11.5px;
+  opacity: 0.65;
+  color: var(--text-faint);
+  padding-left: 56px;
+}
+.rodape__portal-link:hover .rodape__portal-brand { color: var(--accent); }
+.rodape__portal-irma a {
   transform: none !important;
 }
 
