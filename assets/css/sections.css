@@ -507,80 +507,48 @@
 .historia__content { display: flex; flex-direction: column; gap: var(--gap-lg); }
 .historia__content p { font-size: var(--text-base); }
 .historia__valores { margin-top: var(--gap-lg); }
-
-/* ── MVV Grid ── */
-.mvv__grid {
+.historia__valores .section-label { margin-bottom: 1rem; font-size: var(--text-sm); letter-spacing: 2px; }
+.valores__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--gap-md);
+  margin-top: var(--gap-sm);
 }
-.mvv__card {
-  background: rgba(196,103,58,0.06);
-  border: 1px solid rgba(196,103,58,0.2);
-  border-radius: var(--radius-lg);
-  padding: 28px 24px;
-  display: flex;
+.valores__grid .chip {
   flex-direction: column;
-  gap: 12px;
-  transition: all 0.25s ease;
-}
-.mvv__card:hover {
-  background: rgba(196,103,58,0.12);
-  border-color: rgba(196,103,58,0.45);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(196,103,58,0.15);
-}
-.mvv__icon {
-  width: 44px;
-  height: 44px;
-  background: rgba(196,103,58,0.12);
-  border-radius: 12px;
-  display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  text-align: center;
+  gap: 10px;
+  padding: 22px 14px;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  background: rgba(196,103,58,0.08);
+  border: 1px solid rgba(196,103,58,0.25);
+  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 12px rgba(196,103,58,0.07);
 }
-.mvv__icon svg {
+.valores__grid .chip svg {
   width: 22px;
   height: 22px;
   color: var(--accent);
+  flex-shrink: 0;
 }
-.mvv__label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+.valores__grid .chip:hover {
+  background: rgba(196,103,58,0.18);
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(196,103,58,0.2);
   color: var(--accent);
-  margin: 0;
-}
-.mvv__text {
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  line-height: 1.65;
-  margin: 0;
-}
-.valores__chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 4px;
-}
-.valores__chips .chip {
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 5px 12px;
-  background: rgba(196,103,58,0.1);
-  border: 1px solid rgba(196,103,58,0.25);
-  border-radius: 999px;
-  color: var(--text-primary);
-  display: inline-flex;
-  align-items: center;
 }
 
 @media (max-width: 900px) {
   .historia__inner { grid-template-columns: 1fr; }
   .historia__photo { order: -1; }
-  .mvv__grid { grid-template-columns: 1fr; gap: var(--gap-sm); }
+  .valores__grid { grid-template-columns: repeat(2, 1fr); gap: var(--gap-sm); }
 }
 
 /* ══════════════ NÚMEROS ══════════════ */
