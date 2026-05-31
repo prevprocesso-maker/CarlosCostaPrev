@@ -59,3 +59,53 @@ ERRO FATAL: Error: EBUSY: resource busy or locked, open 'C:\Users\NIKE\carloscos
   syscall: 'open',
   path: 'C:\\Users\\NIKE\\carloscostaprev-site\\scripts\\log.txt'
 }
+[29/05/2026, 08:00:03] === Iniciando gerador de post ===
+ERRO FATAL: Error: EBUSY: resource busy or locked, open 'C:\Users\NIKE\carloscostaprev-site\scripts\log.txt'
+    at Object.writeFileSync (node:fs:2413:20)
+    at Object.appendFileSync (node:fs:2495:6)
+    at log (C:\Users\NIKE\carloscostaprev-site\scripts\gerar-post.js:89:6)
+    at main (C:\Users\NIKE\carloscostaprev-site\scripts\gerar-post.js:530:3)
+    at Object.<anonymous> (C:\Users\NIKE\carloscostaprev-site\scripts\gerar-post.js:572:1)
+    at Module._compile (node:internal/modules/cjs/loader:1812:14)
+    at Object..js (node:internal/modules/cjs/loader:1943:10)
+    at Module.load (node:internal/modules/cjs/loader:1533:32)
+    at Module._load (node:internal/modules/cjs/loader:1335:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19) {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\NIKE\\carloscostaprev-site\\scripts\\log.txt'
+}
+[30/05/2026, 11:45:34] === Iniciando gerador de post ===
+[30/05/2026, 11:45:34] Tema: Tempo Especial: Como Converter Insalubridade em Aposentadoria
+[30/05/2026, 11:45:36] Foto baixada: C:\Users\NIKE\carloscostaprev-site\assets\images\blog\tempo-especial-insalubridade.jpg
+[30/05/2026, 11:45:36] Gerando conteúdo com IA...
+[30/05/2026, 11:45:36] AVISO: ANTHROPIC_API_KEY não configurada — usando conteúdo de exemplo.
+[30/05/2026, 11:45:36] Artigo criado: C:\Users\NIKE\carloscostaprev-site\blog\tempo-especial-insalubridade.html
+[30/05/2026, 11:45:36] index.html atualizado com novo card.
+[30/05/2026, 11:45:36] Iniciando deploy no Cloudflare Pages...
+[30/05/2026, 11:46:00] Deploy concluído com sucesso!
+
+═══════════════════════════════════════════
+  POST PUBLICADO — 30/05/2026, 11:46:00
+  Título : Tempo Especial: Como Converter Insalubridade em Aposentadoria
+  Tag    : Aposentadoria
+  URL    : https://carloscostaprev.pages.dev/blog/tempo-especial-insalubridade.html
+═══════════════════════════════════════════
+[30/05/2026, 11:46:12] Aviso WhatsApp enviado para 5521964238080
+[30/05/2026, 11:46:12] === Post #6 publicado: Tempo Especial: Como Converter Insalubridade em Aposentadoria ===
+[30/05/2026, 11:57:27] === Iniciando gerador de post ===
+[30/05/2026, 11:57:27] Tema: Revisão da Vida Toda: O Que É e Quem Pode Pedir
+[30/05/2026, 11:57:28] Foto baixada: C:\Users\NIKE\carloscostaprev-site\assets\images\blog\revisao-vida-toda.jpg
+[30/05/2026, 11:57:28] Gerando conteúdo com IA...
+[30/05/2026, 11:57:44] Artigo criado: C:\Users\NIKE\carloscostaprev-site\blog\revisao-vida-toda.html
+[30/05/2026, 11:57:44] index.html atualizado com novo card.
+[30/05/2026, 11:57:44] Iniciando deploy no Cloudflare Pages...
+[30/05/2026, 11:58:03] Deploy concluído com sucesso!
+
+═══════════════════════════════════════════
+  POST PUBLICADO — 30/05/2026, 11:58:03
+  Título : Revisão da Vida Toda: O Que É e Quem Pode Pedir
+  Tag    : Revisão
+  URL    : https://carloscostaprev.pages.dev/blog/revisao-vida-toda.html
+═══════════════════════════════════════════

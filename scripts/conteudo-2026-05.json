@@ -1,0 +1,115 @@
+[
+  {
+    "id": "2026-06-02-am",
+    "data": "2026-05-30",
+    "turno": "manha",
+    "horario": "08:30",
+    "conta": "portaldobpc",
+    "formato": "carrossel",
+    "coluna": "voce_tem_direito",
+    "persona": "P2",
+    "gancho": "Sua mãe tem mais de 65 anos e nunca contribuiu pro INSS? Ela ainda pode receber 1 salário por mês.",
+    "legenda": "Muita gente não sabe, mas existe um benefício chamado BPC/LOAS — e ele não exige nenhuma contribuição ao INSS.\n\nSe sua mãe, pai ou avó tem 65 anos ou mais e a renda familiar é baixa, eles têm direito a 1 salário mínimo por mês.\n\nSalva esse post e compartilha com quem precisa saber. 👇",
+    "slides": [
+      "Capa: Sua mãe pode receber 1 salário sem ter pago INSS",
+      "O que é o BPC/LOAS",
+      "Não precisa ter trabalhado com registro",
+      "Quem tem direito: 65+ e renda familiar baixa",
+      "Quanto recebe: 1 salário mínimo por mês",
+      "Como começar: CadÚnico + agência do INSS",
+      "CTA: Manda no WhatsApp que a gente analisa o caso"
+    ],
+    "cta": "Manda mensagem no WhatsApp — analisamos o caso da sua família gratuitamente.",
+    "hashtags": [
+      "#BPC",
+      "#BPCLOAS",
+      "#INSS",
+      "#DireitosDoIdoso",
+      "#Irajá",
+      "#RioDeJaneiro",
+      "#PrevidênciaSocial"
+    ],
+    "grupo_fb": true,
+    "versao_grupo": "Você sabia que idosos com 65 anos ou mais podem receber 1 salário mínimo por mês, mesmo sem nunca ter contribuído pro INSS?\n\nSe chama BPC/LOAS e muita família de Irajá e região tem direito e não sabe.\n\nSe quiser saber se o seu familiar tem direito, chama no WhatsApp: (21) 96423-8080"
+  },
+  {
+    "id": "2026-06-02-pm",
+    "data": "2026-05-30",
+    "turno": "tarde",
+    "horario": "18:30",
+    "conta": "portaldobpc",
+    "formato": "post_imagem",
+    "coluna": "conexao_emocao",
+    "persona": "P1",
+    "gancho": "Ela trabalhou a vida inteira dentro de casa. Por que ninguém nunca disse que ela tinha direito?",
+    "legenda": "A dona de casa que criou os filhos, cuidou dos netos, nunca faltou pra ninguém.\n\nO sistema esqueceu dela. Mas a lei não esqueceu.\n\nO BPC existe pra quem o INSS deixou pra trás. E você não precisa entender de lei pra começar — a gente explica do seu jeito.\n\nMarca alguém que merece saber disso. 💛",
+    "cta": "Marca alguém que merece saber disso.",
+    "hashtags": [
+      "#PessoaIdosa",
+      "#BPC",
+      "#Cuidado",
+      "#Família",
+      "#DireitosSociais"
+    ],
+    "grupo_fb": true,
+    "versao_grupo": "A dona de casa que criou os filhos e cuidou de todo mundo a vida inteira — ela tem direito ao BPC/LOAS mesmo sem ter trabalhado com carteira assinada.\n\nConhece alguém assim? Compartilha essa mensagem. Pode ser a informação que vai mudar a vida de uma família."
+  },
+  {
+    "id": "2026-06-03-am",
+    "data": "2026-06-03",
+    "turno": "manha",
+    "horario": "08:30",
+    "conta": "carloscostaprev",
+    "formato": "reel",
+    "coluna": "mito_verdade",
+    "persona": "P6",
+    "gancho": "MITO: 'Se eu nunca paguei INSS, não tenho direito a nada.' Errado — e eu te explico em 40 segundos.",
+    "legenda": "Tem muita gente perdendo benefício por acreditar nesse mito.\n\nExiste diferença entre benefício previdenciário (exige contribuição) e benefício assistencial (não exige).\n\nSe você ou alguém da sua família teve pedido negado por 'falta de contribuição', pode ser que o caso seja BPC/LOAS — e não aposentadoria.\n\nSalva esse vídeo e manda pra quem precisa ouvir isso. ✊",
+    "cta": "Salva e compartilha com quem acha que não tem direito.",
+    "hashtags": [
+      "#MitoVsVerdade",
+      "#INSS",
+      "#Previdência",
+      "#BPC",
+      "#AuxílioDoença",
+      "#DireitosDoTrabalhador"
+    ],
+    "grupo_fb": false,
+    "versao_grupo": ""
+  },
+  {
+    "id": "2026-06-05-am",
+    "data": "2026-06-05",
+    "turno": "manha",
+    "horario": "08:30",
+    "conta": "carloscostaprev",
+    "formato": "carrossel",
+    "coluna": "voce_tem_direito",
+    "persona": "P4",
+    "gancho": "Auxílio-doença há mais de 1 ano? Você talvez já tenha direito à aposentadoria por incapacidade — e ninguém te avisou.",
+    "legenda": "Tem gente que fica anos recebendo auxílio-doença sem saber que já tinha direito a algo melhor: a aposentadoria por incapacidade permanente.\n\nA diferença é enorme. Um é temporário. O outro é vitalício.\n\nSe você está há mais de 1 ano em auxílio, vale muito a pena revisar seu caso.\n\nManda mensagem — a análise é gratuita. 👇",
+    "slides": [
+      "Capa: Auxílio há mais de 1 ano? Você pode ter direito a mais",
+      "A diferença: temporário vs permanente",
+      "Quando o auxílio pode virar aposentadoria",
+      "O que a perícia avalia",
+      "Por que vale revisar agora",
+      "CTA: Manda mensagem"
+    ],
+    "cta": "Recebe auxílio há mais de 1 ano? Manda mensagem pra revisar seu caso.",
+    "hashtags": [
+      "#AuxílioDoença",
+      "#AposentadoriaPorIncapacidade",
+      "#INSS",
+      "#Perícia",
+      "#Previdência"
+    ],
+    "grupo_fb": false,
+    "versao_grupo": "",
+    "cross_mention": {
+      "ativa": true,
+      "texto": "\n\n📌 Se o caso for deficiência física ou intelectual, veja também o @portaldobpc — nosso portal especializado em BPC/LOAS.",
+      "conta_destino": "portaldobpc"
+    }
+  }
+]

@@ -1,0 +1,19 @@
+[30/05/2026, 12:08:20] === Distribuidor de Conteúdo ===
+[30/05/2026, 12:08:20] AVISO: arquivo C:\Users\NIKE\carloscostaprev-site\scripts\conteudo-2026-05.json não encontrado.
+[30/05/2026, 12:08:20] Aguardando entrega do Claude Design (todo dia 25 do mês anterior).
+[30/05/2026, 12:08:20] Nenhum post para hoje (2026-05-30). Dia livre ou JSON ainda não chegou.
+[30/05/2026, 12:08:36] === Distribuidor de Conteúdo ===
+[30/05/2026, 12:08:36] 2 post(s) para hoje: manha, tarde
+[30/05/2026, 12:08:36] ✅ Arquivos salvos em scripts/social/
+[30/05/2026, 12:08:36]    → instagram-hoje.txt
+[30/05/2026, 12:08:36]    → facebook-hoje.txt
+[30/05/2026, 12:08:36]    → grupos-hoje.txt
+[30/05/2026, 12:08:36] === Concluído ===
+[30/05/2026, 12:10:35] === Distribuidor de Conteúdo ===
+[30/05/2026, 12:10:35] 2 post(s) para hoje: manha, tarde
+[30/05/2026, 12:10:35] ✅ Arquivos salvos em scripts/social/
+[30/05/2026, 12:10:35]    → instagram-hoje.txt
+[30/05/2026, 12:10:35]    → facebook-hoje.txt
+[30/05/2026, 12:10:35]    → grupos-hoje.txt
+[30/05/2026, 12:10:35]    → painel.html
+[30/05/2026, 12:10:35] === Concluído ===
