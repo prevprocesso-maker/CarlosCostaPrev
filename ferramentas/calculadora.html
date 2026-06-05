@@ -77,11 +77,12 @@
     .calc-btn:active { transform: scale(0.99); }
 
     /* ── Resultado ── */
-    .calc-result-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); padding: var(--gap-xl); min-height: 380px; display: flex; flex-direction: column; justify-content: center; position: sticky; top: 90px; }
+    .calc-result-card { background: linear-gradient(135deg, rgba(196,103,58,0.05) 0%, rgba(0,0,0,0.2) 100%); border: 1px solid var(--accent-border); border-radius: var(--radius-lg); padding: var(--gap-xl); min-height: 420px; display: flex; flex-direction: column; justify-content: center; position: sticky; top: 90px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
     .result-empty { text-align: center; color: var(--text-faint); padding: var(--gap-xl) 0; }
-    .result-empty svg { margin-bottom: var(--gap-md); opacity: 0.4; }
-    .result-empty p { font-size: var(--text-sm); line-height: 1.6; }
-    .result-empty strong { color: var(--text-muted); }
+    .result-empty svg { margin-bottom: var(--gap-lg); opacity: 0.5; color: var(--accent); width: 64px; height: 64px; }
+    .result-empty h3 { font-size: var(--text-lg); font-weight: 700; color: var(--text-primary); margin-bottom: var(--gap-md); line-height: 1.4; font-family: var(--font-display); }
+    .result-empty p { font-size: var(--text-sm); line-height: 1.7; max-width: 320px; margin: 0 auto; }
+    .result-empty strong { color: var(--accent); font-weight: 600; }
     .result-content { display: none; flex-direction: column; gap: var(--gap-md); }
     .result-content.visible { display: flex; }
 
@@ -255,8 +256,9 @@
       <!-- ── Resultado ── -->
       <div class="calc-result-card" id="result-card">
         <div class="result-empty" id="result-empty">
-          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-          <p>Adicione seus <strong>períodos de trabalho</strong>, preencha data de nascimento e sexo, e clique em <strong>Calcular simulação</strong>.</p>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <h3>Seu Resultado Aparecerá Aqui</h3>
+          <p>Preencha seus <strong>períodos de trabalho</strong> à esquerda,<br>informe data de nascimento e sexo, e clique em<br><strong>Calcular simulação</strong> para ver quando você<br>pode se aposentar e quanto vai receber.</p>
         </div>
         <div class="result-content" id="result-content">
 
