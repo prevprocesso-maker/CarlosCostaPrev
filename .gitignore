@@ -25,3 +25,4 @@ scripts/log-social.txt
 scripts/social/
 scripts/estado.json
 scripts/conteudo-*.json
+scripts/add-lora*.js
