@@ -13,6 +13,7 @@
   --glass-blur: blur(12px);
   --whatsapp: #25d366; --whatsapp-dark: #1da851;
   --font-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Lora', serif;
   --text-xs: 0.7rem; --text-sm: 0.85rem; --text-base: 0.95rem;
   --text-lg: 1.1rem; --text-xl: 1.35rem; --text-2xl: 1.7rem;
   --text-hero: clamp(2rem,5vw,3.5rem); --text-h2: clamp(1.5rem,3vw,2.5rem);

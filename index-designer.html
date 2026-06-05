@@ -12,10 +12,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carlos Costa — Especialista em Previdência Social | Irajá, RJ</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
+      <style>
 /* ════════════════════════════════════════════════════════
    variables.css
 ════════════════════════════════════════════════════════ */
@@ -539,7 +536,15 @@ ul{list-style:none}
 <!-- ═══════════════════════════ NAVBAR ═══════════════════════════ -->
 <nav class="navbar" id="navbar" role="navigation" aria-label="Menu principal">
   <div class="container navbar__inner">
-    <a href="/" class="navbar__logo" aria-label="CarlosCostaPrev - Início">Carlos<span>Costa</span>Prev</a>
+    <a href="/" class="navbar__logo" ari
+
+  <!-- Fonte — carregamento assíncrono (não bloqueia renderização) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+
+a-label="CarlosCostaPrev - Início">Carlos<span>Costa</span>Prev</a>
     <ul class="navbar__links" id="nav-links" role="list">
       <li><a href="/">Início</a></li>
       <li><a href="beneficios.html">Benefícios</a></li>

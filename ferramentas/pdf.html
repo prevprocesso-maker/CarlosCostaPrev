@@ -22,10 +22,7 @@
   <meta property="og:title" content="Ferramentas de PDF | CarlosCostaPrev">
   <meta property="og:description" content="Comprima, divida, junte e converta PDFs. Tudo no navegador, sem enviar arquivos a servidores.">
   <link rel="canonical" href="https://carloscostaprev.com.br/ferramentas/pdf.html">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/variables.css">
+      <link rel="stylesheet" href="../assets/css/variables.css">
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/components.css">
   <link rel="stylesheet" href="../assets/css/sections.css">
@@ -198,7 +195,15 @@
 <nav class="site-nav" aria-label="Navegação">
   <div class="container site-nav__inner">
     <a href="../" class="site-nav__logo">Carlos<span>Costa</span>Prev</a>
-    <div class="site-nav__links" id="nav-links">
+    <div class="site-nav__links" id="nav-links"
+
+  <!-- Fonte — carregamento assíncrono (não bloqueia renderização) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+
+>
       <a href="../">Início</a>
       <a href="../beneficios.html">Benefícios</a>
       <a href="../servicos.html">Serviços</a>

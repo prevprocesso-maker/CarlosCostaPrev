@@ -109,3 +109,37 @@ ERRO FATAL: Error: EBUSY: resource busy or locked, open 'C:\Users\NIKE\carloscos
   Tag    : Revisão
   URL    : https://carloscostaprev.pages.dev/blog/revisao-vida-toda.html
 ═══════════════════════════════════════════
+[02/06/2026, 08:10:34] === Iniciando gerador de post ===
+ERRO FATAL: Error: EBUSY: resource busy or locked, open 'C:\Users\NIKE\carloscostaprev-site\scripts\log.txt'
+    at Object.writeFileSync (node:fs:2413:20)
+    at Object.appendFileSync (node:fs:2495:6)
+    at log (C:\Users\NIKE\carloscostaprev-site\scripts\gerar-post.js:89:6)
+    at main (C:\Users\NIKE\carloscostaprev-site\scripts\gerar-post.js:530:3)
+    at Object.<anonymous> (C:\Users\NIKE\carloscostaprev-site\scripts\gerar-post.js:572:1)
+    at Module._compile (node:internal/modules/cjs/loader:1812:14)
+    at Object..js (node:internal/modules/cjs/loader:1943:10)
+    at Module.load (node:internal/modules/cjs/loader:1533:32)
+    at Module._load (node:internal/modules/cjs/loader:1335:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19) {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\NIKE\\carloscostaprev-site\\scripts\\log.txt'
+}
+[05/06/2026, 08:00:02] === Iniciando gerador de post ===
+ERRO FATAL: Error: EBUSY: resource busy or locked, open 'C:\Users\NIKE\carloscostaprev-site\scripts\log.txt'
+    at Object.writeFileSync (node:fs:2413:20)
+    at Object.appendFileSync (node:fs:2495:6)
+    at log (C:\Users\NIKE\carloscostaprev-site\scripts\gerar-post.js:89:6)
+    at main (C:\Users\NIKE\carloscostaprev-site\scripts\gerar-post.js:530:3)
+    at Object.<anonymous> (C:\Users\NIKE\carloscostaprev-site\scripts\gerar-post.js:572:1)
+    at Module._compile (node:internal/modules/cjs/loader:1812:14)
+    at Object..js (node:internal/modules/cjs/loader:1943:10)
+    at Module.load (node:internal/modules/cjs/loader:1533:32)
+    at Module._load (node:internal/modules/cjs/loader:1335:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19) {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\NIKE\\carloscostaprev-site\\scripts\\log.txt'
+}
