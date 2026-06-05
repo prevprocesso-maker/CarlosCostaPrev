@@ -17,6 +17,11 @@ Thumbs.db
 # Netlify config
 .netlify/
 
-# Scripts com chaves
+# Scripts com chaves e dados operacionais (não deployar)
 scripts/GeradorPost.bat
+scripts/AbrirPainel.bat
 scripts/log.txt
+scripts/log-social.txt
+scripts/social/
+scripts/estado.json
+scripts/conteudo-*.json
