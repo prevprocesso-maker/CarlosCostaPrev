@@ -8,7 +8,7 @@
  * 3. Coloque na linha 11 abaixo
  */
 
-const UNSPLASH_ACCESS_KEY = 'YOUR_ACCESS_KEY_HERE'; // ← SUBSTITUA PELA SUA
+const UNSPLASH_ACCESS_KEY = '3LZ9hY9UBR3qyQFgs_wWfVXCRu69KWDOpHmlH_qNoXg';
 const CACHE_KEY = 'unsplash_cache';
 const CACHE_EXPIRY = 24 * 60 * 60 * 1000; // 24 horas
 
