@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria de Fotos — Unsplash | CarlosCostaPrev</title>
+  <meta name="description" content="Galeria de fotos profissionais para uso no site — Integração com Unsplash API.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+  <link rel="stylesheet" href="assets/css/unsplash-gallery.css">
+
+  <style>
+    .page-hero {
+      padding: clamp(60px, 8vw, 100px) 0;
+      background: linear-gradient(160deg, var(--bg-deep) 0%, var(--bg-mid) 100%);
+      text-align: center;
+      margin-bottom: var(--gap-xl);
+    }
+    .page-hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-family: var(--font-display);
+      font-weight: 800;
+      margin-bottom: var(--gap-md);
+    }
+    .page-hero p {
+      color: var(--text-muted);
+      font-size: var(--text-lg);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-nav">
+  <div class="container">
+    <a href="/" class="site-nav__logo" style="display:flex;align-items:center;gap:9px;text-decoration:none;">
+      <img src="assets/logo-monograma-cc.png" alt="CarlosCostaPrev" style="height:44px;width:44px;object-fit:contain;flex:none;display:block;">
+      <span style="display:flex;flex-direction:column;line-height:1;">
+        <span style="font-size:0.9rem;font-weight:900;letter-spacing:-0.02em;color:var(--text-primary,#f5ede0);">CarlosCosta</span>
+        <span style="font-size:0.9rem;font-weight:900;letter-spacing:-0.02em;color:var(--text-primary,#f5ede0);">Prev<span style="color:var(--accent,#c4673a);">.</span></span>
+      </span>
+    </a>
+
+    <nav class="site-nav__links">
+      <a href="/">Início</a>
+      <a href="beneficios.html">Benefícios</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="blog/">Blog</a>
+    </nav>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main>
+  <!-- Hero -->
+  <div class="page-hero">
+    <div class="container">
+      <h1>📸 Galeria de Fotos</h1>
+      <p>Busca dinâmica integrada com Unsplash API. Use para referência de design e conteúdo do site.</p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Instrução de configuração -->
+      <div style="background: rgba(220, 38, 38, 0.1); border: 1px solid #dc2626; border-radius: var(--radius-lg); padding: var(--gap-lg); margin-bottom: var(--gap-xl); color: #dc2626;">
+        <strong>⚠️ Antes de usar:</strong>
+        <ol style="margin: var(--gap-md) 0 0 var(--gap-lg); padding-left: var(--gap-lg);">
+          <li>Acesse: <a href="https://unsplash.com/oauth/applications" target="_blank" style="color: inherit; text-decoration: underline;">https://unsplash.com/oauth/applications</a></li>
+          <li>Crie uma aplicação e copie a <strong>Access Key</strong></li>
+          <li>Abra <code>assets/js/unsplash-gallery.js</code> linha 11 e substitua <code>YOUR_ACCESS_KEY_HERE</code> pela sua chave</li>
+          <li>Recarregue esta página</li>
+        </ol>
+      </div>
+
+      <!-- Buscador -->
+      <div class="unsplash-search-section">
+        <form class="unsplash-search-form" onsubmit="event.preventDefault(); searchUnsplash(document.getElementById('unsplash-query').value);">
+          <input
+            type="text"
+            id="unsplash-query"
+            class="unsplash-search-input"
+            placeholder="Buscar: 'advocacia', 'escritório', 'documentos', 'pessoas'..."
+            autocomplete="off"
+          >
+          <button type="submit" class="unsplash-search-btn" id="unsplash-btn">
+            🔍 Buscar
+          </button>
+          <button type="button" class="unsplash-search-btn" onclick="gallery.clearCache()" style="background: var(--text-muted); margin-left: auto;">
+            🗑️ Limpar Cache
+          </button>
+        </form>
+      </div>
+
+      <!-- Galeria -->
+      <div id="unsplash-container" class="unsplash-container"></div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="rodape" role="contentinfo">
+  <div class="container">
+    <div class="rodape__grid rodape__grid--5col">
+      <div class="rodape__col">
+        <div class="rodape__logo">
+          <img src="assets/logo-monograma-cc.png" alt="CarlosCostaPrev" class="rodape__logo-mark">
+          <div class="rodape__logo-text">
+            <span class="rodape__logo-name1">CarlosCosta</span>
+            <span class="rodape__logo-name2">Prev<span>.</span></span>
+          </div>
+        </div>
+        <p>Especialista em Previdência Social.<br>Irajá, Rio de Janeiro.<br>Atendimento online para todo o Brasil.</p>
+      </div>
+      <nav class="rodape__col" aria-label="Links do rodapé">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="beneficios.html">Benefícios</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </nav>
+      <address class="rodape__col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/5521964238080" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a></li>
+          <li><a href="https://www.instagram.com/carloscostaprev" target="_blank" rel="noopener noreferrer">📷 Instagram</a></li>
+        </ul>
+      </address>
+      <div class="rodape__col">
+        <h4>Endereço</h4>
+        <p style="font-size: var(--text-sm); margin: 0;">
+          Irajá<br>Rio de Janeiro, RJ<br><br>
+          <strong>Presencial ou WhatsApp</strong>
+        </p>
+      </div>
+    </div>
+    <div style="border-top: 1px solid var(--glass-border); margin-top: var(--gap-lg); padding-top: var(--gap-lg); text-align: center; color: var(--text-faint); font-size: var(--text-xs);">
+      <p style="margin: 0;">© 2026 CarlosCostaPrev. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="assets/js/main.js"></script>
+<script src="assets/js/unsplash-gallery.js"></script>
+
+<!-- Exemplo de busca inicial ao carregar -->
+<script>
+  // Buscar fotos padrão ao carregar
+  window.addEventListener('load', () => {
+    // Descomente para busca automática:
+    // searchUnsplash('professional office');
+  });
+
+  // Atualizar visual do botão durante carregamento
+  const observer = new MutationObserver(() => {
+    const btn = document.getElementById('unsplash-btn');
+    if (gallery.isLoading) {
+      btn.classList.add('loading');
+      btn.disabled = true;
+    } else {
+      btn.classList.remove('loading');
+      btn.disabled = false;
+    }
+  });
+
+  observer.observe(document.body, { attributes: true, subtree: true });
+</script>
+
+</body>
+</html>
