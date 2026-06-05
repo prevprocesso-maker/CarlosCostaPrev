@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/favicon.png">
+  <!-- ===== Analytics ===== -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T7ZNB2FXZY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('consent', 'default', { 'analytics_storage': 'denied', 'ad_storage': 'denied' });
+    gtag('config', 'G-T7ZNB2FXZY', { 'anonymize_ip': true });
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CTC — Certidão de Tempo de Contribuição | CarlosCostaPrev</title>
+  <meta name="description" content="Tempo de serviço público ou militar conta para a aposentadoria civil? Sim! CTC valida esse tempo. Ajudamos a obter e usar na aposentadoria. Análise gratuita.">
+  <meta name="theme-color" content="#c4673a">
+  <link rel="canonical" href="https://carloscostaprev.com.br/servicos/ctc-certidao-tempo.html">
+
+  <!-- SEO -->
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Carlos Costa — CarlosCostaPrev">
+  <meta name="keywords" content="CTC, certidão tempo contribuição, serviço público, serviço militar, aposentadoria, tempo na administração pública">
+
+  <!-- GEO -->
+  <meta name="geo.region" content="BR-RJ">
+  <meta name="geo.placename" content="Irajá, Rio de Janeiro, Brasil">
+  <meta name="geo.position" content="-22.8383;-43.3202">
+  <meta name="ICBM" content="-22.8383, -43.3202">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CarlosCostaPrev">
+  <meta property="og:title" content="CTC — Certidão de Tempo de Contribuição — CarlosCostaPrev">
+  <meta property="og:description" content="Tempo público ou militar conta? Sim! CTC comprova para o INSS. Ajudamos a obter.">
+  <meta property="og:url" content="https://carloscostaprev.com.br/servicos/ctc-certidao-tempo.html">
+  <meta property="og:image" content="https://carloscostaprev.com.br/assets/images/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CTC — Certidão de Tempo de Contribuição — CarlosCostaPrev">
+  <meta name="twitter:description" content="Tempo público ou militar para a aposentadoria civil? CTC comprova.">
+  <meta name="twitter:image" content="https://carloscostaprev.com.br/assets/images/og-cover.jpg">
+
+  <!-- Social -->
+  <link rel="me" href="https://www.instagram.com/carloscostaprev">
+  <link rel="me" href="https://www.facebook.com/carloscostaprev">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/sections.css">
+
+  <style>
+    .servico-hero {
+      padding: clamp(80px, 12vw, 140px) 0;
+      background: linear-gradient(160deg, var(--bg-deep) 0%, var(--bg-mid) 100%);
+      text-align: center;
+    }
+    .servico-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: clamp(40px, 6vw, 60px);
+      align-items: start;
+      margin: clamp(60px, 8vw, 100px) 0;
+    }
+    .servico-main {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-xl);
+    }
+    .servico-main h2 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-family: var(--font-display);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: var(--gap-lg);
+    }
+    .servico-main p {
+      font-size: var(--text-base);
+      line-height: 1.75;
+      color: var(--text-muted);
+      margin-bottom: var(--gap-md);
+    }
+    .servico-main strong {
+      color: var(--text-primary);
+    }
+    .servico-checklist {
+      list-style: none;
+      padding: 0;
+      margin: var(--gap-xl) 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-md);
+    }
+    .servico-checklist li {
+      display: flex;
+      gap: var(--gap-md);
+      align-items: flex-start;
+      padding: var(--gap-md);
+      background: rgba(196,103,58,0.05);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+    .servico-checklist li::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .servico-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-lg);
+      position: sticky;
+      top: 100px;
+    }
+    .servico-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: var(--gap-xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-md);
+    }
+    .servico-card h3 {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      font-family: var(--font-display);
+      color: var(--text-primary);
+    }
+    .servico-card p {
+      font-size: var(--text-sm);
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+    @media (max-width: 768px) {
+      .servico-content { grid-template-columns: 1fr; }
+      .servico-sidebar { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="Menu principal">
+  <div class="container navbar__inner">
+    <a href="/" class="navbar__logo" aria-label="CarlosCostaPrev - Início">
+      <img src="../assets/logo-monograma-cc.png" alt="CarlosCostaPrev" class="header-logo-mark">
+      <span class="header-logo-text">
+        <span class="header-logo-text-1">CarlosCosta</span>
+        <span class="header-logo-text-2">Prev<span class="header-logo-dot">.</span></span>
+        <span class="header-logo-tagline">PREVIDÊNCIA · INSS · ACOLHIMENTO</span>
+      </span>
+    </a>
+    <ul class="navbar__links" id="nav-links" role="list">
+      <li><a href="/">Início</a></li>
+      <li><a href="/beneficios.html">Benefícios</a></li>
+      <li><a href="/servicos.html" aria-current="page">Serviços</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+    <a href="https://wa.me/5521964238080?text=Preciso+de+CTC+para+tempo+de+serviço+público+ou+militar." class="btn btn-primary navbar__cta" target="_blank" rel="noopener noreferrer">
+      WhatsApp
+    </a>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<header class="servico-hero">
+  <div class="container" style="max-width: 720px;">
+    <p class="tag" style="margin-bottom: var(--gap-md);">📜 Documentação</p>
+    <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.2; margin-bottom: var(--gap-lg); font-family: var(--font-display);">
+      Leva tempo de<br>serviço <em style="color: var(--accent); font-style: normal;">público ou militar</em>?
+    </h1>
+    <p style="color: var(--text-muted); font-size: var(--text-base); max-width: 600px; margin: 0 auto;">
+      Sim! Você pode contar tempo de serviço público, servidor municipal e até serviço militar obrigatório na sua aposentadoria civil. A CTC comprova isso perante o INSS.
+    </p>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══ CONTEÚDO ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="servico-content">
+      <div class="servico-main">
+        <h2>O Que é a CTC (Certidão de Tempo de Contribuição)</h2>
+        <p>
+          CTC é um documento que prova o tempo que você trabalhou em órgãos públicos (federal, estadual ou municipal) ou serviu nas Forças Armadas. Esse tempo pode ser contado na sua aposentadoria privada (INSS), através de um processo chamado <strong>consolidação de tempo</strong>.
+        </p>
+        <p>
+          <strong>Exemplo real:</strong> você trabalhou 5 anos como servidor municipal, depois 25 anos no setor privado. Ao se aposentar, pode somar os 5 anos públicos aos 25 privados — totalizando 30 anos para o INSS. Isso pode adiantar sua aposentadoria em ANOS.
+        </p>
+
+        <h2 style="margin-top: var(--gap-xl);">Quando Você Precisa de CTC</h2>
+        <p>
+          Você qualifica se:
+        </p>
+        <ul class="servico-checklist">
+          <li>Trabalhou como servidor público (federal, estadual ou municipal)</li>
+          <li>Trabalhou em autarquia, fundação pública ou empresa estatal</li>
+          <li>Serviu nas Forças Armadas (Exército, Marinha, Aeronáutica)</li>
+          <li>Serviu obrigatoriamente, mesmo por pouco tempo (conta!)</li>
+          <li>Deixou o serviço público antes de se aposentar lá</li>
+        </ul>
+
+        <h2 style="margin-top: var(--gap-xl);">Como Obter a CTC</h2>
+        <p>
+          <strong>Para tempo em serviço público federal:</strong> solicitar ao Ministério da Defesa ou à secretaria estadual/municipal de administração (depende de onde trabalhou).
+        </p>
+        <p>
+          <strong>Para serviço militar obrigatório:</strong> requisição é feita ao Ministério da Defesa com seu número de matrícula.
+        </p>
+        <p>
+          <strong>Documentação necessária:</strong> CPF, identidade, e informações sobre o período (datas de início/fim). Muitas vezes basta fazer um requerimento online direto no site do órgão.
+        </p>
+
+        <h2 style="margin-top: var(--gap-xl);">O Problema Comum</h2>
+        <p>
+          A maioria das pessoas que têm tempo público não sabem disso. Outras obtêm a CTC mas não usam porque não entendem como integrar ao cálculo da aposentadoria.
+        </p>
+        <p>
+          <strong>Erros que vemos:</strong>
+        </p>
+        <ul class="servico-checklist">
+          <li>CTC com datas erradas ou incompletas</li>
+          <li>Não saber que pode usar tempo de servidor municipal (muita gente acha que só conta público federal)</li>
+          <li>Deixar a CTC parada sem usar no cálculo da aposentadoria</li>
+          <li>Erro no registro do tempo na base do INSS (mesmo com CTC válida)</li>
+        </ul>
+
+        <h2 style="margin-top: var(--gap-xl);">Como a Gente Ajuda</h2>
+        <p>
+          Você traz a informação do tempo público que teve (ou a CTC já emitida). A gente:
+        </p>
+        <ul class="servico-checklist">
+          <li>Valida se a CTC está completa e correta</li>
+          <li>Se necessário, orienta como obter/refazer</li>
+          <li>Integra esse tempo no cálculo da aposentadoria (INSS)</li>
+          <li>Registra corretamente no CNIS</li>
+          <li>Calcula quanto esse tempo acelera sua aposentadoria</li>
+        </ul>
+
+        <p style="margin-top: var(--gap-xl); padding: var(--gap-lg); background: rgba(196,103,58,0.08); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-md) var(--radius-md) 0;">
+          <strong>Não deixe tempo público ou militar fora da conta.</strong> Pode ser a diferença entre se aposentar daqui a 5 anos ou 3 anos.
+        </p>
+      </div>
+
+      <aside class="servico-sidebar">
+        <div class="servico-card">
+          <h3>⏱️ Tempo Estimado</h3>
+          <p>Análise da documentação: 1 a 2 horas. Obtenção da CTC (se não tiver): 2 a 4 semanas dependendo do órgão.</p>
+        </div>
+
+        <div class="servico-card">
+          <h3>📋 O Que Você Precisa Levar</h3>
+          <ul class="servico-checklist" style="margin: 0; gap: var(--gap-sm);">
+            <li>CPF</li>
+            <li>CTC (se tiver)</li>
+            <li>Documentos de nomeação/admissão</li>
+            <li>Contracheque ou comprovante de vencimento</li>
+            <li>Datas de início e saída</li>
+            <li>Nome do órgão/entidade exata</li>
+          </ul>
+        </div>
+
+        <div class="servico-card" style="background: linear-gradient(135deg, rgba(196,103,58,0.12) 0%, rgba(196,103,58,0.05) 100%); border-color: var(--accent-border); border-width: 2px;">
+          <h3>💬 Próximo Passo</h3>
+          <p>Descreve no WhatsApp qual tempo público/militar você tem (datas e órgão). Te oriento exatamente como proceder.</p>
+          <a href="https://wa.me/5521964238080?text=Preciso+de+CTC+para+tempo+de+serviço+público+ou+militar." class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" style="margin-top: var(--gap-md);">
+            Contar Tempo Público
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══ RODAPÉ ═══ -->
+<footer class="rodape" role="contentinfo">
+  <div class="container">
+    <div class="rodape__grid rodape__grid--5col">
+      <div class="rodape__col">
+        <div class="rodape__logo">
+          <img src="../assets/logo-monograma-cc.png" alt="CarlosCostaPrev" class="rodape__logo-mark">
+          <div class="rodape__logo-text">
+            <span class="rodape__logo-name1">CarlosCosta</span>
+            <span class="rodape__logo-name2">Prev<span>.</span></span>
+          </div>
+        </div>
+        <p>Especialista em Previdência Social.<br>Irajá, Rio de Janeiro.<br>Atendimento online para todo o Brasil.</p>
+      </div>
+      <nav class="rodape__col" aria-label="Links do rodapé">
+        <h4>Navegação</h4>
+        <ul style="display: flex; flex-direction: column; gap: 8px;">
+          <li><a href="/">Início</a></li>
+          <li><a href="/beneficios.html">Benefícios</a></li>
+          <li><a href="/servicos.html">Serviços</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </nav>
+      <nav class="rodape__col">
+        <h4>Contato</h4>
+        <ul style="display: flex; flex-direction: column; gap: 8px;">
+          <li><a href="https://wa.me/5521964238080" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a></li>
+          <li><a href="https://www.instagram.com/carloscostaprev" target="_blank" rel="noopener noreferrer">📷 Instagram</a></li>
+        </ul>
+      </nav>
+      <div class="rodape__col">
+        <h4>Endereço</h4>
+        <p style="font-size: var(--text-sm); margin: 0;">
+          Irajá<br>Rio de Janeiro, RJ<br><br>
+          <strong>Presencial ou<br>WhatsApp</strong>
+        </p>
+      </div>
+    </div>
+    <div style="border-top: 1px solid var(--glass-border); margin-top: var(--gap-lg); padding-top: var(--gap-lg); text-align: center; color: var(--text-faint); font-size: var(--text-xs);">
+      <p style="margin: 0;">© 2026 CarlosCostaPrev. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Obtenção e Integração de CTC para Aposentadoria",
+  "description": "Obtenção de Certidão de Tempo de Contribuição (CTC) de serviço público, militar e integração ao cálculo de aposentadoria INSS",
+  "provider": {
+    "@type": "Person",
+    "name": "Carlos Costa",
+    "jobTitle": "Especialista em Previdência Social"
+  },
+  "areaServed": { "@type": "Country", "name": "Brasil" },
+  "url": "https://carloscostaprev.com.br/servicos/ctc-certidao-tempo.html"
+}
+</script>
+
+<a href="https://wa.me/5521964238080?text=Preciso+de+CTC+para+tempo+de+serviço+público+ou+militar." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>
