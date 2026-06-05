@@ -81,13 +81,26 @@
       display: flex;
       flex-direction: column;
       gap: var(--gap-md);
-      padding: var(--gap-lg);
       background: var(--glass-bg);
       border: 1px solid var(--glass-border);
       border-radius: var(--radius-lg);
       transition: all 0.3s ease;
       text-decoration: none;
       color: inherit;
+      overflow: hidden;
+    }
+    .beneficio-card__image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .beneficio-card__content {
+      padding: var(--gap-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-md);
+      flex: 1;
     }
     .beneficio-card:hover {
       background: var(--accent-glass);
@@ -226,34 +239,42 @@
     <div class="beneficios-grid">
       <!-- 1. Aposentadoria da Pessoa Deficiente -->
       <a href="blog/aposentadoria-pessoa-deficiente.html" class="beneficio-card">
-        <div class="beneficio-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 48px; height: 48px; color: #2563eb;"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM12 6v6m0 4v2M9 9h6"/></svg></div>
-        <h3 class="beneficio-card__title">Aposentadoria da Pessoa Deficiente</h3>
-        <p class="beneficio-card__desc">Requisitos reduzidos para pessoas com deficiência comprovada. Perícia especializada do INSS.</p>
-        <span class="beneficio-card__cta">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <img src="https://images.pexels.com/photos/8127701/pexels-photo-8127701.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Pessoa com deficiência" class="beneficio-card__image">
+        <div class="beneficio-card__content">
+          <h3 class="beneficio-card__title">Aposentadoria da Pessoa Deficiente</h3>
+          <p class="beneficio-card__desc">Requisitos reduzidos para pessoas com deficiência comprovada. Perícia especializada do INSS.</p>
+          <span class="beneficio-card__cta">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
       </a>
 
       <!-- 2. Auxílio por Incapacidade Temporária -->
       <a href="blog/auxilio-incapacidade-temporaria.html" class="beneficio-card">
-        <div class="beneficio-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 48px; height: 48px; color: #7c3aed;"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 11h6M12 8v6"/></svg></div>
-        <h3 class="beneficio-card__title">Auxílio por Incapacidade Temporária</h3>
-        <p class="beneficio-card__desc">Quando você fica incapaz de trabalhar. Antigo Auxílio-Doença renovado em suas regras.</p>
-        <span class="beneficio-card__cta">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <img src="https://images.pexels.com/photos/7578798/pexels-photo-7578798.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Consulta médica" class="beneficio-card__image">
+        <div class="beneficio-card__content">
+          <h3 class="beneficio-card__title">Auxílio por Incapacidade Temporária</h3>
+          <p class="beneficio-card__desc">Quando você fica incapaz de trabalhar. Antigo Auxílio-Doença renovado em suas regras.</p>
+          <span class="beneficio-card__cta">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
       </a>
 
       <!-- 3. Auxílio Acidente -->
       <a href="blog/auxilio-acidente.html" class="beneficio-card">
-        <div class="beneficio-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 48px; height: 48px; color: #f59e0b;"><path d="M12 2l10 18H2L12 2zM12 8v6M12 16v.01"/></svg></div>
-        <h3 class="beneficio-card__title">Auxílio Acidente</h3>
-        <p class="beneficio-card__desc">Indenização mensal por sequela permanente de acidente. Você continua trabalhando e recebendo.</p>
-        <span class="beneficio-card__cta">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <img src="https://images.pexels.com/photos/10395785/pexels-photo-10395785.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Segurança no trabalho" class="beneficio-card__image">
+        <div class="beneficio-card__content">
+          <h3 class="beneficio-card__title">Auxílio Acidente</h3>
+          <p class="beneficio-card__desc">Indenização mensal por sequela permanente de acidente. Você continua trabalhando e recebendo.</p>
+          <span class="beneficio-card__cta">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
       </a>
 
       <!-- 4. Salário Maternidade -->
       <a href="blog/salario-maternidade.html" class="beneficio-card">
-        <div class="beneficio-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 48px; height: 48px; color: #ec4899;"><path d="M18 8a4 4 0 1 0-8 0 4 4 0 0 0 8 0zM14 16c-4 0-6 2-6 4v2h12v-2c0-2-2-4-6-4zM8 8a3 3 0 1 0-6 0 3 3 0 0 0 6 0zM5 14c-2 0-3 1-3 2v2h4v-2c0-1-1-2-2-2z"/></svg></div>
-        <h3 class="beneficio-card__title">Salário Maternidade</h3>
-        <p class="beneficio-card__desc">120 dias de proteção à mãe trabalhadora. Direito garantido ao INSS desde antes do parto.</p>
-        <span class="beneficio-card__cta">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <img src="https://images.pexels.com/photos/34566653/pexels-photo-34566653.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Mãe com bebê" class="beneficio-card__image">
+        <div class="beneficio-card__content">
+          <h3 class="beneficio-card__title">Salário Maternidade</h3>
+          <p class="beneficio-card__desc">120 dias de proteção à mãe trabalhadora. Direito garantido ao INSS desde antes do parto.</p>
+          <span class="beneficio-card__cta">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
       </a>
     </div>
   </div>
@@ -267,42 +288,52 @@
     <div class="beneficios-grid">
       <!-- 5. Aposentadoria por Invalidez Permanente -->
       <a href="blog/aposentadoria-invalidez-permanente.html" class="beneficio-card">
-        <div class="beneficio-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 48px; height: 48px; color: #ef4444;"><circle cx="12" cy="12" r="10"/><path d="M8 8l8 8M16 8l-8 8"/></svg></div>
-        <h3 class="beneficio-card__title">Aposentadoria por Invalidez Permanente</h3>
-        <p class="beneficio-card__desc">Para quem fica permanentemente incapaz de trabalhar. Perícia médica rigorosa do INSS.</p>
-        <span class="beneficio-card__cta">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <img src="https://images.pexels.com/photos/6194680/pexels-photo-6194680.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Exame médico" class="beneficio-card__image">
+        <div class="beneficio-card__content">
+          <h3 class="beneficio-card__title">Aposentadoria por Invalidez Permanente</h3>
+          <p class="beneficio-card__desc">Para quem fica permanentemente incapaz de trabalhar. Perícia médica rigorosa do INSS.</p>
+          <span class="beneficio-card__cta">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
       </a>
 
       <!-- 6. Aposentadoria por Idade -->
       <a href="blog/aposentadoria-idade.html" class="beneficio-card">
-        <div class="beneficio-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 48px; height: 48px; color: #06b6d4;"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 14h4M8 18h4"/></svg></div>
-        <h3 class="beneficio-card__title">Aposentadoria por Idade</h3>
-        <p class="beneficio-card__desc">Baseada na idade e tempo de contribuição ao INSS. A mais procurada entre brasileiros.</p>
-        <span class="beneficio-card__cta">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <img src="https://images.pexels.com/photos/34761/old-people-couple-together-connected.jpg?auto=compress&cs=tinysrgb&h=350" alt="Casal idoso" class="beneficio-card__image">
+        <div class="beneficio-card__content">
+          <h3 class="beneficio-card__title">Aposentadoria por Idade</h3>
+          <p class="beneficio-card__desc">Baseada na idade e tempo de contribuição ao INSS. A mais procurada entre brasileiros.</p>
+          <span class="beneficio-card__cta">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
       </a>
 
       <!-- 7. Aposentadoria por Tempo de Contribuição -->
       <a href="blog/aposentadoria-tempo-contribuicao.html" class="beneficio-card">
-        <div class="beneficio-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 48px; height: 48px; color: #8b5cf6;"><circle cx="12" cy="12" r="9"/><polyline points="12 6 12 12 16 14"/></svg></div>
-        <h3 class="beneficio-card__title">Aposentadoria por Tempo de Contribuição</h3>
-        <p class="beneficio-card__desc">Para quem completou 30 (mulher) ou 35 (homem) anos de contribuição. Regras de transição.</p>
-        <span class="beneficio-card__cta">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <img src="https://images.pexels.com/photos/6538440/pexels-photo-6538440.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Documentos e planejamento" class="beneficio-card__image">
+        <div class="beneficio-card__content">
+          <h3 class="beneficio-card__title">Aposentadoria por Tempo de Contribuição</h3>
+          <p class="beneficio-card__desc">Para quem completou 30 (mulher) ou 35 (homem) anos de contribuição. Regras de transição.</p>
+          <span class="beneficio-card__cta">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
       </a>
 
       <!-- 8. Aposentadoria Especial -->
       <a href="blog/aposentadoria-especial.html" class="beneficio-card">
-        <div class="beneficio-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 48px; height: 48px; color: #f59e0b;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-        <h3 class="beneficio-card__title">Aposentadoria Especial</h3>
-        <p class="beneficio-card__desc">Para trabalho em condições prejudiciais à saúde. Insalubridade, periculosidade, penosidade.</p>
-        <span class="beneficio-card__cta">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <img src="https://images.pexels.com/photos/18355812/pexels-photo-18355812.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Trabalho em condições especiais" class="beneficio-card__image">
+        <div class="beneficio-card__content">
+          <h3 class="beneficio-card__title">Aposentadoria Especial</h3>
+          <p class="beneficio-card__desc">Para trabalho em condições prejudiciais à saúde. Insalubridade, periculosidade, penosidade.</p>
+          <span class="beneficio-card__cta">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
       </a>
 
       <!-- 9. Pensão por Morte -->
       <a href="blog/pensao-morte.html" class="beneficio-card">
-        <div class="beneficio-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 48px; height: 48px; color: #06b6d4;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3 class="beneficio-card__title">Pensão por Morte</h3>
-        <p class="beneficio-card__desc">Renda vitalícia para dependentes do segurado falecido. Cônjuge, filhos, pais, irmãos.</p>
-        <span class="beneficio-card__cta">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <img src="https://images.pexels.com/photos/1648396/pexels-photo-1648396.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Família" class="beneficio-card__image">
+        <div class="beneficio-card__content">
+          <h3 class="beneficio-card__title">Pensão por Morte</h3>
+          <p class="beneficio-card__desc">Renda vitalícia para dependentes do segurado falecido. Cônjuge, filhos, pais, irmãos.</p>
+          <span class="beneficio-card__cta">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
       </a>
     </div>
   </div>
