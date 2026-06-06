@@ -6,31 +6,6 @@ if (navbar) {
   }, { passive: true });
 }
 
-// ── Formulário → WhatsApp ──
-const formContato = document.getElementById('formContato');
-if (formContato) {
-  formContato.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const nome      = document.getElementById('f-nome').value.trim();
-    const whatsapp  = document.getElementById('f-whatsapp').value.trim();
-    const beneficio = document.getElementById('f-beneficio').value;
-    const mensagem  = document.getElementById('f-mensagem').value.trim();
-
-    if (!nome || !whatsapp || !beneficio) {
-      alert('Por favor, preencha nome, WhatsApp e o benefício desejado.');
-      return;
-    }
-
-    let texto = `Olá, Carlos! Me chamo *${nome}* e preciso de ajuda com: *${beneficio}*.`;
-    texto += `\n📱 Meu WhatsApp: ${whatsapp}`;
-    if (mensagem) texto += `\n\n📝 Situação: ${mensagem}`;
-    texto += '\n\nGostaria de uma análise gratuita do meu caso.';
-
-    const url = `https://wa.me/5521964238080?text=${encodeURIComponent(texto)}`;
-    window.open(url, '_blank', 'noopener');
-  });
-}
-
 // ── Mobile hamburger ──
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('nav-links');

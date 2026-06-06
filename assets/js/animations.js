@@ -30,8 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
     '.blog__grid',
     '.credenciais__grid',
     '.especialidades__grid',
-    '.servicos-page__grid',
-    '.beneficio__body ul',
   ];
 
   gridSelectors.forEach(sel => {

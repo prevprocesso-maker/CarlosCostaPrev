@@ -133,7 +133,6 @@
 }
 
 /* ── WHATSAPP FLOAT ── */
-.wpp-float,
 .whatsapp-float {
   position: fixed;
   bottom: 24px; right: 24px;
@@ -146,14 +145,13 @@
   box-shadow: 0 4px 20px rgba(37,211,102,0.4);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-.wpp-float:hover,
 .whatsapp-float:hover {
   transform: scale(1.12);
   box-shadow: 0 6px 28px rgba(37,211,102,0.6);
 }
 /* esconde o float no mobile — substitui pela barra */
 @media (max-width: 768px) {
-  .wpp-float, .whatsapp-float { display: none; }
+  .whatsapp-float { display: none; }
 }
 
 /* ── MOBILE STICKY CTA BAR ── */
@@ -191,11 +189,6 @@
     background: linear-gradient(135deg, var(--whatsapp), var(--whatsapp-dark));
     color: #fff;
     box-shadow: 0 2px 12px rgba(37,211,102,0.3);
-  }
-  .mobile-cta-bar .mcta-tel {
-    background: var(--accent-glass);
-    border: 1px solid var(--accent-border);
-    color: var(--accent);
   }
   /* padding no body para não cobrir conteúdo */
   body { padding-bottom: 76px; }
