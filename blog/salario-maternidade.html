@@ -102,9 +102,9 @@
   </script>
 </head>
 <body>
-<nav class="site-nav" aria-label="Navegação">
-  <div class="container site-nav__inner">
-    <a href="/" class="site-nav__logo" style="display:flex;align-items:center;gap:9px;text-decoration:none;">
+<nav class="navbar" id="navbar" role="navigation" aria-label="Menu principal">
+  <div class="container navbar__inner">
+    <a href="/" class="navbar__logo" aria-label="CarlosCostaPrev - Início">
   <img src="../assets/logo-monograma-cc.png" alt="CarlosCostaPrev" class="header-logo-mark">
   <span class="header-logo-text">
     <span class="header-logo-text-1">CarlosCosta</span>
@@ -112,35 +112,11 @@
     <span class="header-logo-tagline">PREVIDÊNCIA · INSS · ACOLHIMENTO</span>
   </span>
 </a>
-    <div class="site-nav__links">
-      <a href="../beneficios.html">Benefícios</a>
-      <a href="../servicos.html">Serviços</a>
-      <a href="index.html">← Blog</a>
-      <div class="nav-ferramentas">
-        <button class="nav-ferramentas__btn" aria-expanded="false" aria-haspopup="true" id="btn-ferramentas">
-          Ferramentas
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="nav-ferramentas__dropdown" id="dropdown-ferramentas" hidden>
-          <a href="../ferramentas/indicadores-do-cnis.html">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-            Indicadores do CNIS
-          </a>
-          <a href="../ferramentas/calculadora.html">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h4M8 14h8M8 18h4"/></svg>
-            Calculadora de Aposentadoria
-          </a>
-          <a href="../ferramentas/louco-para-aposentar.html">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2m-6 0a2 2 0 012-2h2a2 2 0 012 2M9 12l2 2 4-4"/></svg>
-            Louco para Aposentar
-          </a>
-          <a href="../ferramentas/pdf.html">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6M9 15l3 3 3-3"/></svg>
-            Ferramentas de PDF
-          </a>
-        </div>
-      </div>
-    </div>
+    <ul class="navbar__links" id="nav-links" role="list">
+      <li><a href="../beneficios.html">Benefícios</a></li>
+      <li><a href="../servicos.html">Serviços</a></li>
+      <li><a href="index.html">Blog</a></li>
+    </ul>
   </div>
 </nav>
 <header class="article-hero">
