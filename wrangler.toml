@@ -1,0 +1,10 @@
+name = "carloscostaprev"
+type = "javascript"
+account_id = "a68fb5edd5af87de47e28d4a977933c2"
+pages_build_output_dir = "."
+
+[env.production]
+name = "carloscostaprev"
+routes = [
+  { pattern = "carloscostaprev.com.br", zone_id = "" }
+]
