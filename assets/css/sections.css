@@ -1308,7 +1308,6 @@
 /* ══════════════ STAGGER GRIDS ══════════════ */
 .credenciais__grid   .fade-up:nth-child(2) { transition-delay: 0.1s; }
 .credenciais__grid   .fade-up:nth-child(3) { transition-delay: 0.2s; }
-.credenciais__grid   .fade-up:nth-child(4) { transition-delay: 0.3s; }
 .especialidades__grid .fade-up:nth-child(2) { transition-delay: 0.15s; }
 .servicos-page__grid article:nth-child(2)  { transition-delay: 0.06s; }
 .servicos-page__grid article:nth-child(3)  { transition-delay: 0.12s; }
@@ -1341,7 +1340,6 @@
 .credenciais__item:nth-child(1) .icon-svg { animation: iconFloat 4s ease-in-out infinite; }
 .credenciais__item:nth-child(2) .icon-svg { animation: iconFloat 4s ease-in-out infinite 0.5s; }
 .credenciais__item:nth-child(3) .icon-svg { animation: iconFloat 4s ease-in-out infinite 1s; }
-.credenciais__item:nth-child(4) .icon-svg { animation: iconFloat 4s ease-in-out infinite 1.5s; }
 
 @keyframes iconPulseScale {
   0%, 100% { transform: scale(1); filter: drop-shadow(0 0 4px rgba(196,103,58,0.4)); }
