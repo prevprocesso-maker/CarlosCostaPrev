@@ -400,95 +400,6 @@
   .hero__subtitle { margin: 0 auto var(--gap-xl); }
 }
 
-/* ══════════════ CREDENCIAIS ══════════════ */
-.credenciais {
-  background: oklch(0.15 0.02 0);
-  padding: clamp(60px, 10vw, 120px) clamp(20px, 5vw, 80px);
-}
-
-.credenciais__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(20px, 3vw, 40px);
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.credenciais__item {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  border-top: 3px solid var(--accent);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 12px;
-  padding: 32px 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.credenciais__item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
-}
-
-.credenciais__number {
-  font-size: 48px;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 8px;
-  line-height: 1;
-}
-
-.credenciais__icon {
-  width: 32px;
-  height: 32px;
-  color: var(--accent);
-  margin-bottom: 16px;
-  margin-top: 0;
-  flex-shrink: 0;
-}
-
-.credenciais__icon svg {
-  width: 100%;
-  height: 100%;
-}
-
-.credenciais__title {
-  font-size: 18px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.4;
-  margin: 12px 0 8px 0;
-  font-family: var(--font-base);
-}
-
-.credenciais__sub {
-  font-size: 14px;
-  color: #d4d4d8;
-  margin: 0;
-  line-height: 1.5;
-}
-
-@media (max-width: 1024px) {
-  .credenciais__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .credenciais__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .credenciais__item {
-    padding: 24px 16px;
-  }
-}
-
 /* ══════════════ SERVIÇOS ══════════════ */
 .servicos { background: var(--bg-deep); }
 .servicos .text-center { margin-bottom: clamp(32px, 5vw, 56px); }
@@ -1306,8 +1217,6 @@
 }
 
 /* ══════════════ STAGGER GRIDS ══════════════ */
-.credenciais__grid   .fade-up:nth-child(2) { transition-delay: 0.1s; }
-.credenciais__grid   .fade-up:nth-child(3) { transition-delay: 0.2s; }
 .especialidades__grid .fade-up:nth-child(2) { transition-delay: 0.15s; }
 .servicos-page__grid article:nth-child(2)  { transition-delay: 0.06s; }
 .servicos-page__grid article:nth-child(3)  { transition-delay: 0.12s; }
@@ -1337,9 +1246,6 @@
   33%       { transform: translateY(-4px) rotate(-3deg); }
   66%       { transform: translateY(-2px) rotate(3deg); }
 }
-.credenciais__item:nth-child(1) .icon-svg { animation: iconFloat 4s ease-in-out infinite; }
-.credenciais__item:nth-child(2) .icon-svg { animation: iconFloat 4s ease-in-out infinite 0.5s; }
-.credenciais__item:nth-child(3) .icon-svg { animation: iconFloat 4s ease-in-out infinite 1s; }
 
 @keyframes iconPulseScale {
   0%, 100% { transform: scale(1); filter: drop-shadow(0 0 4px rgba(196,103,58,0.4)); }
