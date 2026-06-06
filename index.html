@@ -190,7 +190,6 @@
       <img src="assets/images/carlos-foto.png" alt="Carlos Costa — Especialista em Previdência Social" width="520" height="650" loading="lazy">
     </div>
     <div class="historia__content">
-      <p class="section-label fade-up">Por que Carlos Costa</p>
       <h2 id="historia-title" class="section-title fade-up">
         Cresci vendo trabalhadores perderem<br>o que construíram a vida toda.<br><em class="accent">Escolhi fazer diferente.</em>
       </h2>
@@ -205,7 +204,7 @@
         cada um deles chega até mim com uma história real. E cada um merece resultado real.
       </p>
       <div class="historia__valores fade-up">
-        <p class="section-label">MISSÃO · VISÃO · VALORES</p>
+        <h3 style="font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px;">MISSÃO · VISÃO · VALORES</h3>
         <div class="valores__grid">
           <div class="chip">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
@@ -246,186 +245,6 @@
 </section>
 
 <!-- ═══════════════════════════ 4 CARROS-CHEFE PREMIUM ═══════════════════════════ -->
-<style>
-  .carros-chefe {
-    background: linear-gradient(135deg,
-      rgba(14, 8, 6, 0.8) 0%,
-      rgba(196, 103, 58, 0.08) 50%,
-      rgba(14, 8, 6, 0.6) 100%);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .carros-chefe::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(circle at 20% 50%, rgba(196, 103, 58, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%);
-    pointer-events: none;
-  }
-
-  .carros-chefe__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .beneficio-card {
-    position: relative;
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-    group: "card";
-    display: flex;
-    flex-direction: column;
-  }
-
-  .beneficio-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.08) 0%,
-      rgba(255, 255, 255, 0.02) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 20px;
-    backdrop-filter: blur(12px);
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    z-index: -1;
-  }
-
-  .beneficio-card:hover::before {
-    border-color: rgba(255, 255, 255, 0.25);
-    background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.12) 0%,
-      rgba(255, 255, 255, 0.04) 100%);
-    backdrop-filter: blur(16px);
-    box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.4);
-  }
-
-  .beneficio-card__inner {
-    padding: 32px 28px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    gap: 16px;
-    z-index: 1;
-  }
-
-  .beneficio-card__icon {
-    font-size: 48px;
-    line-height: 1;
-    width: 64px;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 16px;
-    background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.1) 0%,
-      rgba(255, 255, 255, 0.02) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    transition: all 0.4s ease;
-  }
-
-  .beneficio-card:hover .beneficio-card__icon {
-    transform: translateY(-6px) scale(1.08);
-    background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.15) 0%,
-      rgba(255, 255, 255, 0.05) 100%);
-    border-color: rgba(255, 255, 255, 0.25);
-  }
-
-  .beneficio-card__color-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    border-radius: 20px 20px 0 0;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-
-  .beneficio-card:hover .beneficio-card__color-bar {
-    opacity: 1;
-  }
-
-  .beneficio-card__title {
-    font-family: 'Lora', serif;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 1.3;
-    letter-spacing: -0.5px;
-    transition: all 0.4s ease;
-  }
-
-  .beneficio-card:hover .beneficio-card__title {
-    color: #c4673a;
-    transform: translateX(4px);
-  }
-
-  .beneficio-card__desc {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.65);
-    transition: all 0.4s ease;
-    flex-grow: 1;
-  }
-
-  .beneficio-card:hover .beneficio-card__desc {
-    color: rgba(255, 255, 255, 0.8);
-  }
-
-  .beneficio-card__cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    color: #c4673a;
-    transition: all 0.3s ease;
-    margin-top: auto;
-    padding-top: 12px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    width: fit-content;
-  }
-
-  .beneficio-card:hover .beneficio-card__cta {
-    gap: 12px;
-    color: #e8794a;
-  }
-
-  @media (max-width: 768px) {
-    .carros-chefe__grid {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-    }
-
-    .beneficio-card__inner {
-      padding: 24px 20px;
-      gap: 12px;
-    }
-
-    .beneficio-card__title {
-      font-size: 18px;
-    }
-
-    .beneficio-card__icon {
-      width: 56px;
-      height: 56px;
-      font-size: 40px;
-    }
-  }
-</style>
-
 <section class="carros-chefe section">
   <div class="container">
     <div class="text-center fade-up" style="margin-bottom: 48px; position: relative; z-index: 2;">
@@ -436,7 +255,7 @@
 
     <!-- 4 PILARES PRINCIPAIS -->
     <div style="margin-bottom: 64px;">
-      <h3 style="text-center; font-size: 18px; font-weight: 600; color: #c4673a; margin-bottom: 32px; text-transform: uppercase; letter-spacing: 1px;">Os 4 Pilares Principais</h3>
+      <h3 style="text-align: center; font-size: 18px; font-weight: 600; color: #c4673a; margin-bottom: 32px; text-transform: uppercase; letter-spacing: 1px;">Os 4 Pilares Principais</h3>
       <div class="carros-chefe__grid">
 
       <!-- Card 1: Aposentadoria Deficiente -->
@@ -498,31 +317,34 @@
     </div>
     </div>
 
-    <!-- 3 SERVIÇOS PRINCIPAIS -->
+    <!-- 3 SERVIÇOS COMPLEMENTARES — layout horizontal (diferenciado dos 4 cards acima) -->
     <div style="margin-top: 80px;">
-      <h3 style="text-center; font-size: 18px; font-weight: 600; color: #c4673a; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">+ 3 Especialidades Complementares</h3>
-      <p style="text-center; font-size: 14px; color: rgba(255, 255, 255, 0.6); margin-bottom: 32px;">A fundação do seu benefício</p>
-      <div class="servicos__grid fade-up">
-        <!-- Planejamento Previdenciário 360° -->
-        <div class="glass-card servicos__card">
-          <div class="servicos__icon">📊</div>
-          <h3 class="servicos__title">Planejamento Previdenciário 360°</h3>
-          <p class="servicos__desc">Qual é o melhor caminho para seu caso específico</p>
-        </div>
-
-        <!-- Análise Previdenciária -->
-        <div class="glass-card servicos__card">
-          <div class="servicos__icon">🔍</div>
-          <h3 class="servicos__title">Análise Previdenciária Completa</h3>
-          <p class="servicos__desc">Avaliação detalhada de todos os seus direitos</p>
-        </div>
-
-        <!-- Análise de CNIS -->
-        <div class="glass-card servicos__card">
-          <div class="servicos__icon">📋</div>
-          <h3 class="servicos__title">Análise de CNIS</h3>
-          <p class="servicos__desc">Identifica erros e períodos perdidos que custam dinheiro</p>
-        </div>
+      <h3 style="text-align: center; font-size: 14px; font-weight: 600; color: var(--text-muted); margin-bottom: 32px; text-transform: uppercase; letter-spacing: 1.5px;">+ 3 Especialidades Complementares</h3>
+      <div class="complementares fade-up">
+        <a href="planejamento-360.html" class="complementar-item">
+          <span class="complementar-item__icon">📊</span>
+          <div class="complementar-item__text">
+            <strong>Planejamento Previdenciário 360°</strong>
+            <span>Qual é o melhor caminho para seu caso específico</span>
+          </div>
+          <span class="complementar-item__arrow">→</span>
+        </a>
+        <a href="analise-completa.html" class="complementar-item">
+          <span class="complementar-item__icon">🔍</span>
+          <div class="complementar-item__text">
+            <strong>Análise Previdenciária Completa</strong>
+            <span>Avaliação detalhada de todos os seus direitos</span>
+          </div>
+          <span class="complementar-item__arrow">→</span>
+        </a>
+        <a href="analise-cnis.html" class="complementar-item">
+          <span class="complementar-item__icon">📋</span>
+          <div class="complementar-item__text">
+            <strong>Análise de CNIS</strong>
+            <span>Identifica erros e períodos perdidos que custam dinheiro</span>
+          </div>
+          <span class="complementar-item__arrow">→</span>
+        </a>
       </div>
       <div class="text-center fade-up" style="margin-top: 32px;">
         <a href="servicos.html" class="servicos__link">Ver todos os 13 serviços →</a>
@@ -570,7 +392,6 @@
 
     <!-- Blog -->
     <div class="text-center fade-up">
-      <p class="section-label">Entenda Seus Direitos</p>
       <h2 class="section-title">O INSS nega porque você não sabe o que pode exigir</h2>
       <p class="section-subtitle">Leia antes de desistir. Cada artigo pode mudar o seu caso.</p>
     </div>
@@ -607,7 +428,6 @@
     <!-- FAQ -->
     <div class="faq__wrap fade-up">
       <div class="text-center">
-        <p class="section-label">O Que Ninguém Te Explica</p>
         <h2 class="section-title">As perguntas que todo mundo tem mas tem medo de fazer</h2>
       </div>
       <div class="faq__list" id="faq-list">
