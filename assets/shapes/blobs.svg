@@ -1,0 +1,42 @@
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @keyframes float1 {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        33% { transform: translate(15px, -10px) rotate(120deg); }
+        66% { transform: translate(-10px, 15px) rotate(240deg); }
+      }
+      @keyframes float2 {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        33% { transform: translate(-12px, 18px) rotate(120deg); }
+        66% { transform: translate(18px, -12px) rotate(240deg); }
+      }
+      @keyframes float3 {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        33% { transform: translate(10px, 12px) rotate(120deg); }
+        66% { transform: translate(-15px, -8px) rotate(240deg); }
+      }
+      .blob1 { animation: float1 6s ease-in-out infinite; transform-origin: 50% 50%; }
+      .blob2 { animation: float2 7s ease-in-out infinite; transform-origin: 50% 50%; }
+      .blob3 { animation: float3 8s ease-in-out infinite; transform-origin: 50% 50%; }
+    </style>
+  </defs>
+
+  <!-- Blob 1: Large organic shape top-left -->
+  <g class="blob1">
+    <path d="M 80,50 Q 100,20 130,30 Q 160,40 160,70 Q 165,100 140,120 Q 110,140 80,130 Q 50,120 50,90 Q 45,60 80,50 Z"
+          stroke="#c4673a" stroke-width="2" fill="none" opacity="0.15" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Blob 2: Medium organic shape center-right -->
+  <g class="blob2">
+    <path d="M 200,100 Q 230,80 250,110 Q 260,140 240,160 Q 210,180 180,170 Q 160,160 165,130 Q 170,100 200,100 Z"
+          stroke="#c4673a" stroke-width="2" fill="none" opacity="0.15" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Blob 3: Small organic shape bottom-center -->
+  <g class="blob3">
+    <path d="M 120,200 Q 145,185 160,210 Q 165,235 145,250 Q 115,265 100,245 Q 85,220 120,200 Z"
+          stroke="#c4673a" stroke-width="2" fill="none" opacity="0.15" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
