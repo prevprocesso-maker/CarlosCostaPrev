@@ -52,6 +52,36 @@ if (hamburger && navLinks) {
   });
 })();
 
+// ── Formulário de contato WhatsApp ──
+const formContato = document.getElementById('formContato');
+if (formContato) {
+  formContato.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const nome = document.getElementById('f-nome')?.value?.trim() || '';
+    const whatsapp = document.getElementById('f-whatsapp')?.value?.trim() || '';
+    const beneficio = document.getElementById('f-beneficio')?.value?.trim() || '';
+    const mensagem = document.getElementById('f-mensagem')?.value?.trim() || '';
+
+    // Validação: campos obrigatórios
+    if (!nome || !whatsapp || !beneficio) {
+      alert('Preencha todos os campos obrigatórios');
+      return;
+    }
+
+    // Constrói mensagem para WhatsApp
+    const corpo = `Olá, meu nome é ${nome}.\n\nTenho interesse em saber mais sobre: ${beneficio}.\n\n${mensagem ? `Observação: ${mensagem}` : ''}`;
+    const urlEnc = encodeURIComponent(corpo);
+    const wppUrl = `https://wa.me/5521964238080?text=${urlEnc}`;
+
+    // Abre WhatsApp
+    window.open(wppUrl, '_blank');
+
+    // Limpa form
+    formContato.reset();
+  });
+}
+
 // ── Cursor glow interativo na hero ──
 (function cursorGlow() {
   const hero = document.querySelector('.hero');
