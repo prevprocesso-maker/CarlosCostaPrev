@@ -17,6 +17,51 @@ ul{list-style:none}
 .accent{color:var(--accent)}
 .text-center{text-align:center}
 .text-center .section-subtitle{margin:0 auto}
-.fade-up{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
-.fade-up.visible{opacity:1;transform:translateY(0)}
+/* ── Fade-up Animation — Scroll triggered ── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s cubic-bezier(0.33, 0.66, 0.66, 1), transform 0.65s cubic-bezier(0.33, 0.66, 0.66, 1);
+  will-change: opacity, transform;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Sub-elementos em cascata (usado em .text-center) */
+.fade-up-child {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: opacity, transform;
+}
+
+.fade-up .fade-up-child {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Suporte para reduce motion (acessibilidade) */
+@media (prefers-reduced-motion: reduce) {
+  .fade-up,
+  .fade-up-child {
+    transition: none;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}

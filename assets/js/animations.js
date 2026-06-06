@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── Fade-up com IntersectionObserver ──
+  // ── Fade-up com IntersectionObserver (scroll-triggered animation) ──
+  const animationConfig = {
+    threshold: 0.08,
+    rootMargin: '0px 0px -50px 0px' // Trigger 50px antes do elemento sair da tela inferior
+  };
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -8,39 +13,79 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.05, rootMargin: '0px 0px 0px 0px' });
+  }, animationConfig);
 
+  // Observar todos os elementos com .fade-up
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-  // Marca visível imediatamente se já está no viewport (ex: após anchor jump)
+  // Marca visível imediatamente se já está no viewport (ex: hero, seção acima da dobra)
+  // Isto garante que elementos já visíveis no carregamento animem corretamente
   setTimeout(() => {
     document.querySelectorAll('.fade-up:not(.visible)').forEach(el => {
       const rect = el.getBoundingClientRect();
+      // Se elemento está visível, marca como visible e dispara animação
       if (rect.top < window.innerHeight && rect.bottom > 0) {
         el.classList.add('visible');
       }
     });
-  }, 100);
+  }, 50);
 
-  // ── Stagger automático para itens dentro de grids ──
-  const gridSelectors = [
+  // ── Stagger automático para itens em grids e seções ──
+  // Cada grid/container tem delay progressivo para efeito cascata
+  const containerSelectors = [
+    // Grids normais
     '.servicos__grid',
+    '.carros-chefe__grid', // Cards dos 4 pilares
+    '.especialidades__grid',
     '.consultivos__grid',
     '.depoimentos__grid',
     '.blog__grid',
     '.credenciais__grid',
-    '.especialidades__grid',
+    '.numeros__grid',
+    // Outros containers com múltiplos itens
+    '.faq__list',
+    '.historia__valores .valores__grid', // MVV chips
   ];
 
-  gridSelectors.forEach(sel => {
-    const grid = document.querySelector(sel);
-    if (!grid) return;
-    const children = grid.querySelectorAll('.fade-up, article, .glass-card');
-    children.forEach((child, i) => {
+  containerSelectors.forEach(selector => {
+    const container = document.querySelector(selector);
+    if (!container) return;
+
+    // Seleciona diretos filhos animáveis
+    const children = container.querySelectorAll(':scope > .fade-up, :scope > article, :scope > .glass-card, :scope > .beneficio-card, :scope > .faq__item, :scope > .chip');
+
+    children.forEach((child, index) => {
+      // Só sobrescreve se não foi customizado
       if (!child.style.transitionDelay) {
-        child.style.transitionDelay = `${i * 0.07}s`;
+        // Delay progressivo: 70-100ms entre cada item
+        // Mais rápido em mobile, mais lento em desktop
+        const delayMs = window.innerWidth < 768 ? 50 : 70;
+        child.style.transitionDelay = `${index * delayMs}ms`;
       }
     });
+  });
+
+  // ── Stagger especial para seções de texto (section-label, section-title, section-subtitle) ──
+  // Cria cascata suave do label → título → subtítulo
+  document.querySelectorAll('.text-center').forEach((textCenter) => {
+    if (!textCenter.classList.contains('fade-up')) return; // Só se o container tem fade-up
+
+    const label = textCenter.querySelector('.section-label');
+    const title = textCenter.querySelector('.section-title');
+    const subtitle = textCenter.querySelector('.section-subtitle');
+
+    if (label) {
+      label.style.transitionDelay = '0ms';
+      label.classList.add('fade-up-child');
+    }
+    if (title) {
+      title.style.transitionDelay = '80ms';
+      title.classList.add('fade-up-child');
+    }
+    if (subtitle) {
+      subtitle.style.transitionDelay = '160ms';
+      subtitle.classList.add('fade-up-child');
+    }
   });
 
   // ── Marca link ativo na navbar — apenas UM por vez ──
@@ -63,6 +108,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (isActive) link.setAttribute('aria-current', 'page');
+  });
+
+  // ── Performance: Cleanup listeners ao descarregar ──
+  window.addEventListener('beforeunload', () => {
+    observer.disconnect();
   });
 
 });
