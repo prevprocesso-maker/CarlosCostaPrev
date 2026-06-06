@@ -402,28 +402,91 @@
 
 /* ══════════════ CREDENCIAIS ══════════════ */
 .credenciais {
-  background: linear-gradient(180deg, var(--bg-mid) 0%, var(--bg-deep) 100%);
-  padding: clamp(32px, 5vw, 60px) 0;
+  background: oklch(0.15 0.02 0);
+  padding: clamp(60px, 10vw, 120px) clamp(20px, 5vw, 80px);
 }
+
 .credenciais__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--gap-md);
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 40px);
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.credenciais__item { text-align: center; }
-.credenciais__icon { font-size: 2rem; margin-bottom: var(--gap-sm); }
-.credenciais__title {
-  font-size: var(--text-base);
+
+.credenciais__item {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-top: 3px solid var(--accent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.credenciais__item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.credenciais__number {
+  font-size: 48px;
   font-weight: 700;
-  font-family: var(--font-display);
-  color: var(--text-primary);
-  line-height: 1.3;
-  margin-bottom: 4px;
+  color: var(--accent);
+  margin-bottom: 8px;
+  line-height: 1;
 }
-.credenciais__sub { font-size: var(--text-xs); color: var(--text-faint); }
+
+.credenciais__icon {
+  width: 32px;
+  height: 32px;
+  color: var(--accent);
+  margin-bottom: 16px;
+  margin-top: 0;
+  flex-shrink: 0;
+}
+
+.credenciais__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.credenciais__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.4;
+  margin: 12px 0 8px 0;
+  font-family: var(--font-base);
+}
+
+.credenciais__sub {
+  font-size: 14px;
+  color: #d4d4d8;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .credenciais__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 @media (max-width: 768px) {
-  .credenciais__grid { grid-template-columns: repeat(2, 1fr); }
+  .credenciais__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .credenciais__item {
+    padding: 24px 16px;
+  }
 }
 
 /* ══════════════ SERVIÇOS ══════════════ */
@@ -1124,6 +1187,122 @@
   .cta-final__box .btn { width: 100%; justify-content: center; }
   .hero__btns .btn { width: 100%; justify-content: center; }
   .servicos__card .btn { width: 100%; justify-content: center; }
+}
+
+/* ══════════════ HERO COM VÍDEO BACKGROUND (video-background.html) ══════════════ */
+/* Nota: Elemento .hero está definido acima (linhas 135-245) como seção hero com foto.
+   Este bloco adiciona estilos complementares para o hero com vídeo background em index.html */
+
+/* Override: quando .hero contém .hero__video (seção com vídeo, não foto) */
+.hero:has(> .hero__video) {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+  min-height: unset;
+  display: unset;
+  align-items: unset;
+  padding-top: unset;
+}
+
+.hero__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 100%);
+  z-index: 1;
+}
+
+.hero:has(> .hero__video) .hero__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding: clamp(20px, 5vw, 80px);
+  box-sizing: border-box;
+  max-width: unset;
+}
+
+.hero:has(> .hero__video) .hero__headline {
+  font-size: clamp(48px, 8vw, 72px);
+  font-weight: 700;
+  color: #c4673a;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.hero:has(> .hero__video) .hero__subheadline {
+  font-size: clamp(18px, 4vw, 24px);
+  font-weight: 400;
+  color: #fff;
+  margin: 16px 0 0 0;
+  line-height: 1.5;
+}
+
+.hero:has(> .hero__video) .hero__cta {
+  margin-top: 24px;
+}
+
+.hero__shapes {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero__shapes:nth-of-type(1) {
+  top: 10%;
+  left: 5%;
+}
+
+.hero__shapes:nth-of-type(2) {
+  top: 50%;
+  right: 10%;
+}
+
+.hero__shapes:nth-of-type(3) {
+  bottom: 10%;
+  left: 30%;
+}
+
+@media (max-width: 768px) {
+  .hero:has(> .hero__video) .hero__content {
+    padding: clamp(16px, 5vw, 40px);
+  }
+
+  .hero:has(> .hero__video) .hero__headline {
+    font-size: clamp(36px, 7vw, 56px);
+  }
+
+  .hero:has(> .hero__video) .hero__subheadline {
+    font-size: clamp(16px, 3.5vw, 20px);
+  }
+
+  .hero__shapes {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 /* ══════════════ STAGGER GRIDS ══════════════ */
