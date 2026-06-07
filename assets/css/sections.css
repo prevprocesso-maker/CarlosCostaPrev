@@ -1956,6 +1956,32 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
+.beneficio-card__checklist {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.beneficio-card__checklist li {
+  font-size: 13px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.55);
+  padding-left: 18px;
+  position: relative;
+}
+
+.beneficio-card__checklist li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #c4673a;
+  font-weight: 700;
+  font-size: 12px;
+}
+
 .beneficio-card__cta {
   display: inline-flex;
   align-items: center;
