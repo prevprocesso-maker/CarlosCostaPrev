@@ -1877,18 +1877,18 @@
 }
 
 .beneficio-card__inner {
-  padding: 32px 28px;
+  padding: 24px 24px 20px;
   position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
-  gap: 16px;
+  gap: 10px;
   z-index: 1;
 }
 
 .beneficio-card__img {
   width: 100%;
-  height: 160px;
+  height: 180px;
   overflow: hidden;
   border-radius: 20px 20px 0 0;
   position: relative;
@@ -1898,7 +1898,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 40%, rgba(14, 8, 6, 0.7) 100%);
+  background: linear-gradient(to bottom, transparent 30%, rgba(14, 8, 6, 0.8) 100%);
   pointer-events: none;
 }
 
@@ -1949,7 +1949,6 @@
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.65);
   transition: all 0.4s ease;
-  flex-grow: 1;
 }
 
 .beneficio-card:hover .beneficio-card__desc {
@@ -1958,18 +1957,21 @@
 
 .beneficio-card__checklist {
   list-style: none;
-  padding: 0;
-  margin: 4px 0 0;
+  padding: 10px 12px 10px 14px;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 2px solid rgba(196, 103, 58, 0.5);
+  border-radius: 0 8px 8px 0;
 }
 
 .beneficio-card__checklist li {
-  font-size: 13px;
-  line-height: 1.4;
-  color: rgba(255, 255, 255, 0.55);
-  padding-left: 18px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: 16px;
   position: relative;
 }
 
@@ -1979,7 +1981,7 @@
   left: 0;
   color: #c4673a;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .beneficio-card__cta {
@@ -1992,7 +1994,7 @@
   color: #c4673a;
   transition: all 0.3s ease;
   margin-top: auto;
-  padding-top: 12px;
+  padding-top: 14px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   width: fit-content;
 }
@@ -2009,8 +2011,8 @@
   }
 
   .beneficio-card__inner {
-    padding: 24px 20px;
-    gap: 12px;
+    padding: 20px 18px 16px;
+    gap: 8px;
   }
 
   .beneficio-card__title {
@@ -2018,7 +2020,15 @@
   }
 
   .beneficio-card__img {
-    height: 130px;
+    height: 140px;
+  }
+
+  .beneficio-card__checklist {
+    padding: 8px 10px 8px 12px;
+  }
+
+  .beneficio-card__checklist li {
+    font-size: 12px;
   }
 }
 
