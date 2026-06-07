@@ -2120,6 +2120,95 @@
   }
 }
 
+/* ══════════════ MOBILE DEEP — 480px e abaixo ══════════════ */
+@media (max-width: 480px) {
+  /* Navbar logo — reduzir no mobile pequeno */
+  .header-logo-mark { width: 34px; height: 34px; }
+  .header-logo-text-2 { font-size: 1.2rem; }
+  .header-logo-tagline { font-size: 0.38rem; letter-spacing: 0.15em; }
+
+  /* Hero vídeo — mais alto no mobile para CTA ficar visível */
+  .hero:has(> .hero__video) { height: 70dvh; }
+
+  /* Números — garantir 2 colunas legíveis */
+  .numeros__val { font-size: clamp(2rem, 10vw, 2.8rem); }
+  .numeros__label { font-size: 0.72rem; }
+
+  /* História — valores grid 2 colunas com chips menores */
+  .valores__grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .valores__grid .chip { padding: 16px 10px; font-size: 0.78rem; }
+  .valores__grid .chip svg { width: 18px; height: 18px; }
+
+  /* Benefício cards — forçar 1 coluna */
+  .carros-chefe__grid { grid-template-columns: 1fr !important; gap: 16px; }
+  .beneficio-card__img { height: 160px; }
+  .beneficio-card__title { font-size: 17px; }
+  .beneficio-card__desc { font-size: 13px; }
+  .beneficio-card__checklist li { font-size: 12px; }
+
+  /* Rodapé 5-col — 1 coluna no mobile pequeno */
+  .rodape__grid--5col { grid-template-columns: 1fr !important; }
+
+  /* Rodapé — logo menor */
+  .rodape__logo-mark { width: 48px; height: 48px; }
+
+  /* Footer-top — empilhar */
+  .footer-top { grid-template-columns: 1fr; gap: 16px; margin-bottom: 32px; }
+  .footer-map { min-height: 220px; }
+  .footer-map iframe { min-height: 220px; }
+
+  /* Review card — empilhar */
+  .review-card { grid-template-columns: 1fr; padding: 20px; gap: 20px; }
+  .review-card-qr { align-self: center; }
+  .review-card-btn { width: 100%; justify-content: center; }
+  .review-card-title { font-size: clamp(18px, 5vw, 24px); }
+  .review-card-sub { font-size: 13px; }
+
+  /* Complementares — ícone menor, texto menor */
+  .complementar-item { padding: 12px 14px; gap: 10px; }
+  .complementar-item__icon { font-size: 22px; width: 32px; }
+  .complementar-item__text strong { font-size: 13px; }
+  .complementar-item__text span { font-size: 11px; }
+
+  /* CTA final — padding reduzido */
+  .cta-final__box { padding: clamp(28px, 5vw, 48px) clamp(16px, 4vw, 32px); }
+  .cta-final__box h2 { font-size: clamp(1.2rem, 5vw, 1.8rem); }
+
+  /* Section padding reduzido */
+  .section { padding: clamp(40px, 6vw, 60px) 0; }
+
+  /* Formulário — campos em 1 coluna (já está) */
+
+  /* Depoimentos — card menor */
+  .depoimentos__card blockquote p { font-size: 0.88rem; }
+
+  /* Blog cards */
+  .blog__grid { gap: var(--gap-md); }
+
+  /* Especialidades */
+  .especialidade__card { padding: var(--gap-lg); }
+
+  /* MVV cards */
+  .mvv__card { padding: 1.2rem 1rem; }
+  .mvv__icon { width: 44px; height: 44px; }
+  .mvv__title { font-size: 0.9rem; }
+  .mvv__desc { font-size: 12px; }
+
+  /* Servicos hero */
+  .servicos-hero,
+  .servico-hero { padding: clamp(60px, 10vw, 80px) 0 clamp(40px, 6vw, 60px); }
+}
+
+/* ══════════════ MOBILE MEDIUM — 640px ══════════════ */
+@media (max-width: 640px) {
+  /* Logo texto ajustado */
+  .header-logo-text-1 { font-size: 0.58rem; }
+  .header-logo-text-2 { font-size: 1.35rem; }
+
+  /* Benefício cards — 1 coluna garantida */
+  .carros-chefe__grid { grid-template-columns: 1fr; }
+}
+
 /* ══════════════ ACESSIBILIDADE — reduzir movimento ══════════════ */
 @media (prefers-reduced-motion: reduce) {
   *,

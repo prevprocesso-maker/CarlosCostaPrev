@@ -110,6 +110,13 @@
     .beneficios-grid--5 {
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
+    @media (max-width: 480px) {
+      .beneficios-hero { padding: clamp(40px, 8vw, 60px) 0; }
+      .beneficios-section-title { font-size: clamp(1.3rem, 5vw, 1.8rem); }
+      .beneficios-grid { padding: clamp(32px, 6vw, 60px) 0; }
+      .beneficios-grid,
+      .beneficios-grid--5 { grid-template-columns: 1fr !important; gap: 16px; }
+    }
   </style>
 </head>
 <body>
