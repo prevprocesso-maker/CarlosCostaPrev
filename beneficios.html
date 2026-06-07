@@ -106,59 +106,9 @@
       letter-spacing: 1px;
       margin-bottom: var(--gap-md);
     }
-    /* Cards simples da seção "Outros Benefícios" (sem foto) */
-    .beneficio-card-simple {
-      display: flex;
-      flex-direction: column;
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-lg);
-      transition: all 0.3s ease;
-      text-decoration: none;
-      color: inherit;
-      overflow: hidden;
-    }
-    .beneficio-card-simple:hover {
-      background: var(--accent-glass);
-      border-color: var(--accent-border);
-      transform: translateY(-4px);
-    }
-    .beneficio-card-simple__content {
-      padding: var(--gap-lg);
-      display: flex;
-      flex-direction: column;
-      gap: var(--gap-md);
-      flex: 1;
-    }
-    .beneficio-card-simple__title {
-      font-size: var(--text-lg);
-      font-weight: 700;
-      font-family: var(--font-display);
-      color: var(--text-primary);
-      line-height: 1.3;
-    }
-    .beneficio-card-simple__desc {
-      font-size: var(--text-sm);
-      color: var(--text-muted);
-      line-height: 1.5;
-      flex: 1;
-    }
-    .beneficio-card-simple__cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--accent);
-      margin-top: auto;
-    }
-    .beneficio-card-simple__cta svg {
-      width: 14px;
-      height: 14px;
-      transition: transform 0.3s ease;
-    }
-    .beneficio-card-simple:hover .beneficio-card-simple__cta svg {
-      transform: translateX(4px);
+    /* Grid da segunda seção — 5 cards com auto-fit */
+    .beneficios-grid--5 {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
   </style>
 </head>
@@ -340,49 +290,125 @@
   <div class="container">
     <span class="beneficios-badge">📋 Outros Benefícios</span>
     <h2 class="beneficios-section-title">5 Benefícios Adicionais</h2>
-    <div class="beneficios-grid">
+    <div class="beneficios-grid beneficios-grid--5">
       <!-- 5. Aposentadoria por Invalidez Permanente -->
-      <a href="blog/aposentadoria-invalidez-permanente.html" class="beneficio-card-simple">
-        <div class="beneficio-card-simple__content">
-          <h3 class="beneficio-card-simple__title">Aposentadoria por Invalidez Permanente</h3>
-          <p class="beneficio-card-simple__desc">Para quem fica permanentemente incapaz de trabalhar. Perícia médica rigorosa do INSS.</p>
-          <span class="beneficio-card-simple__cta">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      <a href="blog/aposentadoria-invalidez-permanente.html" class="beneficio-card">
+        <div class="beneficio-card__color-bar" style="background: linear-gradient(90deg, #7C3AED 0%, #7c3aed80 100%);"></div>
+        <div class="beneficio-card__img">
+          <img src="assets/images/beneficios/invalidez.jpg" alt="Pessoa em cadeira de rodas — aposentadoria por invalidez permanente" loading="lazy" width="400" height="600">
+        </div>
+        <div class="beneficio-card__inner">
+          <h3 class="beneficio-card__title">Aposentadoria por Invalidez Permanente</h3>
+          <p class="beneficio-card__desc">Para quem fica permanentemente incapaz de exercer qualquer atividade laboral. Exige perícia médica rigorosa do INSS.</p>
+          <ul class="beneficio-card__checklist">
+            <li>Incapacidade total e permanente comprovada</li>
+            <li>Carência mínima de 12 contribuições</li>
+            <li>Valor: 60% + 2% por ano acima de 20</li>
+            <li>Acidente de trabalho: sem carência</li>
+            <li>Adicional de 25% se precisar de cuidador</li>
+            <li>Perícia de revisão a cada 2 anos</li>
+            <li>Pode converter em aposentadoria por idade</li>
+          </ul>
+          <div class="beneficio-card__cta">
+            <span>Saiba mais</span>
+            <span>→</span>
+          </div>
         </div>
       </a>
 
       <!-- 6. Aposentadoria por Idade -->
-      <a href="blog/aposentadoria-idade.html" class="beneficio-card-simple">
-        <div class="beneficio-card-simple__content">
-          <h3 class="beneficio-card-simple__title">Aposentadoria por Idade</h3>
-          <p class="beneficio-card-simple__desc">Baseada na idade e tempo de contribuição ao INSS. A mais procurada entre brasileiros.</p>
-          <span class="beneficio-card-simple__cta">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      <a href="blog/aposentadoria-idade.html" class="beneficio-card">
+        <div class="beneficio-card__color-bar" style="background: linear-gradient(90deg, #0891B2 0%, #0891b280 100%);"></div>
+        <div class="beneficio-card__img">
+          <img src="assets/images/beneficios/idade.jpg" alt="Idosa sorrindo — aposentadoria por idade" loading="lazy" width="400" height="600">
+        </div>
+        <div class="beneficio-card__inner">
+          <h3 class="beneficio-card__title">Aposentadoria por Idade</h3>
+          <p class="beneficio-card__desc">A mais procurada entre brasileiros. Baseada na idade mínima e tempo de contribuição ao INSS.</p>
+          <ul class="beneficio-card__checklist">
+            <li>Idade: 62 anos (mulher) / 65 anos (homem)</li>
+            <li>Mínimo de 15 anos de contribuição</li>
+            <li>Valor: 60% + 2% por ano acima de 20</li>
+            <li>Regras de transição para quem já contribuía</li>
+            <li>Inclui trabalhador rural (55F / 60H)</li>
+          </ul>
+          <div class="beneficio-card__cta">
+            <span>Saiba mais</span>
+            <span>→</span>
+          </div>
         </div>
       </a>
 
       <!-- 7. Aposentadoria por Tempo de Contribuição -->
-      <a href="blog/aposentadoria-tempo-contribuicao.html" class="beneficio-card-simple">
-        <div class="beneficio-card-simple__content">
-          <h3 class="beneficio-card-simple__title">Aposentadoria por Tempo de Contribuição</h3>
-          <p class="beneficio-card-simple__desc">Para quem completou 30 (mulher) ou 35 (homem) anos de contribuição. Regras de transição.</p>
-          <span class="beneficio-card-simple__cta">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      <a href="blog/aposentadoria-tempo-contribuicao.html" class="beneficio-card">
+        <div class="beneficio-card__color-bar" style="background: linear-gradient(90deg, #B45309 0%, #b4530980 100%);"></div>
+        <div class="beneficio-card__img">
+          <img src="assets/images/beneficios/tempo-contribuicao.jpg" alt="Trabalhador experiente na oficina — aposentadoria por tempo de contribuição" loading="lazy" width="400" height="600">
+        </div>
+        <div class="beneficio-card__inner">
+          <h3 class="beneficio-card__title">Aposentadoria por Tempo de Contribuição</h3>
+          <p class="beneficio-card__desc">Para quem completou 30 (mulher) ou 35 (homem) anos de contribuição. Várias regras de transição disponíveis.</p>
+          <ul class="beneficio-card__checklist">
+            <li>30 anos (mulher) / 35 anos (homem)</li>
+            <li>5 regras de transição pós-reforma 2019</li>
+            <li>Pedágio 50% ou 100% conforme o caso</li>
+            <li>Pontos: idade + contribuição = 91F / 101H</li>
+            <li>Idade mínima progressiva até 2031</li>
+            <li>Direito adquirido se completou antes de 2019</li>
+          </ul>
+          <div class="beneficio-card__cta">
+            <span>Saiba mais</span>
+            <span>→</span>
+          </div>
         </div>
       </a>
 
       <!-- 8. Aposentadoria Especial -->
-      <a href="blog/aposentadoria-especial.html" class="beneficio-card-simple">
-        <div class="beneficio-card-simple__content">
-          <h3 class="beneficio-card-simple__title">Aposentadoria Especial</h3>
-          <p class="beneficio-card-simple__desc">Para trabalho em condições prejudiciais à saúde. Insalubridade, periculosidade, penosidade.</p>
-          <span class="beneficio-card-simple__cta">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      <a href="blog/aposentadoria-especial.html" class="beneficio-card">
+        <div class="beneficio-card__color-bar" style="background: linear-gradient(90deg, #EA580C 0%, #ea580c80 100%);"></div>
+        <div class="beneficio-card__img">
+          <img src="assets/images/beneficios/especial.jpg" alt="Trabalhador com capacete de segurança — aposentadoria especial" loading="lazy" width="400" height="600">
+        </div>
+        <div class="beneficio-card__inner">
+          <h3 class="beneficio-card__title">Aposentadoria Especial</h3>
+          <p class="beneficio-card__desc">Para quem trabalhou exposto a agentes nocivos à saúde. Insalubridade, periculosidade ou penosidade comprovadas.</p>
+          <ul class="beneficio-card__checklist">
+            <li>15, 20 ou 25 anos de exposição conforme risco</li>
+            <li>PPP e LTCAT obrigatórios como prova</li>
+            <li>Sem fator previdenciário (direito adquirido)</li>
+            <li>Ruído, calor, agentes químicos e biológicos</li>
+            <li>Conversão de tempo especial em comum</li>
+            <li>Eletricidade e periculosidade incluídas</li>
+          </ul>
+          <div class="beneficio-card__cta">
+            <span>Saiba mais</span>
+            <span>→</span>
+          </div>
         </div>
       </a>
 
       <!-- 9. Pensão por Morte -->
-      <a href="blog/pensao-morte.html" class="beneficio-card-simple">
-        <div class="beneficio-card-simple__content">
-          <h3 class="beneficio-card-simple__title">Pensão por Morte</h3>
-          <p class="beneficio-card-simple__desc">Renda vitalícia para dependentes do segurado falecido. Cônjuge, filhos, pais, irmãos.</p>
-          <span class="beneficio-card-simple__cta">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      <a href="blog/pensao-morte.html" class="beneficio-card">
+        <div class="beneficio-card__color-bar" style="background: linear-gradient(90deg, #6366F1 0%, #6366f180 100%);"></div>
+        <div class="beneficio-card__img">
+          <img src="assets/images/beneficios/pensao-morte.jpg" alt="Família unida — pensão por morte para dependentes" loading="lazy" width="400" height="600">
+        </div>
+        <div class="beneficio-card__inner">
+          <h3 class="beneficio-card__title">Pensão por Morte</h3>
+          <p class="beneficio-card__desc">Renda mensal para dependentes do segurado falecido. Garante sustento da família em momento difícil.</p>
+          <ul class="beneficio-card__checklist">
+            <li>Cônjuge, filhos menores e pais dependentes</li>
+            <li>Não exige carência (qualquer contribuição)</li>
+            <li>Valor: 50% + 10% por dependente (máx. 100%)</li>
+            <li>Filhos recebem até 21 anos (ou 24 se universitário)</li>
+            <li>Cônjuge: duração conforme idade e tempo de casamento</li>
+            <li>Acumulável com aposentadoria (regras específicas)</li>
+            <li>Prazo: 90 dias para requerer sem perda</li>
+          </ul>
+          <div class="beneficio-card__cta">
+            <span>Saiba mais</span>
+            <span>→</span>
+          </div>
         </div>
       </a>
     </div>
