@@ -143,3 +143,20 @@ ERRO FATAL: Error: EBUSY: resource busy or locked, open 'C:\Users\NIKE\carloscos
   syscall: 'open',
   path: 'C:\\Users\\NIKE\\carloscostaprev-site\\scripts\\log.txt'
 }
+[09/06/2026, 08:00:01] === Iniciando gerador de post ===
+[09/06/2026, 08:00:01] Tema: Auxílio-Acidente: Quando o INSS Paga Mesmo Você Trabalhando
+[09/06/2026, 08:00:03] Foto baixada: C:\Users\NIKE\carloscostaprev-site\assets\images\blog\auxilio-acidente.jpg
+[09/06/2026, 08:00:03] Gerando conteúdo com IA...
+[09/06/2026, 08:00:19] Artigo criado: C:\Users\NIKE\carloscostaprev-site\blog\auxilio-acidente.html
+[09/06/2026, 08:00:19] index.html atualizado com novo card.
+[09/06/2026, 08:00:19] Iniciando deploy no Cloudflare Pages...
+[09/06/2026, 08:00:52] Deploy concluído com sucesso!
+
+═══════════════════════════════════════════
+  POST PUBLICADO — 09/06/2026, 08:00:52
+  Título : Auxílio-Acidente: Quando o INSS Paga Mesmo Você Trabalhando
+  Tag    : Auxílio
+  URL    : https://carloscostaprev.pages.dev/blog/auxilio-acidente.html
+═══════════════════════════════════════════
+[09/06/2026, 08:01:02] Aviso WhatsApp enviado para 5521964238080
+[09/06/2026, 08:01:02] === Post #7 publicado: Auxílio-Acidente: Quando o INSS Paga Mesmo Você Trabalhando ===
