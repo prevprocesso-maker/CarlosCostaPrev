@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/favicon.png">
+  <!-- ===== Analytics ===== -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T7ZNB2FXZY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('consent', 'default', { 'analytics_storage': 'denied', 'ad_storage': 'denied' });
+    gtag('config', 'G-T7ZNB2FXZY', { 'anonymize_ip': true });
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monitoramento de Benefício INSS — Pente Fino e Bloqueio | CarlosCostaPrev</title>
+  <meta name="description" content="O INSS pode bloquear seu benefício sem aviso. Monitoramos preventivamente e agimos imediatamente se qualquer bloqueio ou alteração indevida aparecer — antes que você perca um centavo.">
+  <meta name="theme-color" content="#c4673a">
+  <link rel="canonical" href="https://carloscostaprev.com.br/servicos/monitoramento-mob.html">
+
+  <!-- SEO -->
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Carlos Costa — CarlosCostaPrev">
+  <meta name="keywords" content="monitoramento benefício INSS, pente fino INSS, bloqueio benefício INSS, benefício suspenso INSS, como desbloquear benefício INSS, MOB INSS">
+
+  <!-- GEO -->
+  <meta name="geo.region" content="BR-RJ">
+  <meta name="geo.placename" content="Irajá, Rio de Janeiro, Brasil">
+  <meta name="geo.position" content="-22.8383;-43.3202">
+  <meta name="ICBM" content="-22.8383, -43.3202">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CarlosCostaPrev">
+  <meta property="og:title" content="Monitoramento de Benefício INSS — Prevenção contra Bloqueio e Pente Fino">
+  <meta property="og:description" content="O INSS pode bloquear seu benefício sem aviso. Monitoramos preventivamente e agimos imediatamente — antes que você perca um centavo.">
+  <meta property="og:url" content="https://carloscostaprev.com.br/servicos/monitoramento-mob.html">
+  <meta property="og:image" content="https://carloscostaprev.com.br/assets/images/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Monitoramento de Benefício INSS — Pente Fino e Bloqueio">
+  <meta name="twitter:description" content="Prevenção e ação imediata contra bloqueio indevido do benefício INSS. O INSS comete erros — esteja protegido.">
+  <meta name="twitter:image" content="https://carloscostaprev.com.br/assets/images/og-cover.jpg">
+
+  <!-- Social -->
+  <link rel="me" href="https://www.instagram.com/carloscostaprev">
+  <link rel="me" href="https://www.facebook.com/carloscostaprev">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/sections.css">
+
+  <style>
+    .servico-hero {
+      padding: clamp(80px, 12vw, 140px) 0;
+      background: linear-gradient(160deg, var(--bg-deep) 0%, var(--bg-mid) 100%);
+      text-align: center;
+    }
+    .servico-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: clamp(40px, 6vw, 60px);
+      align-items: start;
+      margin: clamp(60px, 8vw, 100px) 0;
+    }
+    .servico-main {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-xl);
+    }
+    .servico-main h2 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-family: var(--font-display);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: var(--gap-lg);
+    }
+    .servico-main p {
+      font-size: var(--text-base);
+      line-height: 1.75;
+      color: var(--text-muted);
+      margin-bottom: var(--gap-md);
+    }
+    .servico-main strong { color: var(--text-primary); }
+    .servico-checklist {
+      list-style: none;
+      padding: 0;
+      margin: var(--gap-xl) 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-md);
+    }
+    .servico-checklist li {
+      display: flex;
+      gap: var(--gap-md);
+      align-items: flex-start;
+      padding: var(--gap-md);
+      background: rgba(196,103,58,0.05);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+    .servico-checklist li::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .servico-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-lg);
+      position: sticky;
+      top: 100px;
+    }
+    .servico-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: var(--gap-xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-md);
+    }
+    .servico-card h3 {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      font-family: var(--font-display);
+      color: var(--text-primary);
+    }
+    .servico-card p {
+      font-size: var(--text-sm);
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+    @media (max-width: 768px) {
+      .servico-content { grid-template-columns: 1fr; }
+      .servico-sidebar { position: static; }
+    }
+  </style>
+
+  <!-- Schema.org — Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Monitoramento de Benefício INSS — Prevenção e Desbloqueio",
+    "description": "Monitoramento preventivo mensal do benefício INSS e ação imediata em caso de bloqueio, suspensão ou alteração indevida pelo pente fino.",
+    "url": "https://carloscostaprev.com.br/servicos/monitoramento-mob.html",
+    "provider": {"@type": "LegalService", "name": "Carlos Costa — Advocacia Previdenciária", "url": "https://carloscostaprev.com.br", "telephone": "+55-21-96423-8080", "address": {"@type": "PostalAddress", "addressLocality": "Irajá", "addressRegion": "RJ", "addressCountry": "BR"}},
+    "serviceType": "Monitoramento de Benefícios Previdenciários",
+    "areaServed": "Brasil",
+    "inLanguage": "pt-BR"
+  }
+  </script>
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="Menu principal">
+  <div class="container navbar__inner">
+    <a href="/" class="navbar__logo" aria-label="CarlosCostaPrev - Início">
+      <img src="../assets/logo-monograma-cc.png" alt="CarlosCostaPrev" class="header-logo-mark">
+      <span class="header-logo-text">
+        <span class="header-logo-text-1">CarlosCosta</span>
+        <span class="header-logo-text-2">Prev<span class="header-logo-dot">.</span></span>
+        <span class="header-logo-tagline">PREVIDÊNCIA · INSS · ACOLHIMENTO</span>
+      </span>
+    </a>
+    <ul class="navbar__links" id="nav-links" role="list">
+      <li><a href="/">Início</a></li>
+      <li><a href="/beneficios.html">Benefícios</a></li>
+      <li><a href="/servicos.html" aria-current="page">Serviços</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+    <a href="https://wa.me/5521964238080?text=Meu+benefício+foi+bloqueado+ou+quero+monitoramento+preventivo." class="btn btn-primary navbar__cta" target="_blank" rel="noopener noreferrer">
+      WhatsApp
+    </a>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<header class="servico-hero">
+  <div class="container" style="max-width: 720px;">
+    <p class="tag" style="margin-bottom: var(--gap-md);">🔍 Pente Fino e Vigilância Preventiva</p>
+    <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.2; margin-bottom: var(--gap-lg); font-family: var(--font-display);">
+      Seu benefício pode ser bloqueado<br><em style="color: var(--accent); font-style: normal;">amanhã. Sem aviso. Sem explicação.</em>
+    </h1>
+    <p style="color: var(--text-muted); font-size: var(--text-base); max-width: 600px; margin: 0 auto;">
+      O INSS comete erros. Dados desatualizados, cruzamentos incorretos com bases governamentais e suspeitas sem fundamento levam à suspensão de benefícios de quem tem todo o direito. A diferença está em agir antes — ou depois.
+    </p>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══ CONTEÚDO ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="servico-content">
+      <div class="servico-main">
+        <h2>O Que é o Pente Fino do INSS</h2>
+        <p>
+          O "Pente Fino" é o processo de revisão massiva que o INSS faz periodicamente para identificar benefícios que, segundo o sistema, não deveriam mais ser pagos. O problema: o sistema comete erros.
+        </p>
+        <p>
+          Dados desatualizados, cruzamento incorreto com bases do CAGED, Receita Federal e outros órgãos, e suspeitas de fraude sem fundamento levam à suspensão de benefícios de quem tem todo o direito. E o beneficiário só descobre quando o pagamento não cai.
+        </p>
+
+        <h2>Quem Está em Maior Risco</h2>
+        <ul class="servico-checklist">
+          <li>Aposentados que ainda constam como ativos em bases de emprego desatualizadas</li>
+          <li>Beneficiários de auxílio com vínculo empregatício não encerrado corretamente no CNIS</li>
+          <li>Quem não atualizou dados no Meu INSS há mais de 1 ano</li>
+          <li>Beneficiários sem prova de vida digital em dia</li>
+          <li>Quem recebe benefício por deficiência em revisão periódica obrigatória</li>
+          <li>Pensionistas cujos dependentes mudaram de situação civil sem atualização no INSS</li>
+        </ul>
+
+        <h2>O Que Fazemos</h2>
+        <ul class="servico-checklist">
+          <li>Monitoramento mensal do status do benefício no sistema do INSS</li>
+          <li>Alerta imediato se qualquer alteração, bloqueio ou exigência aparecer</li>
+          <li>Orientação sobre documentação preventiva (prova de vida, atualização cadastral)</li>
+          <li>Ação imediata para desbloqueio se o benefício for suspenso</li>
+          <li>Recurso administrativo com argumentação técnica dentro do prazo correto</li>
+        </ul>
+
+        <p style="margin-top: var(--gap-xl); padding: var(--gap-lg); background: rgba(196,103,58,0.08); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-md) var(--radius-md) 0;">
+          <strong>A maioria dos bloqueios indevidos pode ser revertida</strong> — mas o prazo para recurso é curto e muita gente perde por não agir a tempo. Com monitoramento ativo, agimos no primeiro sinal, antes que o dano se acumule.
+        </p>
+
+        <h2>Quanto Tempo Leva para Desbloquear</h2>
+        <p>
+          Depende do motivo do bloqueio. Com documentação correta e recurso bem fundamentado, a maioria dos casos se resolve em 15 a 45 dias. Casos mais complexos podem seguir para via judicial — e nesse caso o retroativo dos meses bloqueados indevidamente é recuperável.
+        </p>
+        <p>
+          O monitoramento preventivo evita exatamente esse caminho: identificamos o risco antes que o bloqueio aconteça e tomamos as medidas para regularizar antes que o pagamento seja suspenso.
+        </p>
+      </div>
+
+      <aside class="servico-sidebar">
+        <div class="servico-card">
+          <h3>⏱️ Tempo Estimado</h3>
+          <p>Monitoramento: contínuo (verificação mensal). Desbloqueio após suspensão: 15 a 45 dias em média.</p>
+        </div>
+
+        <div class="servico-card">
+          <h3>📋 O Que Você Precisa Levar</h3>
+          <ul class="servico-checklist" style="margin: 0; gap: var(--gap-sm);">
+            <li>Número do benefício (NB)</li>
+            <li>CPF do beneficiário</li>
+            <li>Dados de acesso ao Meu INSS (se houver)</li>
+            <li>Documentos pessoais atualizados</li>
+          </ul>
+        </div>
+
+        <div class="servico-card" style="background: linear-gradient(135deg, rgba(196,103,58,0.12) 0%, rgba(196,103,58,0.05) 100%); border-color: var(--accent-border); border-width: 2px;">
+          <h3>💬 Próximo Passo</h3>
+          <p>Me conta no WhatsApp se o benefício foi bloqueado ou se quer proteção preventiva. Te respondo em minutos.</p>
+          <a href="https://wa.me/5521964238080?text=Meu+benefício+foi+bloqueado+ou+quero+monitoramento+preventivo.+Me+ajuda?" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" style="margin-top: var(--gap-md);">
+            Entrar em Contato
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container" style="max-width: 900px;">
+    <div style="padding: var(--gap-xl); background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-lg);">
+      <p style="font-size: var(--text-sm); font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--gap-md);">Leia também</p>
+      <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--gap-sm);">
+        <li><a href="../servicos/beneficio-negado.html" style="color: var(--text-primary); text-decoration: underline; text-underline-offset: 3px; font-size: var(--text-sm);">Serviço: Benefício Negado — Recurso em 30 Dias</a></li>
+        <li><a href="../blog/auxilio-doenca-negado.html" style="color: var(--text-primary); text-decoration: underline; text-underline-offset: 3px; font-size: var(--text-sm);">Artigo: O Que Fazer Quando o Benefício é Negado</a></li>
+        <li><a href="../servicos/analise-cnis.html" style="color: var(--text-primary); text-decoration: underline; text-underline-offset: 3px; font-size: var(--text-sm);">Serviço: Análise do CNIS — Identifique Erros e Lacunas</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══ RODAPÉ ═══ -->
+<footer class="rodape" role="contentinfo">
+  <div class="container">
+    <div class="rodape__grid rodape__grid--5col">
+      <div class="rodape__col">
+        <div class="rodape__logo">
+          <img src="../assets/logo-monograma-cc.png" alt="CarlosCostaPrev" class="rodape__logo-mark">
+          <div class="rodape__logo-text">
+            <span class="rodape__logo-name1">CarlosCosta</span>
+            <span class="rodape__logo-name2">Prev<span>.</span></span>
+          </div>
+        </div>
+        <p>Especialista em Previdência Social.<br>Irajá, Rio de Janeiro.<br>Atendimento online para todo o Brasil.</p>
+        <div class="social-links" aria-label="Redes sociais">
+          <a href="https://www.instagram.com/carloscostaprev" target="_blank" rel="noopener noreferrer" aria-label="Instagram @carloscostaprev">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/carloscostaprev" target="_blank" rel="noopener noreferrer" aria-label="Facebook Carlos Costa Prev">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://g.page/r/CcJNe240Go7AEBM/review" target="_blank" rel="noopener noreferrer" aria-label="Avaliar no Google">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="rodape__map-col">
+        <iframe
+          src="https://maps.google.com/maps?q=Pra%C3%A7a+Nossa+Senhora+da+Apresenta%C3%A7%C3%A3o%2C+Iraj%C3%A1%2C+Rio+de+Janeiro&hl=pt-BR&z=16&output=embed"
+          width="100%" height="100%"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa — CarlosCostaPrev, Irajá/RJ"></iframe>
+      </div>
+
+      <a href="https://g.page/r/CcJNe240Go7AEBM/review" target="_blank" rel="noopener noreferrer"
+         class="rodape__review-col" aria-label="Avaliar Carlos Costa no Google">
+        <div class="review-card-text">
+          <div class="review-card-stars" aria-hidden="true">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <div class="review-card-kicker">UMA AVALIAÇÃO SUA SALVA OUTRA FAMÍLIA</div>
+          <h3 class="review-card-title">
+            Conseguiu seu benefício?
+            <em> Conta pra quem ainda está perdido.</em>
+          </h3>
+        </div>
+        <span class="review-card-btn">
+          Avaliar no Google
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+          </svg>
+        </span>
+      </a>
+
+      <nav class="rodape__col" aria-label="Links do rodapé">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/beneficios.html">Benefícios</a></li>
+          <li><a href="/servicos.html">Serviços</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </nav>
+
+      <address class="rodape__col" aria-label="Contato e endereço">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/5521964238080" target="_blank" rel="noopener noreferrer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> WhatsApp: (21) 96423-8080</a></li>
+        </ul>
+        <h4 style="margin-top: 1rem;">Endereço</h4>
+        <p>
+          Praça Nossa Sra. da Apresentação, 223 — Sala 206<br>
+          Irajá · Rio de Janeiro · RJ<br>
+          CEP 21231-230<br>
+          <em style="color: var(--accent); font-style: normal; font-size: var(--text-xs);">+ Atendimento online para todo o Brasil</em>
+        </p>
+      </address>
+    </div>
+    <div class="rodape__bottom">
+      <p>© 2026 CarlosCostaPrev — Especialista em Previdência Social. Todos os direitos reservados.</p>
+      <p style="margin-top: 0.5rem; font-size: 13px;">
+        <a href="../privacidade.html" style="color: var(--text-muted);">Política de Privacidade</a>
+        &nbsp;·&nbsp;
+        <a href="../termos.html" style="color: var(--text-muted);">Termos de Uso</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+
+<a href="https://wa.me/5521964238080?text=Meu+benefício+foi+bloqueado+ou+quero+monitoramento+preventivo." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<div class="mobile-cta-bar">
+  <a href="https://wa.me/5521964238080?text=Meu+benefício+foi+bloqueado+ou+quero+monitoramento+preventivo." class="mobile-cta-btn" target="_blank" rel="noopener noreferrer">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Falar no WhatsApp
+  </a>
+</div>
+
+</body>
+</html>
