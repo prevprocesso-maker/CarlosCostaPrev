@@ -2209,6 +2209,101 @@
   .carros-chefe__grid { grid-template-columns: 1fr; }
 }
 
+/* ══════════════ ARTICLE PAGES — blog posts ══════════════ */
+.article-hero {
+  padding: clamp(80px, 12vw, 100px) 0 clamp(40px, 6vw, 60px);
+  background: linear-gradient(160deg, var(--bg-deep) 0%, var(--bg-mid) 100%);
+}
+
+.article-container {
+  max-width: 720px;
+  padding-top: var(--section-py);
+  padding-bottom: var(--section-py);
+}
+
+.article-container h2 {
+  font-size: clamp(1.35rem, 3.5vw, 2rem);
+  font-weight: 800;
+  font-family: var(--font-display);
+  line-height: 1.2;
+  margin: var(--gap-xl) 0 var(--gap-md);
+  color: var(--text-primary);
+}
+
+.article-container h3 {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  font-family: var(--font-display);
+  margin: var(--gap-lg) 0 var(--gap-sm);
+  color: var(--text-primary);
+}
+
+.article-container p {
+  font-size: var(--text-base);
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: var(--gap-md);
+}
+
+.article-container ul,
+.article-container ol {
+  margin: var(--gap-md) 0 var(--gap-md) var(--gap-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+.article-container ul { list-style: disc; }
+.article-container ol { list-style: decimal; }
+
+.article-container li {
+  color: var(--text-muted);
+  font-size: var(--text-base);
+  line-height: 1.7;
+}
+
+.article-container strong {
+  color: var(--text-primary);
+}
+
+.article-container blockquote {
+  border-left: 3px solid var(--accent);
+  padding: var(--gap-md) var(--gap-lg);
+  margin: var(--gap-xl) 0;
+  background: rgba(196, 103, 58, 0.06);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.article-cta {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--gap-xl);
+  text-align: center;
+  margin-top: var(--gap-xl);
+}
+
+.article-cta h2 {
+  margin-top: 0;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+}
+
+@media (max-width: 768px) {
+  .article-hero {
+    padding: clamp(70px, 13vw, 88px) 0 clamp(26px, 5vw, 44px);
+  }
+  .article-container {
+    padding-top: clamp(32px, 6vw, 56px);
+    padding-bottom: clamp(32px, 6vw, 56px);
+  }
+}
+
+@media (max-width: 480px) {
+  .article-hero {
+    padding: 58px 0 26px;
+  }
+}
+
 /* ══════════════ ACESSIBILIDADE — reduzir movimento ══════════════ */
 @media (prefers-reduced-motion: reduce) {
   *,
