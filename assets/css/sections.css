@@ -531,6 +531,49 @@
   .valores__grid { grid-template-columns: repeat(2, 1fr); gap: var(--gap-sm); }
 }
 
+/* ══════════════ APRESENTAÇÃO ══════════════ */
+.apresentacao {
+  background: var(--bg-deep);
+  padding: clamp(24px, 4vw, 40px) 0 clamp(32px, 5vw, 48px);
+  text-align: center;
+}
+.apresentacao__inner {
+  max-width: 740px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.apresentacao__h1 {
+  font-family: 'Lora', serif;
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.25;
+  margin: 0;
+}
+.apresentacao__h2 {
+  font-size: clamp(15px, 2.2vw, 20px);
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+.apresentacao__texto {
+  font-size: clamp(14px, 1.8vw, 16px);
+  color: var(--text-secondary, rgba(255,255,255,0.72));
+  line-height: 1.75;
+  margin: 0;
+  text-align: left;
+}
+.apresentacao__cta {
+  margin-top: 8px;
+}
+@media (max-width: 600px) {
+  .apresentacao__texto { text-align: center; }
+}
+
 /* ══════════════ NÚMEROS ══════════════ */
 .numeros {
   background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-warm) 50%, var(--bg-mid) 100%);
@@ -549,6 +592,8 @@
 .numeros__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  max-width: 860px;
+  margin: 0 auto;
   gap: 0;
   text-align: center;
   position: relative;
