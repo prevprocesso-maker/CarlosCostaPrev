@@ -66,6 +66,7 @@
   <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <style>
     /* ── Navbar ── */
     .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 14px 0; background: rgba(14,8,6,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--glass-border); }
@@ -366,7 +367,6 @@
       </div>
 
       <div class="tool-card" data-tool="proteger">
-        <span class="tool-card__badge badge--soon">Em breve</span>
         <div class="tool-card__icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
@@ -642,15 +642,47 @@
       </div>
     </div>
 
-    <!-- ═══ PANEL: PROTEGER (em breve) ═══ -->
+    <!-- ═══ PANEL: PROTEGER ═══ -->
     <div class="tool-panel" id="panel-proteger">
       <div class="panel-card">
-        <div class="coming-soon">
-          <div class="coming-soon__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <h2 class="panel-title">Proteger PDF com Senha</h2>
+        <p class="panel-subtitle">Adicione uma senha ao seu PDF. O arquivo só poderá ser aberto por quem souber a senha.</p>
+
+        <div class="dropzone" id="dz-proteger" role="button" tabindex="0">
+          <input type="file" id="inp-proteger" accept=".pdf,application/pdf">
+          <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <div class="dropzone__title">Arraste o PDF aqui ou clique para selecionar</div>
+          <div class="dropzone__hint">Um arquivo PDF</div>
+        </div>
+        <div class="file-list" id="fl-proteger"></div>
+
+        <div class="options-row">
+          <div class="opt-group">
+            <label for="proteger-senha">Escolha a senha (mínimo 5 caracteres)</label>
+            <input type="text" id="proteger-senha" placeholder="Digite a senha" maxlength="50" autocomplete="off" style="background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius-md);padding:10px 14px;color:var(--text-primary);font-size:var(--text-sm);font-family:inherit;width:100%;">
           </div>
-          <h2>Proteger PDFs</h2>
-          <p>A criptografia de PDFs no navegador está em desenvolvimento. Por enquanto, use o <a href="https://planilha.tramitacaointeligente.com.br/pdfs/proteger/novo" target="_blank" rel="noopener" style="color:var(--accent)">Tramitação Inteligente</a> para proteger seus arquivos.</p>
+        </div>
+
+        <div class="notice notice--info" style="margin-top:var(--gap-md);background:rgba(196,103,58,0.06);border:1px solid rgba(196,103,58,0.2);border-radius:var(--radius-md);padding:12px 16px;font-size:var(--text-xs);color:var(--text-muted);line-height:1.6;">
+          🔒 O processamento é 100% no seu navegador. Seu arquivo e senha nunca saem do seu computador.
+        </div>
+
+        <button class="btn-process" id="btn-proteger" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Proteger PDF
+        </button>
+
+        <div class="progress-wrap" id="prog-proteger">
+          <div class="progress-bar-track"><div class="progress-bar-fill" id="progbar-proteger"></div></div>
+          <div class="progress-text" id="progtxt-proteger">Processando…</div>
+        </div>
+        <div class="error-msg" id="err-proteger"></div>
+        <div class="result-area" id="res-proteger">
+          <div class="result-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            PDF protegido com sucesso!
+          </div>
+          <div class="result-files" id="resfiles-proteger"></div>
         </div>
       </div>
     </div>
@@ -663,7 +695,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 110 20A10 10 0 0112 2z"/><path d="M12 6v6l4 2"/></svg>
           </div>
           <h2>Dividir por Tipo (IA)</h2>
-          <p>A inteligência artificial que classifica e separa documentos previdenciários automaticamente está em desenvolvimento para o CarlosCostaPrev. <br><br>Precisa agora? Use o <a href="https://planilha.tramitacaointeligente.com.br/pdfs/dividir/novo?tipo=ia" target="_blank" rel="noopener" style="color:var(--accent)">Tramitação Inteligente</a>.</p>
+          <p>A inteligência artificial que classifica e separa documentos previdenciários automaticamente está em desenvolvimento.<br><br>Em breve disponível diretamente aqui no CarlosCostaPrev.</p>
         </div>
       </div>
     </div>
@@ -778,7 +810,8 @@ const state = {
   dividir: [],
   imagens: [],
   juntar: [],
-  'remover-senha': []
+  'remover-senha': [],
+  proteger: []
 };
 
 // ── Utils ──
@@ -885,7 +918,7 @@ function setupDZ(toolId, multiple) {
 
 function addFiles(toolId, newFiles) {
   if (!newFiles.length) return;
-  if (toolId === 'dividir' || toolId === 'remover-senha') {
+  if (toolId === 'dividir' || toolId === 'remover-senha' || toolId === 'proteger') {
     state[toolId] = [newFiles[0]]; // single file tools
   } else {
     state[toolId] = state[toolId].concat(newFiles);
@@ -947,7 +980,13 @@ function removeFile(toolId, idx) {
 
 function updateProcessBtn(toolId) {
   const btn = document.getElementById('btn-' + toolId);
-  if (btn) btn.disabled = state[toolId].length === 0;
+  if (!btn) return;
+  if (toolId === 'proteger') {
+    const senha = document.getElementById('proteger-senha').value;
+    btn.disabled = state.proteger.length === 0 || senha.length < 5;
+  } else {
+    btn.disabled = state[toolId].length === 0;
+  }
 }
 
 async function loadPdfInfo(file) {
@@ -969,6 +1008,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupDZ('imagens', true);
   setupDZ('juntar', true);
   setupDZ('remover-senha', false);
+  setupDZ('proteger', false);
 
   // Dividir mode toggle
   document.getElementById('div-mode').addEventListener('change', e => {
@@ -982,6 +1022,12 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-imagens').addEventListener('click', runImagens);
   document.getElementById('btn-juntar').addEventListener('click', runJuntar);
   document.getElementById('btn-remover-senha').addEventListener('click', runRemoverSenha);
+  document.getElementById('btn-proteger').addEventListener('click', runProteger);
+
+  document.getElementById('proteger-senha').addEventListener('input', function() {
+    const btn = document.getElementById('btn-proteger');
+    btn.disabled = state.proteger.length === 0 || this.value.length < 5;
+  });
 });
 
 // ══════════════════════════════════════
@@ -1389,6 +1435,119 @@ async function runRemoverSenha() {
   } catch (e) {
     hideProgress('remover-senha');
     showError('remover-senha', 'Erro: ' + (e.message || e));
+  }
+  btn.disabled = false;
+}
+
+// ══════════════════════════════════════
+// PROTEGER
+// ══════════════════════════════════════
+async function runProteger() {
+  const files = state.proteger;
+  if (!files.length) return;
+  const file = files[0];
+  const senha = document.getElementById('proteger-senha').value.trim();
+  if (senha.length < 5) { showError('proteger', 'A senha deve ter no mínimo 5 caracteres.'); return; }
+
+  const btn = document.getElementById('btn-proteger');
+  btn.disabled = true;
+  hideError('proteger');
+  const resArea  = document.getElementById('res-proteger');
+  const resFiles = document.getElementById('resfiles-proteger');
+  resArea.classList.remove('visible');
+  resFiles.innerHTML = '';
+
+  try {
+    setProgress('proteger', 5, 'Carregando PDF…');
+    const bytes = await readFileAsBytes(file);
+
+    const pdf = await pdfjsLib.getDocument({ data: bytes }).promise;
+    const numPages = pdf.numPages;
+
+    setProgress('proteger', 10, 'Renderizando páginas…');
+
+    const pageImages = [];
+    for (let i = 1; i <= numPages; i++) {
+      setProgress('proteger', 10 + Math.round((i / numPages) * 60), 'Página ' + i + ' de ' + numPages + '…');
+      const page = await pdf.getPage(i);
+      const vp = page.getViewport({ scale: 2.0 });
+      const canvas = document.createElement('canvas');
+      canvas.width = vp.width;
+      canvas.height = vp.height;
+      const ctx = canvas.getContext('2d');
+      await page.render({ canvasContext: ctx, viewport: vp }).promise;
+      pageImages.push({ dataUrl: canvas.toDataURL('image/jpeg', 0.92), w: vp.width, h: vp.height });
+    }
+
+    setProgress('proteger', 75, 'Aplicando criptografia…');
+
+    var firstImg = pageImages[0];
+    var doc = new jspdf.jsPDF({
+      orientation: firstImg.w > firstImg.h ? 'landscape' : 'portrait',
+      unit: 'px',
+      format: [firstImg.w, firstImg.h],
+      encryption: {
+        userPassword: senha,
+        ownerPassword: senha,
+        userPermissions: ['print']
+      }
+    });
+    doc.addImage(firstImg.dataUrl, 'JPEG', 0, 0, firstImg.w, firstImg.h);
+
+    for (let i = 1; i < pageImages.length; i++) {
+      setProgress('proteger', 75 + Math.round((i / pageImages.length) * 20), 'Montando página ' + (i + 1) + '…');
+      var img = pageImages[i];
+      doc.addPage([img.w, img.h], img.w > img.h ? 'landscape' : 'portrait');
+      doc.addImage(img.dataUrl, 'JPEG', 0, 0, img.w, img.h);
+    }
+
+    setProgress('proteger', 98, 'Salvando…');
+    var outBytes = doc.output('arraybuffer');
+    setTimeout(function() { hideProgress('proteger'); }, 800);
+
+    var outName = baseName(file.name) + '_protegido.pdf';
+    var outData = new Uint8Array(outBytes);
+    var blobUrl = URL.createObjectURL(new Blob([outData], { type: 'application/pdf' }));
+
+    resFiles.innerHTML =
+      '<div class="result-file">' +
+        '<div class="file-item__icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#4caf7d" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>' +
+        '<div class="result-file__info">' +
+          '<div class="result-file__name">' + outName + '</div>' +
+          '<div class="result-file__meta">' + numPages + ' páginas &bull; ' + formatBytes(outBytes.byteLength) + ' &bull; 🔒 Protegido com senha</div>' +
+        '</div>' +
+      '</div>' +
+      '<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;">' +
+        '<button class="btn-process" id="btn-proteger-download" style="flex:1;min-width:180px;margin:0;">' +
+          '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>' +
+          ' Baixar PDF Protegido' +
+        '</button>' +
+        '<button class="btn-process" id="btn-proteger-outro" style="flex:1;min-width:180px;margin:0;background:var(--glass-bg);border:1px solid var(--glass-border);color:var(--text-primary);">' +
+          '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>' +
+          ' Proteger Outro PDF' +
+        '</button>' +
+      '</div>';
+
+    document.getElementById('btn-proteger-download').addEventListener('click', function() {
+      var a = document.createElement('a');
+      a.href = blobUrl;
+      a.download = outName;
+      a.click();
+    });
+    document.getElementById('btn-proteger-outro').addEventListener('click', function() {
+      URL.revokeObjectURL(blobUrl);
+      resArea.classList.remove('visible');
+      resFiles.innerHTML = '';
+      state.proteger = [];
+      document.getElementById('fl-proteger').innerHTML = '';
+      document.getElementById('proteger-senha').value = '';
+      document.getElementById('btn-proteger').disabled = true;
+    });
+    resArea.classList.add('visible');
+
+  } catch (e) {
+    hideProgress('proteger');
+    showError('proteger', 'Erro ao proteger: ' + (e.message || e));
   }
   btn.disabled = false;
 }
