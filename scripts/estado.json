@@ -6,12 +6,13 @@
     "bpc-loas-como-requerer",
     "aposentadoria-por-invalidez",
     "tempo-especial-insalubridade",
-    "auxilio-acidente"
+    "auxilio-acidente",
+    "pensao-por-morte"
   ],
-  "total": 7,
+  "total": 8,
   "ultimoPost": {
-    "slug": "auxilio-acidente",
-    "titulo": "Auxílio-Acidente: Quando o INSS Paga Mesmo Você Trabalhando",
-    "data": "2026-06-09T11:00:19.803Z"
+    "slug": "pensao-por-morte",
+    "titulo": "Pensão por Morte: Quem Tem Direito e Como Requerer",
+    "data": "2026-06-12T11:00:17.971Z"
   }
 }

@@ -160,3 +160,20 @@ ERRO FATAL: Error: EBUSY: resource busy or locked, open 'C:\Users\NIKE\carloscos
 ═══════════════════════════════════════════
 [09/06/2026, 08:01:02] Aviso WhatsApp enviado para 5521964238080
 [09/06/2026, 08:01:02] === Post #7 publicado: Auxílio-Acidente: Quando o INSS Paga Mesmo Você Trabalhando ===
+[12/06/2026, 08:00:02] === Iniciando gerador de post ===
+[12/06/2026, 08:00:02] Tema: Pensão por Morte: Quem Tem Direito e Como Requerer
+[12/06/2026, 08:00:03] Foto baixada: C:\Users\NIKE\carloscostaprev-site\assets\images\blog\pensao-por-morte.jpg
+[12/06/2026, 08:00:03] Gerando conteúdo com IA...
+[12/06/2026, 08:00:17] Artigo criado: C:\Users\NIKE\carloscostaprev-site\blog\pensao-por-morte.html
+[12/06/2026, 08:00:17] index.html atualizado com novo card.
+[12/06/2026, 08:00:17] Iniciando deploy no Cloudflare Pages...
+[12/06/2026, 08:00:41] Deploy concluído com sucesso!
+
+═══════════════════════════════════════════
+  POST PUBLICADO — 12/06/2026, 08:00:41
+  Título : Pensão por Morte: Quem Tem Direito e Como Requerer
+  Tag    : Pensão
+  URL    : https://carloscostaprev.pages.dev/blog/pensao-por-morte.html
+═══════════════════════════════════════════
+[12/06/2026, 08:00:52] Aviso WhatsApp enviado para 5521964238080
+[12/06/2026, 08:00:52] === Post #8 publicado: Pensão por Morte: Quem Tem Direito e Como Requerer ===
