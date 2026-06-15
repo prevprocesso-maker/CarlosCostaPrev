@@ -17,3 +17,7 @@
 [30/05/2026, 12:10:35]    → grupos-hoje.txt
 [30/05/2026, 12:10:35]    → painel.html
 [30/05/2026, 12:10:35] === Concluído ===
+[15/06/2026, 11:49:00] === Distribuidor de Conteúdo ===
+[15/06/2026, 11:49:00] Nenhum post para hoje (2026-06-15). Dia livre ou JSON ainda não chegou.
+[15/06/2026, 12:03:59] === Distribuidor de Conteúdo ===
+[15/06/2026, 12:03:59] Nenhum post para hoje (2026-06-15). Dia livre ou JSON ainda não chegou.
