@@ -7,12 +7,13 @@
     "aposentadoria-por-invalidez",
     "tempo-especial-insalubridade",
     "auxilio-acidente",
-    "pensao-por-morte"
+    "pensao-por-morte",
+    "salario-maternidade"
   ],
-  "total": 8,
+  "total": 9,
   "ultimoPost": {
-    "slug": "pensao-por-morte",
-    "titulo": "Pensão por Morte: Quem Tem Direito e Como Requerer",
-    "data": "2026-06-12T11:00:17.971Z"
+    "slug": "salario-maternidade",
+    "titulo": "Salário-Maternidade: Regras para MEI, Autônoma e CLT",
+    "data": "2026-06-16T11:00:18.887Z"
   }
 }

@@ -177,3 +177,20 @@ ERRO FATAL: Error: EBUSY: resource busy or locked, open 'C:\Users\NIKE\carloscos
 ═══════════════════════════════════════════
 [12/06/2026, 08:00:52] Aviso WhatsApp enviado para 5521964238080
 [12/06/2026, 08:00:52] === Post #8 publicado: Pensão por Morte: Quem Tem Direito e Como Requerer ===
+[16/06/2026, 08:00:02] === Iniciando gerador de post ===
+[16/06/2026, 08:00:02] Tema: Salário-Maternidade: Regras para MEI, Autônoma e CLT
+[16/06/2026, 08:00:03] Foto baixada: C:\Users\NIKE\carloscostaprev-site\assets\images\blog\salario-maternidade.jpg
+[16/06/2026, 08:00:03] Gerando conteúdo com IA...
+[16/06/2026, 08:00:18] Artigo criado: C:\Users\NIKE\carloscostaprev-site\blog\salario-maternidade.html
+[16/06/2026, 08:00:18] index.html atualizado com novo card.
+[16/06/2026, 08:00:18] Iniciando deploy no Cloudflare Pages...
+[16/06/2026, 08:00:35] Deploy concluído com sucesso!
+
+═══════════════════════════════════════════
+  POST PUBLICADO — 16/06/2026, 08:00:35
+  Título : Salário-Maternidade: Regras para MEI, Autônoma e CLT
+  Tag    : Benefícios
+  URL    : https://carloscostaprev.pages.dev/blog/salario-maternidade.html
+═══════════════════════════════════════════
+[16/06/2026, 08:00:47] Aviso WhatsApp enviado para 5521964238080
+[16/06/2026, 08:00:47] === Post #9 publicado: Salário-Maternidade: Regras para MEI, Autônoma e CLT ===
