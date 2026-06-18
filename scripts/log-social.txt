@@ -23,3 +23,5 @@
 [15/06/2026, 12:03:59] Nenhum post para hoje (2026-06-15). Dia livre ou JSON ainda não chegou.
 [16/06/2026, 20:28:47] === Distribuidor de Conteúdo ===
 [16/06/2026, 20:28:48] Nenhum post para hoje (2026-06-16). Dia livre ou JSON ainda não chegou.
+[18/06/2026, 11:13:45] === Distribuidor de Conteúdo ===
+[18/06/2026, 11:13:45] Nenhum post para hoje (2026-06-18). Dia livre ou JSON ainda não chegou.
