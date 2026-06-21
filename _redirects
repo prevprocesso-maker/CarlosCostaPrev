@@ -1,12 +1,3 @@
-# Páginas removidas → redirect para página mais relevante
-
-# BPC/LOAS removido do site — redireciona para benefícios
-/blog/bpc-loas-como-requerer.html     /beneficios.html    301
-/bpc-loas.html                         /beneficios.html    301
-/bpc-loas                              /beneficios.html    301
-
-# Revisão da Vida Toda (encerrada pelo STF)
-/blog/revisao-vida-toda.html           /blog/              301
-
-# Catch-all 404 → home
-# (Cloudflare Pages já serve 404 por padrão — não precisamos de regra extra)
+/blog/aposentadoria-por-idade.html /blog/aposentadoria-por-idade/ 301
+/blog/pensao-morte.html /blog/pensao-por-morte.html 301
+/blog/aposentadoria-idade.html /blog/aposentadoria-por-idade.html 301
