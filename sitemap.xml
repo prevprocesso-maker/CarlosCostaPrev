@@ -1,306 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Home -->
   <url>
     <loc>https://carloscostaprev.com.br/</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- Páginas principais -->
   <url>
     <loc>https://carloscostaprev.com.br/beneficios.html</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://carloscostaprev.com.br/servicos.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Ferramentas -->
-  <url>
-    <loc>https://carloscostaprev.com.br/ferramentas/calculadora.html</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carloscostaprev.com.br/ferramentas/louco-para-aposentar.html</loc>
-    <lastmod>2026-06-09</lastmod>
+    <loc>https://carloscostaprev.com.br/blog/</loc>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://carloscostaprev.com.br/ferramentas/indicadores-do-cnis.html</loc>
-    <lastmod>2026-06-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/ferramentas/pdf.html</loc>
-    <lastmod>2026-06-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Benefícios: 4 carros-chefe + 5 secundários -->
-  <!-- CARROS-CHEFE (4) -->
-  <url>
-    <loc>https://carloscostaprev.com.br/beneficios/aposentadoria-pessoa-deficiente.html</loc>
-    <lastmod>2026-06-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/beneficios/auxilio-incapacidade-temporaria.html</loc>
-    <lastmod>2026-06-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/beneficios/auxilio-acidente.html</loc>
-    <lastmod>2026-06-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/beneficios/salario-maternidade.html</loc>
-    <lastmod>2026-06-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- SECUNDÁRIOS (5) -->
-  <url>
-    <loc>https://carloscostaprev.com.br/beneficios/aposentadoria-invalidez-permanente.html</loc>
-    <lastmod>2026-06-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/beneficios/aposentadoria-por-idade.html</loc>
-    <lastmod>2026-06-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/beneficios/aposentadoria-por-tempo.html</loc>
-    <lastmod>2026-06-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/beneficios/aposentadoria-especial.html</loc>
-    <lastmod>2026-06-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/beneficios/pensao-por-morte.html</loc>
-    <lastmod>2026-06-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Serviços: 3 carros-chefe + 7 complementares -->
-  <!-- CARROS-CHEFE (3) -->
-  <url>
-    <loc>https://carloscostaprev.com.br/servicos/planejamento-360.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/servicos/analise-completa.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/servicos/analise-cnis.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- COMPLEMENTARES (10) -->
-  <url>
-    <loc>https://carloscostaprev.com.br/servicos/planejamento-contributivo.html</loc>
-    <lastmod>2026-06-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/servicos/monitoramento-mob.html</loc>
-    <lastmod>2026-06-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/servicos/pareceres-juridicos.html</loc>
-    <lastmod>2026-06-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/servicos/calculo-tempo-contribuicao.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/servicos/beneficio-negado.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/servicos/ppp-ltcat.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/servicos/ctc-certidao-tempo.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/servicos/averbacao-trabalhista.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/servicos/averbacao-militar.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/servicos/revisao-aposentadorias.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Blog -->
-  <url>
-    <loc>https://carloscostaprev.com.br/blog/</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- CARRO CHEFE (destaque) -->
-  <url>
-    <loc>https://carloscostaprev.com.br/blog/aposentadoria-pessoa-deficiente.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/blog/auxilio-incapacidade-temporaria.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/blog/auxilio-acidente.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/blog/salario-maternidade.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- SECUNDÁRIOS -->
-  <url>
-    <loc>https://carloscostaprev.com.br/blog/aposentadoria-invalidez-permanente.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/blog/aposentadoria-idade.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/blog/aposentadoria-por-idade.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/blog/aposentadoria-por-invalidez.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/blog/aposentadoria-tempo-contribuicao.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/blog/aposentadoria-especial.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/blog/pensao-morte.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- GUIAS GERAIS -->
-  <url>
-    <loc>https://carloscostaprev.com.br/blog/auxilio-doenca-negado.html</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://carloscostaprev.com.br/blog/como-ler-cnis.html</loc>
-    <lastmod>2026-05-20</lastmod>
+    <loc>https://carloscostaprev.com.br/ferramentas/calculadora.html</loc>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://carloscostaprev.com.br/blog/tempo-especial-insalubridade.html</loc>
-    <lastmod>2026-06-05</lastmod>
+    <loc>https://carloscostaprev.com.br/ferramentas/louco-para-aposentar.html</loc>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
-  <!-- Institucionais -->
-  <url>
-    <loc>https://carloscostaprev.com.br/privacidade.html</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://carloscostaprev.com.br/termos.html</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
 </urlset>
